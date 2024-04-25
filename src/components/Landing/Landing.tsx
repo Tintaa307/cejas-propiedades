@@ -114,7 +114,7 @@ const Landing = () => {
   return (
     <main className="w-full h-[calc(100vh_-_80px)] flex items-center justify-center">
       <div className="w-[90%] h-full flex items-start justify-start">
-        <section className="w-full h-3/4 bg-black rounded-[40px] flex items-center justify-center flex-row mt-12">
+        <section className="w-full h-3/4 bg-black rounded-[40px] flex items-center justify-center flex-row mt-12 animate-fade-in-down">
           <article className="relative w-1/2 h-full flex items-center justify-center flex-col">
             <div className="mx-12 flex flex-col gap-2">
               <h1 className="text-white text-4xl font-bold">
