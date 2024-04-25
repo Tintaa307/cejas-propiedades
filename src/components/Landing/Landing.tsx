@@ -117,7 +117,7 @@ const Landing = () => {
         <section className="w-full h-3/4 bg-black rounded-[40px] flex items-center justify-center flex-row mt-12 animate-fade-in-down">
           <article className="relative w-1/2 h-full flex items-center justify-center flex-col">
             <div className="mx-12 flex flex-col gap-2">
-              <h1 className="text-white text-4xl font-bold">
+              <h1 className="text-white text-5xl font-bold leading-snug">
                 ENCONTRA TU SUEÑO EN CEJAS PROPIEDADES
               </h1>
               <p className="text-grey text-sm">
@@ -181,8 +181,8 @@ const Landing = () => {
               ))}
             </ul>
           </article>
-          <picture className="w-1/2 h-full flex items-end justify-center">
-            <div className="relative top-10 w-80 h-[550px] bg-white rounded-t-full shadow-[0_0_10px_#000]"></div>
+          <picture className="w-1/2 h-full flex items-end justify-end">
+            <div className="relative top-10 right-12 w-[460px] h-[550px] bg-white rounded-t-full shadow-[0_0_10px_#000]"></div>
           </picture>
         </section>
       </div>

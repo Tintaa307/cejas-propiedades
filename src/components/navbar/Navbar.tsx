@@ -29,7 +29,7 @@ const Navbar = () => {
             LOGO
           </div>
         </picture>
-        <ul className="w-1/2 h-full flex items-center justify-end flex-row gap-12 ">
+        <ul className="w-1/2 h-full flex items-center justify-end flex-row gap-12">
           {navItems.map((item, index) => (
             <Item key={index} item={item} />
           ))}
