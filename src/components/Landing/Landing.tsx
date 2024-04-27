@@ -79,32 +79,17 @@ const Landing = () => {
       ],
     },
     {
-      title: "Precio",
+      title: "Estado",
       data: [
         {
-          title: "0-100000",
-          value: "0-100000",
+          title: "Venta",
+          value: "Venta",
         },
         {
-          title: "100000-200000",
-          value: "100000-200000",
+          title: "Alquiler",
+          value: "Alquiler",
         },
-        {
-          title: "200000-300000",
-          value: "200000-300000",
-        },
-        {
-          title: "300000-400000",
-          value: "300000-400000",
-        },
-        {
-          title: "400000-500000",
-          value: "400000-500000",
-        },
-        {
-          title: "500000+",
-          value: "500000+",
-        },
+
       ],
     },
     {
@@ -114,11 +99,11 @@ const Landing = () => {
   return (
     <main className="w-full h-[calc(100vh_-_80px)] flex items-center justify-center">
       <div className="w-[90%] h-full flex items-start justify-start">
-        <section className="w-full h-3/4 bg-black rounded-[40px] flex items-center justify-center flex-row mt-12 animate-fade-in-down">
-          <article className="relative w-1/2 h-full flex items-center justify-center flex-col">
+        <section className="w-full 2xl:h-3/4 lg:h-5/6 bg-black rounded-[40px] flex items-center justify-center flex-row mt-12 animate-fade-in-down ">
+          <article className="relative w-1/2 h-full flex items-center justify-center flex-col lg:gap-5">
             <div className="mx-12 flex flex-col gap-2">
-              <h1 className="text-white text-5xl font-bold leading-snug">
-                ENCONTRA TU SUEÑO EN CEJAS PROPIEDADES
+              <h1 className="text-white 2xl:text-5xl lg:text-3xl font-bold leading-snug">
+                ENCONTRÁ TU SUEÑO EN CEJAS PROPIEDADES
               </h1>
               <p className="text-grey text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -128,7 +113,7 @@ const Landing = () => {
                 sed do eiusmod tempor incididunt ut labore.
               </p>
             </div>
-            <ul className="absolute bottom-14 w-[105%] h-24 bg-white rounded-[20px] ml-[calc(96px_+_5%)] flex items-center justify-center flex-row">
+            <ul className="2xl:absolute 2xl:bottom-14 2xl:w-[105%] lg:w-[135%] 2xl:h-24 h-20 bg-white rounded-[20px] 2xl:ml-[calc(96px_+_5%)] lg:ml-[calc(96px_+_35%)] flex items-center justify-center flex-row z-10 border-2 border-black">
               {filterItems.map((item, index) => (
                 <li
                   key={index}
@@ -151,7 +136,7 @@ const Landing = () => {
                   )}
                   {item.data && (
                     <Select>
-                      <SelectTrigger className="px-0 text-black font-bold text-base">
+                      <SelectTrigger className="px-0 text-black font-bold text-sm">
                         <SelectValue
                           className="text-black font-bold"
                           placeholder={item.data[0].title}
@@ -182,7 +167,7 @@ const Landing = () => {
             </ul>
           </article>
           <picture className="w-1/2 h-full flex items-end justify-end">
-            <div className="relative top-10 right-12 w-[460px] h-[550px] bg-white rounded-t-full shadow-[0_0_10px_#000]"></div>
+            <div className="relative top-5 right-10 2xl:top-10 2xl:right-12 2xl:w-[460px] lg:w-[320px] 2xl:h-[550px] lg:h-[375px] bg-white rounded-t-full shadow-[0_0_10px_#000]"></div>
           </picture>
         </section>
       </div>
