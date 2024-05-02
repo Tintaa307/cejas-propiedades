@@ -30,19 +30,19 @@ const Information = () => {
     if (salesNumber < 100) {
       setTimeout(() => {
         setSalesNumber(salesNumber + 1)
-      }, 70)
+      }, 15)
     }
 
     if (hectariasNumber < 200) {
       setTimeout(() => {
         setHectariasNumber(hectariasNumber + 1)
-      }, 50)
+      }, 8)
     }
 
     if (clientsNumber < 99) {
       setTimeout(() => {
         setClientsNumber(clientsNumber + 1)
-      }, 70)
+      }, 15)
     }
   }, [salesNumber, hectariasNumber, clientsNumber])
 
