@@ -9,7 +9,7 @@ const Map = () => {
         alt="image-empty"
         width={800}
         height={800}
-        className="w-1/2 mt-24"
+        className="w-1/2 my-24"
       />
     </div>
   )

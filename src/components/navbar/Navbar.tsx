@@ -1,7 +1,11 @@
-import React from "react"
+"use client"
+
+import React, { useState, useEffect } from "react"
 import Item from "./Item"
+import { cn } from "@/lib/utils"
 
 const Navbar = () => {
+  const [isScrolling, setIsScrolling] = useState(false)
   const navItems = [
     {
       title: "Sobre nosotros",
@@ -21,9 +25,31 @@ const Navbar = () => {
     },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolling(true)
+      } else {
+        setIsScrolling(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
-    <header className="relative w-full h-20 flex items-center justify-center">
-      <nav className="w-[90%] h-full flex items-center justify-between border-b-[1px] border-b-grey/20">
+    <header
+      className={cn(
+        "fixed w-full h-20 flex items-center justify-center bg-[#f3f3f3] z-50 transition-all duration-150",
+        {
+          "shadow-[0_4px_6px_#9a9a9a] transition-all duration-150": isScrolling,
+        }
+      )}
+    >
+      <nav className="w-[90%] h-full flex items-center justify-between">
         <picture className="w-max h-3/4">
           <div className="w-24 h-full bg-grey flex items-center justify-center rounded-md">
             LOGO

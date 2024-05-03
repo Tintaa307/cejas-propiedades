@@ -3,7 +3,7 @@ import React from "react"
 
 const Landing = () => {
   return (
-    <main className="w-full h-[calc(100vh_-_80px)] flex items-center justify-center bg-[url('/images/image-empty.svg')] bg-cover bg-center">
+    <main className="w-full h-screen flex items-center justify-center bg-[url('/images/image-empty.svg')] bg-cover bg-center">
       <section className="w-full h-full flex items-center justify-start flex-row bg-black bg-opacity-30">
         <article className="relative w-full h-full flex items-center justify-center flex-col lg:gap-5">
           <div className="w-[90%] flex flex-col gap-3 animate-fade-in-down">

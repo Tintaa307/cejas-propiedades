@@ -140,7 +140,7 @@ const Filter = () => {
           )}
           {item.icon && (
             <div className="w-full h-full flex items-center justify-end">
-              <button className="w-14 h-14 bg-white rounded-xl flex items-center justify-center hover:bg-opacity-90 transition-colors duration-150">
+              <button className="w-14 h-14 bg-white rounded-xl flex items-center justify-center hover:bg-opacity-90 transition-colors duration-150 mr-2">
                 <RiSearchLine className="text-black" />
               </button>
             </div>

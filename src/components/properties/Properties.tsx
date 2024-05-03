@@ -6,7 +6,7 @@ import {
   RiHotelBedLine,
   RiDropLine,
 } from "@remixicon/react"
-import Image from "next/image"
+import Item from "./Item"
 
 const Properties = () => {
   const properties = [
@@ -105,50 +105,15 @@ const Properties = () => {
         <main className="w-full h-max flex items-center justify-center">
           <ul className="grid grid-cols-3 place-content-center gap-16">
             {properties.map((property, index) => (
-              <li key={index} className="flex flex-col gap-4">
-                <Image
-                  src={property.src}
-                  alt={property.src}
-                  width={400}
-                  height={400}
-                  className="rounded-[40px]"
-                />
-                <div className="w-full h-max flex items-center justify-start flex-row gap-4">
-                  {property.icons[0]}
-                  <h4 className="text-black text-base font-medium">
-                    {property.location}
-                  </h4>
-                </div>
-                <article className="w-full h-max flex items-center justify-between flex-row gap-4">
-                  <div className="flex flex-row gap-3">
-                    {property.icons[1]}
-                    <h4 className="text-black text-base font-medium">
-                      {property.land_size}
-                    </h4>
-                  </div>
-                  <div className="flex flex-row gap-3">
-                    {property.icons[2]}
-                    <h4 className="text-black text-base font-medium">
-                      {property.beds}
-                    </h4>
-                  </div>
-                  <div className="flex flex-row gap-3">
-                    {property.icons[3]}
-                    <h4 className="text-black text-base font-medium">
-                      {property.baths}
-                    </h4>
-                  </div>
-                </article>
-                <footer className="w-full h-max flex items-center justify-between">
-                  <strong className="text-xl">{property.price}</strong>
-                  <button className="w-max h-max flex items-center justify-center text-black text-lg font-normal border-[2px] border-black rounded-2xl px-5 py-3">
-                    Más detalles
-                  </button>
-                </footer>
-              </li>
+              <Item key={index} index={index} property={property} />
             ))}
           </ul>
         </main>
+        <div className="w-full h-max flex items-center justify-center">
+          <button className="w-max h-max flex items-center justify-center bg-black text-white rounded-[15px] px-7 py-3 text-lg mb-2 hover:bg-opacity-90 transition-all duration-150">
+            Ver Todas
+          </button>
+        </div>
       </div>
     </section>
   )

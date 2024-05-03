@@ -1,7 +1,5 @@
-import React from "react"
+import Item from "./Item"
 import Title from "../title/Title"
-import Image from "next/image"
-import Link from "next/link"
 
 const Works = () => {
   const works = [
@@ -45,25 +43,7 @@ const Works = () => {
         </div>
         <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20">
           {works.map((work, index) => (
-            <li
-              key={index}
-              className="relative w-full h-max flex items-center justify-center flex-col"
-            >
-              <Link href={work.link}>
-                <picture>
-                  <Image
-                    src={work.src}
-                    alt={work.title}
-                    className="w-full h-full object-cover rounded-md cursor-pointer"
-                    width={370}
-                    height={324}
-                  />
-                </picture>
-              </Link>
-              <strong className="text-black text-2xl font-bold mt-5">
-                {work.title}
-              </strong>
-            </li>
+            <Item key={index} index={index} {...work} />
           ))}
         </ul>
       </div>

@@ -2,11 +2,18 @@
 
 import React, { useEffect, useState } from "react"
 import Title from "../title/Title"
+import { useMotionValueEvent, useScroll } from "framer-motion"
 
 const Information = () => {
   const [salesNumber, setSalesNumber] = useState(0)
   const [hectariasNumber, setHectariasNumber] = useState(0)
   const [clientsNumber, setClientsNumber] = useState(0)
+  const { scrollY } = useScroll()
+  const [scroll, setScroll] = useState(0)
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScroll(latest)
+  })
 
   const data = [
     {
@@ -27,30 +34,32 @@ const Information = () => {
   ]
 
   useEffect(() => {
-    if (salesNumber < 100) {
-      setTimeout(() => {
-        setSalesNumber(salesNumber + 1)
-      }, 15)
-    }
+    if (scroll >= 3490) {
+      if (salesNumber < 100) {
+        setTimeout(() => {
+          setSalesNumber(salesNumber + 1)
+        }, 15)
+      }
 
-    if (hectariasNumber < 200) {
-      setTimeout(() => {
-        setHectariasNumber(hectariasNumber + 1)
-      }, 8)
-    }
+      if (hectariasNumber < 200) {
+        setTimeout(() => {
+          setHectariasNumber(hectariasNumber + 1)
+        }, 8)
+      }
 
-    if (clientsNumber < 99) {
-      setTimeout(() => {
-        setClientsNumber(clientsNumber + 1)
-      }, 15)
+      if (clientsNumber < 99) {
+        setTimeout(() => {
+          setClientsNumber(clientsNumber + 1)
+        }, 15)
+      }
     }
-  }, [salesNumber, hectariasNumber, clientsNumber])
+  }, [salesNumber, hectariasNumber, clientsNumber, scroll])
 
   return (
-    <section className="w-full h-max flex items-center justify-center">
+    <section className="w-full h-max flex items-center justify-center bg-[#e6e6e6]">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-14">
         <div className="w-full h-max flex items-center justify-center">
-          <Title text="Tu conformidad es nuestra prioridad" />
+          <Title text="Tu conformidad es nuestra prioridad" className="mt-10" />
         </div>
         <ul className="w-full h-max flex items-center justify-center flex-row gap-20">
           {data.map((item, index) => (
@@ -83,7 +92,7 @@ const Information = () => {
           ))}
         </ul>
         <div className="w-full h-max flex items-center justify-center text-center">
-          <p className="w-2/3 text-black text-base font-normal mb-4">
+          <p className="w-2/3 text-black text-base font-normal mb-10">
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
