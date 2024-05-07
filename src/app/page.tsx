@@ -1,4 +1,6 @@
 import About from "@/components/about/About"
+import Contact from "@/components/contact/Contact"
+import Footer from "@/components/footer/Footer"
 import Information from "@/components/information/Information"
 import Landing from "@/components/Landing/Landing"
 import Map from "@/components/map/Map"
@@ -20,6 +22,8 @@ export default function Home() {
       <Information />
       <Properties />
       <Partners />
+      <Contact />
+      <Footer />
     </>
   )
 }
