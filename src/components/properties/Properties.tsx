@@ -7,6 +7,7 @@ import {
   RiDropLine,
 } from "@remixicon/react"
 import Item from "./Item"
+import Button from "../button/Button"
 
 const Properties = () => {
   const properties = [
@@ -110,9 +111,9 @@ const Properties = () => {
           </ul>
         </main>
         <div className="w-full h-max flex items-center justify-center">
-          <button className="w-max h-max flex items-center justify-center bg-black text-white rounded-[15px] px-7 py-3 text-lg mb-2 hover:bg-opacity-90 transition-all duration-150">
+          <Button className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white">
             Ver Todas
-          </button>
+          </Button>
         </div>
       </div>
     </section>

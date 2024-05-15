@@ -3,9 +3,8 @@
 import React from "react"
 import Input from "./Input"
 import { Toaster, toast } from "sonner"
-import { ContactSchema } from "@/lib/validators/FormSchema"
-import { z } from "zod"
-import axios from "axios"
+import Button from "../button/Button"
+import { handleSubmit } from "@/actions/contact-actions"
 
 const Contact = () => {
   const inputs = [
@@ -13,39 +12,6 @@ const Contact = () => {
     { type: "email", placeholder: "Correo electrónico...", name: "email" },
     { type: "tel", placeholder: "Teléfono...", name: "phone" },
   ]
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const formData = new FormData(e.currentTarget)
-    const values = Object.fromEntries(formData.entries())
-
-    if (Object.values(values).some((value) => value === "")) {
-      toast.error("Please fill in all fields")
-      return
-    }
-
-    try {
-      const result = ContactSchema.parse(values)
-      await axios
-        .post("/api/emails", result)
-        .then(() => {
-          toast.success("Message sent successfully")
-        })
-        .catch((error) => {
-          toast.error("An error occurred, please try again later")
-          console.log(error)
-        })
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        const errors = error.errors.map((err) => err.message)
-        errors.forEach((err) => toast.error(err))
-        return
-      } else {
-        toast.error("An error occurred, please try again later")
-        console.log(error)
-      }
-    }
-  }
 
   return (
     <section
@@ -63,7 +29,22 @@ const Contact = () => {
               </p>
             </header>
             <form
-              onSubmit={handleSubmit}
+              action={async (formData) => {
+                const res = await handleSubmit(formData)
+                switch (res.status) {
+                  case 200:
+                    toast.success(res.message)
+                    break
+                  case 500:
+                    res.message.map((msg: string) =>
+                      toast.error(msg)
+                    ) as string[]
+                    break
+                  default:
+                    toast.info("Error al enviar el mensaje")
+                    break
+                }
+              }}
               autoComplete="off"
               className="w-full xl:w-2/3 h-max flex sm:items-center items-center justify-center flex-col gap-8 xl:md:w-full"
             >
@@ -78,12 +59,9 @@ const Contact = () => {
                 maxLength={200}
                 className="w-2/3 h-[104px] px-4 bg-transparent border-[1px] border-black/80 rounded-md placeholder:text-black/80 text-sm text-black font-medium outline-none focus:outline-2 focus:outline-black/80 transition-all duration-200 py-2 resize-none shadow-[0_4px_8px_#d9d9d9]"
               />
-              <button
-                type="submit"
-                className="w-2/3 h-12 bg-[#070707] rounded-md text-white text-sm border-[1px] border-white/20 font-normal outline-none hover:bg-opacity-90 transition-all duration-150"
-              >
+              <Button className="w-2/3 h-12 bg-[#070707] rounded-md text-white text-sm border-[1px] border-white/20 font-normal outline-none hover:bg-opacity-90">
                 Enviar mensaje
-              </button>
+              </Button>
             </form>
           </div>
         </section>

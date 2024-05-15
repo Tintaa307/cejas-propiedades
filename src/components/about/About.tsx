@@ -1,6 +1,7 @@
 import React from "react"
 import Title from "../title/Title"
 import Image from "next/image"
+import Button from "../button/Button"
 
 const About = () => {
   return (
@@ -38,9 +39,9 @@ const About = () => {
               paso del camino.
             </p>
             <div className="w-full h-max flex items-center justify-start">
-              <button className="w-max h-max flex items-center justify-center rounded-md text-white text-base text-normal bg-black px-4 py-3 hover:bg-opacity-95 transition-all duration-150">
+              <Button className="bg-black px-5 py-3 hover:bg-opacity-95 text-white">
                 Quiero Vender
-              </button>
+              </Button>
             </div>
           </div>
           <div className="w-1/2 h-max flex items-center justify-center">

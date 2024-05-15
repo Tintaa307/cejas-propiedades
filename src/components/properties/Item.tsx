@@ -3,6 +3,7 @@
 import Image from "next/image"
 import React from "react"
 import { motion } from "framer-motion"
+import Button from "../button/Button"
 
 type ItemProps = {
   index: number
@@ -62,9 +63,9 @@ const Item = ({ index, property }: ItemProps) => {
       </article>
       <footer className="w-full h-max flex items-center justify-between">
         <strong className="text-xl">{property.price}</strong>
-        <button className="w-max h-max flex items-center justify-center text-black text-lg font-normal border-[2px] border-black rounded-[15px] px-5 py-3 hover:bg-black hover:text-white transition-all duration-150">
-          Más detalles
-        </button>
+        <Button className="px-5 py-3 hover:bg-black hover:text-white">
+          Mas detalles
+        </Button>
       </footer>
     </motion.li>
   )
