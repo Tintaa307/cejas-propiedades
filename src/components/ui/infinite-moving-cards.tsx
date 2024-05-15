@@ -12,9 +12,9 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string
-    name: string
     title: string
+    description: string
+    icon: JSX.Element
   }[]
   direction?: "left" | "right"
   speed?: "fast" | "normal" | "slow"
@@ -74,7 +74,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-[95rem] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -88,19 +88,16 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[250px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[450px]"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--slate-800), var(--slate-900)",
-            }}
-            key={item.name}
+            className="w-[250px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[450px] border-[2px] border-black flex flex-col items-center justify-center"
+            key={idx}
           >
-            <Image
-              src={"/images/partner-example.png"}
-              alt="partner"
-              width={100}
-              height={100}
-            />
+            <main className="w-full h-max flex items-center justify-center flex-col gap-6">
+              <div className="w-max h-max bg-black rounded-full p-4">
+                {item.icon}
+              </div>
+              <h4 className="text-black text-2xl font-medium">{item.title}</h4>
+              <p className="text-black text-center">{item.description}</p>
+            </main>
           </li>
         ))}
       </ul>

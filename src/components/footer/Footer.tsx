@@ -5,6 +5,7 @@ import {
   RiWhatsappLine,
   RiPhoneFill,
 } from "@remixicon/react"
+import Link from "next/link"
 
 const Footer = () => {
   const socialMedia = [
@@ -20,7 +21,7 @@ const Footer = () => {
     },
     {
       title: "Whatsapp",
-      icon: <RiWhatsappLine size={40} />,
+      icon: <RiPhoneFill size={40} />,
       link: "#",
     },
   ]
@@ -34,22 +35,28 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <section className="w-max h-max flex flex-col items-center justify-center gap-3">
-          <small className="text-black text-sm font-normal">
-            Si te intereso algun inmueble
-          </small>
-          <button className="w-max h-max px-10 py-2 flex flex-row gap-3 items-center justify-center bg-transparent border-[1px] border-black rounded-md text-black font-bold text-lg hover:bg-black hover:text-white transition-all duration-150 group">
-            Contactate
-            <RiPhoneFill
-              size={30}
-              className="group-hover:text-white transition-all duration-150"
+        <section className="w-max h-max items-center justify-center">
+          <Link href={"#"}>
+            <RiWhatsappLine
+              size={45}
+              className="fixed bg-green cursor-pointer p-2 rounded-full transition-all duration-150 bottom-32 right-12 shadow-[0_0_10px_#d9d9d9]"
             />
-          </button>
+          </Link>
         </section>
       </div>
-      <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black">
+      <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black flex-col gap-2">
         <small className="text-black text-sm font-normal my-3">
           ©2024 Cejas Propiedades. Todos los derechos reservados
+        </small>
+        <small className="text-black/90 text-sm font-medium mb-2">
+          Diseñado y desarrollado por{" "}
+          <Link
+            href="https://synera.com.ar"
+            className="text-blue-500"
+            target="_blank"
+          >
+            Synera
+          </Link>
         </small>
       </div>
     </footer>

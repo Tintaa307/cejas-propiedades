@@ -1,14 +1,14 @@
 import About from "@/components/about/About"
 import Contact from "@/components/contact/Contact"
 import Footer from "@/components/footer/Footer"
-import Information from "@/components/information/Information"
-import Landing from "@/components/Landing/Landing"
 import Map from "@/components/map/Map"
 import Navbar from "@/components/navbar/Navbar"
-import Partners from "@/components/partners/Partners"
 import Properties from "@/components/properties/Properties"
 import Search from "@/components/search/Search"
 import Works from "@/components/works/Works"
+import Services from "@/components/services/Services"
+import Features from "@/components/features/Features"
+import Landing from "@/components/landing/Landing"
 
 export default function Home() {
   return (
@@ -17,11 +17,11 @@ export default function Home() {
       <Landing />
       <Search />
       <About />
+      <Services />
+      <Features />
       <Works />
       <Map />
-      <Information />
       <Properties />
-      <Partners />
       <Contact />
       <Footer />
     </>

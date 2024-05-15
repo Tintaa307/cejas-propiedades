@@ -33,6 +33,16 @@ const Works = () => {
       src: "/images/work-estacion.svg",
       link: "#",
     },
+    {
+      title: "Las Magnolias",
+      src: "/images/work-estacion.svg",
+      link: "#",
+    },
+    {
+      title: "La Cañanda II",
+      src: "/images/work-estacion.svg",
+      link: "#",
+    },
   ]
 
   return (
