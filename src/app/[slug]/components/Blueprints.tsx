@@ -18,8 +18,8 @@ const Blueprints = ({ blueprints }: BlueprintsProps) => {
         <Image
           src={blueprints[0]}
           alt="planos"
-          width={300}
-          height={700}
+          width={600}
+          height={600}
           className="mb-24"
         />
       </figure>
