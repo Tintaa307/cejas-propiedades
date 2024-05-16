@@ -2,7 +2,6 @@ import About from "@/components/about/About"
 import Contact from "@/components/contact/Contact"
 import Footer from "@/components/footer/Footer"
 import Map from "@/components/map/Map"
-import Navbar from "@/components/navbar/Navbar"
 import Properties from "@/components/properties/Properties"
 import Search from "@/components/search/Search"
 import Works from "@/components/works/Works"
@@ -13,7 +12,6 @@ import Landing from "@/components/landing/Landing"
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Landing />
       <Search />
       <About />
@@ -23,7 +21,6 @@ export default function Home() {
       <Map />
       <Properties />
       <Contact />
-      <Footer />
     </>
   )
 }

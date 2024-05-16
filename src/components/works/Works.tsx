@@ -6,42 +6,42 @@ const Works = () => {
     {
       title: "La Cañada",
       src: "/images/work-canada.svg",
-      link: "#",
+      link: "/canada",
     },
     {
       title: "Pueblo Chico",
       src: "/images/work-pueblo-chico.svg",
-      link: "#",
+      link: "/pueblo",
     },
     {
       title: "Las Gardenias",
       src: "/images/work-gardenias.svg",
-      link: "#",
+      link: "/gardenias",
     },
     {
       title: "El Retiro",
       src: "/images/work-retiro.svg",
-      link: "#",
+      link: "/retiro",
     },
     {
       title: "La Comarca",
       src: "/images/work-comarca.svg",
-      link: "#",
+      link: "/comarca",
     },
     {
       title: "La Estación",
       src: "/images/work-estacion.svg",
-      link: "#",
+      link: "/estacion",
     },
     {
       title: "Las Magnolias",
       src: "/images/work-estacion.svg",
-      link: "#",
+      link: "/magonolias",
     },
     {
       title: "La Cañanda II",
       src: "/images/work-estacion.svg",
-      link: "#",
+      link: "/canada2",
     },
   ]
 
@@ -49,7 +49,7 @@ const Works = () => {
     <section className="w-full h-max flex items-center justify-center">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">
-          <Title text="Desarrollos" />
+          <Title>Desarrollos</Title>
         </div>
         <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20">
           {works.map((work, index) => (

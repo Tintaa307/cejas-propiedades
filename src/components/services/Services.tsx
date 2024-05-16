@@ -60,7 +60,7 @@ const Services = () => {
     <section className="w-full h-max flex items-center justify-center">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">
-          <Title text="Servicios" />
+          <Title>Servicios</Title>
         </div>
         <div className="h-[25rem] rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
           <InfiniteMovingCards

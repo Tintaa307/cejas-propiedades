@@ -6,7 +6,7 @@ import { Toaster, toast } from "sonner"
 import Button from "../button/Button"
 import { handleSubmit } from "@/actions/contact-actions"
 
-const Contact = () => {
+const Contact = ({ title }: { title?: string }) => {
   const inputs = [
     { type: "text", placeholder: "Nombre completo...", name: "name" },
     { type: "email", placeholder: "Correo electrónico...", name: "email" },
@@ -23,7 +23,9 @@ const Contact = () => {
         <section className="w-full h-max flex items-start sm:items-center justify-center flex-row">
           <div className="w-1/2 h-max flex items-center justify-center flex-col gap-12 xl:w-full">
             <header className="w-full h-max flex sm:items-center items-center justify-center flex-col gap-2">
-              <h4 className="text-black/90 text-4xl font-bold">Contactate</h4>
+              <h4 className="text-black/90 text-4xl font-bold">
+                {title ?? "Contactate"}
+              </h4>
               <p className="text-black/70 text-sm font-medium text-center">
                 Deja un mensaje y nos comunicaremos contigo.
               </p>

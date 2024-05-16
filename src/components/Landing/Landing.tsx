@@ -20,7 +20,7 @@ const Landing = () => {
             </p>
             <Link
               href={"#"}
-              className="w-max h-max py-2 px-8 rounded-md text-white border-white border-[1px] mt-5 text-lg"
+              className="w-max h-max py-2 px-8 rounded-md border-[1px] mt-5 text-lg text-white bg-black border-black hover:bg-opacity-90 transition-all duration-150"
             >
               Ver desarrollos
             </Link>

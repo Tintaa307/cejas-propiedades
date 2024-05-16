@@ -1,0 +1,170 @@
+{
+  "works": [
+    {
+      "title": "canada",
+      "value": "La Cañanda",
+      "location": "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
+      "details": [
+        "16 lotes de terreno baldíos",
+        "Superficie de 796,87m2.",
+        "Medidas: 18,75 mts de frente por 42.50 mts de fondo.",
+        "Zona de casas quinta y viviendas permanentes.",
+        "Se entregan con el amojonamiento y la luz en la puerta",
+        "No es condominio ni indiviso.",
+        "No es condominio ni indiviso.",
+        "Financiación."
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-canada.png"],
+      "map": "canada"
+    },
+    {
+      "title": "pueblo",
+      "value": "Pueblo Chico",
+      "location": "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+      "properties": [
+        {
+          "title": "Fraccion 1A",
+          "list": [
+            "Lotes 1, 2, 3 y 4",
+            "Lote 5",
+            "Lotes 6 y 7",
+            "Lote 10",
+            "Lote 13"
+          ]
+        },
+        {
+          "title": "Fraccion 1B",
+          "list": ["Lotes 1", "Lote 8", "Lotes 10, 11 y 12"]
+        },
+        {
+          "title": "Fraccion 1C",
+          "list": [
+            "Lotes 1 y 2",
+            "Lote 3 y 10",
+            "Lotes 4",
+            "Lote 5 y 6",
+            "Lote 7"
+          ]
+        }
+      ],
+      "details": [
+        "Todos los lotes se entregan con una construcción de 30 m2 en el plano",
+        "Títulos perfectos, listo para escriturar.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Financiación particular (Anticipo del 60% y saldo en 12, 18 y 24 cuotas)"
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-pueblo.png"],
+      "map": "pueblo"
+    },
+    {
+      "title": "gardenias",
+      "value": "Las Gardenias",
+      "location": "Las propiedades se encuentran ubicadas en el Partido y Localidad de Cañuelas. Ingreso por Ruta Nacional N° 205, km 57. (Frente al country “La Tacuara”) Excelente acceso, por autopista Ezeiza-Cañuelas, altura de la bajada Petion 2.000mts de distancia. A 4 km del centro de Cañuelas",
+      "list": [
+        "El emprendimiento está compuesto por 61 lotes de terreno, entre ellos: ",
+        "Lote n°1: Lote Baldío sobre Ruta 205.",
+        "Lote N°2: Casa tipo americana de 3 ambientes. 2 dormitorios, cocina comedor y baño. Cimientos armados para hacer living/comedor.",
+        "Lote N° 3: Casa de 3 ambientes, 2 dormitorios, cocina, comedor y baño. (A REFACCIONAR). Con cimientos para ampliación. Pileta de fibrofacil de 2x4"
+      ],
+      "details": [
+        "Títulos perfectos, listo para escriturar.",
+        "Luz en puerta. Con calle entoscada y empedrada.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Financiación particular. (Consultar)"
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-gardenias.png"],
+      "map": "gardenias"
+    },
+    {
+      "title": "retiro",
+      "value": "El Retiro",
+      "location": "Los lotes se encuentran ubicados Sobre la Ruta 205 a la altura del km 64, Localidad y Partido de Cañuelas. Excelente Acceso, se encuentra a 600 mts del cruce de la Ruta 3 con la Ruta 205 y a 2kmk del centro de Cañuelas. Inserto en polo gastronómico y residencial. Yendo de Capital hacia Cañuelas se encuentra ubicado de mano derecha.",
+      "details": [
+        "El predio se encuentra divido en 46 lotes de terreno.",
+        "Todos los terrenos son baldíos.",
+        "Está prevista la apertura de calles en tocadas con estabilizado, tendido eléctrico, luminarias públicas, pilares de luz y palmeras",
+        "Escrituración en 12 meses.",
+        "Financiación particular.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Se puede entregar con vivienda (Consultar modelos y valores)"
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-retiro.png"],
+      "map": "retiro"
+    },
+    {
+      "title": "comarca",
+      "value": "La Comarca",
+      "location": "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
+      "details": [
+        "16 lotes de terreno baldíos",
+        "Superficie de 796,87m2.",
+        "Medidas: 18,75 mts de frente por 42.50 mts de fondo.",
+        "Zona de casas quinta y viviendas permanentes.",
+        "Se entregan con el amojonamiento y la luz en la puerta",
+        "No es condominio ni indiviso.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Financiación."
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-canada.png"],
+      "map": "comarca"
+    },
+    {
+      "title": "estacion",
+      "value": "La Estación",
+      "location": "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
+      "details": [
+        "16 lotes de terreno baldíos",
+        "Superficie de 796,87m2.",
+        "Medidas: 18,75 mts de frente por 42.50 mts de fondo.",
+        "Zona de casas quinta y viviendas permanentes.",
+        "Se entregan con el amojonamiento y la luz en la puerta",
+        "No es condominio ni indiviso.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Financiación."
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-canada.png"],
+      "map": "estacion"
+    },
+    {
+      "title": "magnolias",
+      "value": "Las Magnolias",
+      "location": "Los lotes se encuentran sobre la calle Maipú y sobre José Hernández, Localidad y Partido de Cañuelas, Provincia de Buenos Aires. Se ubican a 1 cuadra del asfalto (calle Maipú). A 1.500 mts de la estación de tren de Cañuelas (8 minutos en auto), 800 mts de calle Dorrego (continuación de Camino Panelo), 3 km de Ruta 3 (10 min en auto)",
+      "details": [
+        "El predio se encuentra divido en 32 lotes de terreno.",
+        "Todos los terrenos son baldíos.",
+        "Se encuentra en curso la apertura de las calles que tiene previsto la realización de estabilizado, entoscado y empedrado.",
+        "Posteriormente se realizará el tendido eléctrico, luminarias públicas",
+        "Escrituración en 12 meses. (Tiempo estimativo)",
+        "Financiación particular.",
+        "Se aceptan vehículos en parte de pago (Consultar)"
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-magnolilas.png"],
+      "map": "magnolias"
+    },
+    {
+      "title": "canada2",
+      "value": "La Cañanda II",
+      "location": "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
+      "details": [
+        "16 lotes de terreno baldíos",
+        "Superficie de 796,87m2.",
+        "Medidas: 18,75 mts de frente por 42.50 mts de fondo.",
+        "Zona de casas quinta y viviendas permanentes.",
+        "Se entregan con el amojonamiento y la luz en la puerta",
+        "No es condominio ni indiviso.",
+        "Se aceptan vehículos en parte de pago (Consultar)",
+        "Financiación."
+      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos-canada.png"],
+      "map": "canada2"
+    }
+  ]
+}
