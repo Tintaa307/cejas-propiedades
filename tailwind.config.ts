@@ -122,6 +122,18 @@ const config = {
           },
         },
       },
+      screens: {
+        xs: { raw: "(max-width: 550px)" },
+        ls: { raw: "(max-width: 680px)" },
+        sm: { raw: "(max-width: 750px)" },
+        ms: { raw: "(max-width: 817px)" },
+        md: { raw: "(max-width: 930px)" },
+        card: { raw: "(max-width: 1000px)" },
+        lg: { raw: "(max-width: 1050px)" },
+        xl: { raw: "(max-width: 1200px)" },
+        xxl: { raw: "(max-width: 1473px)" },
+        "3xl": { raw: "(max-width: 1543px)" },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -136,16 +148,5 @@ const config = {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
-
-// function addVariablesForColors({ addBase, theme }: any) {
-//   let allColors = flattenColorPalette(theme("colors"))
-//   let newVars = Object.fromEntries(
-//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-//   )
-
-//   addBase({
-//     ":root": newVars,
-//   })
-// }
 
 export default config
