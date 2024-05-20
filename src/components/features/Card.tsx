@@ -17,7 +17,7 @@ type CardProps = {
 
 const Card = ({ image, price, specifications, title }: CardProps) => {
   return (
-    <li className="flex flex-col gap-4 bg-white shadow-[0_0_10px_#000] rounded-[30px]">
+    <li className="flex flex-col gap-4 bg-white shadow-[0_4px_4px_#d9d9d9] rounded-[30px]">
       <picture className="w-full h-max">
         <Image
           src={image}

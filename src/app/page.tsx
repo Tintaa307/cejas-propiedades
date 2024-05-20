@@ -15,9 +15,9 @@ export default function Home() {
       <Landing />
       <Search />
       <About />
-      <Services />
-      <Features />
       <Works />
+      <Features />
+      <Services />
       <Map />
       <Properties />
       <Contact />

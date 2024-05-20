@@ -9,7 +9,7 @@ const Features = () => {
   const features = [
     {
       title: "Departamento Amueblado",
-      image: "/images/image-example.svg",
+      image: "/images/image-2.png",
       specifications: [
         {
           icon: <RiDragMoveFill />,
@@ -31,7 +31,7 @@ const Features = () => {
     },
     {
       title: "Departamento Amueblado",
-      image: "/images/image-example.svg",
+      image: "/images/image-2.png",
       specifications: [
         {
           icon: <RiDragMoveFill />,
@@ -53,7 +53,7 @@ const Features = () => {
     },
     {
       title: "Departamento Amueblado",
-      image: "/images/image-example.svg",
+      image: "/images/image-2.png",
       specifications: [
         {
           icon: <RiDragMoveFill />,

@@ -31,7 +31,7 @@ const Item = ({ index, title, link, src }: ItemProps) => {
           <Image
             src={src}
             alt={title}
-            className="w-full h-full object-cover rounded-[30px] cursor-pointer shadow-[0px_6px_8px_#9a9a9a] hover:-translate-y-1 transition-all duration-150"
+            className="w-full h-full object-cover rounded-[30px] cursor-pointer shadow-[0px_4px_4px_#9a9a9a] hover:-translate-y-1 transition-all duration-150"
             width={370}
             height={324}
           />

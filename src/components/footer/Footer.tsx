@@ -44,11 +44,11 @@ const Footer = () => {
           </Link>
         </section>
       </div>
-      <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black flex-col gap-2">
+      <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black flex-col">
         <small className="text-black text-sm font-normal my-3">
           ©2024 Cejas Propiedades. Todos los derechos reservados
         </small>
-        <small className="text-black/90 text-sm font-medium mb-2">
+        <small className="text-black/90 text-sm font-medium mb-3">
           Diseñado y desarrollado por{" "}
           <Link
             href="https://synera.com.ar"
