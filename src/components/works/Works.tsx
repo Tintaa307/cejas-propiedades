@@ -51,7 +51,7 @@ const Works = () => {
         <div className="w-full h-max flex items-center justify-center">
           <Title>Desarrollos</Title>
         </div>
-        <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20">
+        <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20 mb-24">
           {works.map((work, index) => (
             <Item key={index} index={index} {...work} />
           ))}

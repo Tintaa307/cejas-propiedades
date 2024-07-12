@@ -35,11 +35,11 @@ const Footer = () => {
             </li>
           ))}
         </ul>
-        <section className="w-max h-max items-center justify-center">
+        <section className="w-max h-max flex items-center justify-center">
           <Link href={"#"}>
             <RiWhatsappLine
-              size={45}
-              className="fixed bg-green cursor-pointer p-2 rounded-full transition-all duration-150 bottom-32 right-12 shadow-[0_0_10px_#d9d9d9]"
+              size={55}
+              className="fixed bg-white cursor-pointer p-2 rounded-full transition-all duration-150 bottom-32 right-12 shadow-[0_0_10px_#d9d9d9]"
             />
           </Link>
         </section>

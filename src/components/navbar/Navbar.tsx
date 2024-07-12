@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed w-full h-20 flex items-center justify-center bg-[#f3f3f3] z-50 transition-all duration-150",
+        "fixed top-0 left-0 w-full h-20 flex items-center justify-center bg-[#f3f3f3] z-50 transition-all duration-150",
         {
           "shadow-[0_4px_6px_#9a9a9a] transition-all duration-150": isScrolling,
         }

@@ -5,11 +5,11 @@ const Map = () => {
   return (
     <div className="w-full h-max flex items-center justify-center">
       <Image
-        src={"/images/image-empty.svg"}
+        src={"/images/mapa-cejas-big.jpg"}
         alt="image-empty"
-        width={800}
-        height={800}
-        className="w-1/2 my-24"
+        width={1920}
+        height={1080}
+        className="my-24 drop-shadow-[0_0_8px_#d9d9d9] border-[#d9d9d9] border-[1px]"
       />
     </div>
   )

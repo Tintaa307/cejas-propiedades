@@ -19,7 +19,7 @@ const Slider = ({ imgs }: SliderProps) => {
         {imgs.map((img, index) => (
           <CarouselItem key={index}>
             <figure className="w-full h-max flex items-center justify-center">
-              <Image src={img} alt="image-carrousel" width={400} height={400} />
+              <Image src={img} alt="image-carrousel" width={900} height={900} />
             </figure>
           </CarouselItem>
         ))}

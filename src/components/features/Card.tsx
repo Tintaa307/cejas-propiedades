@@ -17,45 +17,46 @@ type CardProps = {
 
 const Card = ({ image, price, specifications, title }: CardProps) => {
   return (
-    <li className="flex flex-col gap-4 bg-white shadow-[0_4px_4px_#d9d9d9] rounded-[30px]">
-      <picture className="w-full h-max">
-        <Image
-          src={image}
-          alt="image-features"
-          width={400}
-          height={400}
-          className="rounded-t-[30px]"
-        />
-      </picture>
-      <article className="w-full h-max flex items-center justify-center flex-col">
-        <div className="w-[90%] h-max flex items-start justify-center flex-col gap-6">
-          <h5 className="text-black text-xl font-medium">{title}</h5>
-          <ul className="w-full flex flex-col gap-4">
+    <li className="w-[90%] h-max flex items-center justify-center flex-row">
+      <article className="w-1/2 h-max flex items-center justify-center flex-col">
+        <div className="w-[90%] h-max flex items-start justify-center flex-col gap-12">
+          <h5 className="text-white text-3xl font-medium">{title}</h5>
+          <p className="text-white/80 w-4/5">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis
+            enim vero explicabo culpa, natus soluta provident ab consequuntur
+            deserunt consequatur eum magni quos quod optio veniam nam
+            praesentium mollitia odit temporibus fuga. Praesentium natus
+            repudiandae officiis animi, reiciendis architecto impedit! quod
+            optio veniam nam praesentium mollitia odit temporibus fuga.
+            Praesentium natus repudiandae officiis animi, reiciendis architecto
+            impedit!
+          </p>
+          <ul className="w-full flex flex-row gap-4">
             {specifications.map((specification, idx) => (
               <li key={idx} className="w-max flex flex-row gap-4">
                 {specification.icon}
-                <p className="text-black text-base font-medium">
+                <p className="text-white text-base font-medium">
                   {specification.text}
                 </p>
               </li>
             ))}
           </ul>
-          <footer className="w-full h-max flex items-center justify-between mb-6">
-            <div className="w-1/2 h-max flex items-start justify-start flex-col">
-              <p className="relative text-black/80 font-bold text-base flex items-center justify-center">
-                {price.original}
-                <span className="absolute w-full h-[2px] bg-red" />
-              </p>
-              <p className="text-black font-bold text-lg flex items-center justify-center">
-                {price.discount}
-              </p>
-            </div>
-            <Button className="px-5 py-3 hover:bg-black hover:text-white">
+          <footer className="w-full h-max flex items-start justify-start">
+            <Button className="px-5 py-3 hover:bg-white hover:text-black border-white text-white">
               Mas detalles
             </Button>
           </footer>
         </div>
       </article>
+      <picture className="w-1/2 h-max flex items-center justify-end">
+        <Image
+          src={image}
+          alt="image-features"
+          width={500}
+          height={500}
+          className="rounded-[30px]"
+        />
+      </picture>
     </li>
   )
 }
