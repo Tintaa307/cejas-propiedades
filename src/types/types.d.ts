@@ -20,10 +20,10 @@ export interface Property {
   list: string[]
 }
 
-export interface PropertiesProps {
-  caracteristicas: string
-  direccion: string
-  localidad: string
-  precio: string
-  ubicacion: string
+export interface BatchProps {
+  props: string
+  address: string
+  site: string
+  price: string
+  location: string
 }

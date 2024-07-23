@@ -1,102 +1,14 @@
 import React from "react"
 import Title from "../title/Title"
-import {
-  RiMapPinLine,
-  RiDragMoveFill,
-  RiHotelBedLine,
-  RiDropLine,
-} from "@remixicon/react"
-import Item from "./Item"
 import Button from "../button/Button"
+import { BatchProps } from "@/types/types"
+import Item from "./Item"
 
-const Properties = () => {
-  const properties = [
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-    {
-      src: "/images/image-example.svg",
-      location: "Plomer, Prov. BA",
-      land_size: "2.800m²",
-      beds: "3 beds",
-      baths: "2 baths",
-      icons: [
-        <RiMapPinLine key={0} />,
-        <RiDragMoveFill key={1} />,
-        <RiHotelBedLine key={2} />,
-        <RiDropLine key={3} />,
-      ],
-      price: "18.000$USD",
-    },
-  ]
+type ItemProps = {
+  data: BatchProps[]
+}
 
+const Properties = ({ data }: ItemProps) => {
   return (
     <section className="w-full h-max flex items-center justify-center">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
@@ -105,7 +17,7 @@ const Properties = () => {
         </div>
         <main className="w-full h-max flex items-center justify-center">
           <ul className="grid grid-cols-3 place-content-center gap-16">
-            {properties.map((property, index) => (
+            {data.map((property, index) => (
               <Item key={index} index={index} property={property} />
             ))}
           </ul>

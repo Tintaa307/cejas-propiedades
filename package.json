@@ -24,6 +24,7 @@
     "react-dom": "^18",
     "resend": "^3.2.0",
     "sonner": "^1.4.41",
+    "swiper": "^11.1.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-animation-delay": "^1.2.0",

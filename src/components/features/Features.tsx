@@ -1,7 +1,5 @@
 import React from "react"
 import Title from "../title/Title"
-import { BathIcon } from "lucide-react"
-import { RiDragMoveFill, RiHotelBedLine } from "@remixicon/react"
 import Card from "./Card"
 import {
   Carousel,
@@ -14,70 +12,56 @@ import {
 const Features = () => {
   const features = [
     {
-      title: "Departamento Amueblado",
-      image: "/images/image-1.png",
-      specifications: [
-        {
-          icon: <RiDragMoveFill className="text-white/70" />,
-          text: "2800m²",
-        },
-        {
-          icon: <RiHotelBedLine className="text-white/70" />,
-          text: "3 beds",
-        },
-        {
-          icon: <BathIcon className="text-white/70" />,
-          text: "2 baths",
-        },
-      ],
+      title: "La Estacion",
+      image: "/images/work-estacion.svg",
+      description:
+        "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
       price: {
-        original: "$18.000USD",
-        discount: "$16.000USD",
+        original: "18.000 USD",
+        discount: "16.000 USD",
       },
+      isInOffer: true,
+      location: "Ruta 3 Km 71,600",
+      site: "Cañuelas",
     },
     {
-      title: "Departamento Amueblado",
+      title: "Las Magnolias",
       image: "/images/image-1.png",
-      specifications: [
-        {
-          icon: <RiDragMoveFill className="text-white/70" />,
-          text: "2800m²",
-        },
-        {
-          icon: <RiHotelBedLine className="text-white/70" />,
-          text: "3 beds",
-        },
-        {
-          icon: <BathIcon className="text-white/70" />,
-          text: "2 baths",
-        },
-      ],
+      description:
+        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
-        original: "$18.000USD",
-        discount: "$16.000USD",
+        original: "18.000 USD",
+        discount: "16.000 USD",
       },
+      isInOffer: true,
+      location: "Ruta 3 Km 71,600",
+      site: "Cañuelas",
     },
     {
-      title: "Departamento Amueblado",
+      title: "Chacra de 3, has en Cañuelas",
       image: "/images/image-1.png",
-      specifications: [
-        {
-          icon: <RiDragMoveFill className="text-white/70" />,
-          text: "2800m²",
-        },
-        {
-          icon: <RiHotelBedLine className="text-white/70" />,
-          text: "3 beds",
-        },
-        {
-          icon: <BathIcon className="text-white/70" />,
-          text: "2 baths",
-        },
-      ],
+      description:
+        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
-        original: "$18.000USD",
-        discount: "$16.000USD",
+        original: "18.000 USD",
+        discount: "16.000 USD",
       },
+      isInOffer: true,
+      location: "Ruta 3 Km 71,600",
+      site: "Cañuelas",
+    },
+    {
+      title: "18 has en san Miguel del monte",
+      image: "/images/image-1.png",
+      description:
+        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+      price: {
+        original: "18.000 USD",
+        discount: "16.000 USD",
+      },
+      isInOffer: true,
+      location: "Ruta 3 Km 71,600",
+      site: "Cañuelas",
     },
   ]
 

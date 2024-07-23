@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react"
 import Item from "./Item"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
+import Link from "next/link"
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false)
@@ -13,7 +15,7 @@ const Navbar = () => {
     },
     {
       title: "Propiedades",
-      link: "#propiedades",
+      link: "/properties",
     },
     {
       title: "Desarrollos",
@@ -51,9 +53,15 @@ const Navbar = () => {
     >
       <nav className="w-[90%] h-full flex items-center justify-between">
         <picture className="w-max h-3/4">
-          <div className="w-24 h-full bg-grey flex items-center justify-center rounded-md">
-            LOGO
-          </div>
+          <Link href={"/"} className="">
+            <Image
+              src={"/logo-estudio.png"}
+              alt="logo"
+              width={130}
+              height={130}
+              className="cursor-pointer"
+            />
+          </Link>
         </picture>
         <ul className="2xl:w-1/2 lg:w-2/3 h-full flex items-center justify-end flex-row gap-12">
           {navItems.map((item, index) => (

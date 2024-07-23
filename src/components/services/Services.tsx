@@ -16,43 +16,43 @@ const Services = () => {
     {
       title: "Planos",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Nuestros servicios incluyen planos de parcelación, distribución de servicios públicos y diseño de infraestructura, contribuyendo al desarrollo ordenado y sostenible de comunidades residenciales y comerciales.",
       icon: <IconCrane size={30} className="text-white" />,
     },
     {
       title: "Agrimensuras",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Levantamientos topográficos precisos y delimitación de terrenos, fundamentales para la planificación urbana, subdivisión de propiedades y cumplimiento de regulaciones legales.",
       icon: <IconRulerMeasure size={30} className="text-white" />,
     },
     {
       title: "Sucesiones",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Asesoramiento legal y administrativo en la gestión de trámites sucesorios, asegurando una transferencia justa y eficiente de bienes de acuerdo con la legislación vigente.",
       icon: <IconSortAscending size={30} className="text-white" />,
     },
     {
       title: "Tasaciones",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Confección  de informes técnicos  del valor de bienes inmuebles basada en análisis de mercado local, inspección detallada del estado del inmueble.",
       icon: <IconMoneybag size={30} className="text-white" />,
     },
     {
       title: "Subdivisiones",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Proceso de dividir terrenos grandes en parcelas más pequeñas, con cumplimiento normativo y planificación adecuada para desarrollar nuevos proyectos inmobiliarios o comerciales.",
       icon: <IconDimensions size={30} className="text-white" />,
     },
     {
       title: "Construcciones",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "estión integral de proyectos de construcción, planificación inicial, ejecución y entrega final. Incluyendo construcción tradicional, steel framing, etc.",
       icon: <IconHammer size={30} className="text-white" />,
     },
     {
       title: "Administraciónes",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic eos rerum debitis delectus sint eius labore modi nam reiciendis temporibus?",
+        "Servicios de gestión y administración de propiedades, cobranza de alquileres,  y resolución de conflictos.",
       icon: <IconHierarchy3 size={30} className="text-white" />,
     },
   ]

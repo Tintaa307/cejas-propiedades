@@ -15,7 +15,7 @@
         "Financiación."
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-canada.png"],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada.mp4",
       "map": "canada"
     },
@@ -56,14 +56,14 @@
         "Financiación particular (Anticipo del 60% y saldo en 12, 18 y 24 cuotas)"
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-pueblo.png"],
-      "video": "/videos/video.mp4",
+      "blueprints": ["/images/planos/plano-pueblo.jpg"],
+      "video": "/videos/pueblo-chico.mp4",
       "map": "pueblo"
     },
     {
       "title": "gardenias",
       "value": "Las Gardenias",
-      "location": "Las propiedades se encuentran ubicadas en el Partido y Localidad de Cañuelas. Ingreso por Ruta Nacional N° 205, km 57. (Frente al country “La Tacuara”) Excelente acceso, por autopista Ezeiza-Cañuelas, altura de la bajada Petion 2.000mts de distancia. A 4 km del centro de Cañuelas",
+      "location": "El desarrollo se encuentra sobre la Ruta 205 a la altura del km 56,500, Localidad y Partido de Cañuelas. Excelente acceso, por autopista Ezeiza-Cañuelas, altura de la bajada Petion 2.000mts de distancia. A 4 km del centro de Cañuelas. Referencia: Frente al Country La Taquara.",
       "list": [
         "El emprendimiento está compuesto por 61 lotes de terreno, entre ellos: ",
         "Lote n°1: Lote Baldío sobre Ruta 205.",
@@ -71,13 +71,17 @@
         "Lote N° 3: Casa de 3 ambientes, 2 dormitorios, cocina, comedor y baño. (A REFACCIONAR). Con cimientos para ampliación. Pileta de fibrofacil de 2x4"
       ],
       "details": [
-        "Títulos perfectos, listo para escriturar.",
-        "Luz en puerta. Con calle entoscada y empedrada.",
-        "Se aceptan vehículos en parte de pago (Consultar)",
-        "Financiación particular. (Consultar)"
+        "El barrio consta de 61 lotes de terreno. ",
+        "Lotes baldíos y arbolados.",
+        "Lotes de 640 m2, 720m2, 920 m2 y 940m2 ",
+        "Calles internas empedradas",
+        "Luminaria pública",
+        "Tendido de luz eléctrica",
+        "Escrituración inmediata",
+        "Financiación "
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-gardenias.png"],
+      "blueprints": ["/images/planos/planos-gardenias.png"],
       "video": "/videos/las-gardenias.mp4",
       "map": "gardenias"
     },
@@ -95,7 +99,7 @@
         "Se puede entregar con vivienda (Consultar modelos y valores)"
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-retiro.png"],
+      "blueprints": ["/images/planos/planos-retiro.png"],
       "video": "/videos/el-retiro.mp4",
       "map": "retiro"
     },
@@ -114,7 +118,7 @@
         "Financiación."
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-canada.png"],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/video.mp4",
       "map": "comarca"
     },
@@ -133,7 +137,7 @@
         "Financiación."
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-canada.png"],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/video.mp4",
       "map": "estacion"
     },
@@ -151,7 +155,7 @@
         "Se aceptan vehículos en parte de pago (Consultar)"
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-magnolias.png"],
+      "blueprints": ["/images/planos/plano-magnolias.jpg"],
       "video": "/videos/video.mp4",
       "map": "magnolias"
     },
@@ -170,7 +174,7 @@
         "Financiación."
       ],
       "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos-canada.png"],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada-2.mp4",
       "map": "canada2"
     }
