@@ -43,7 +43,9 @@ const Item = ({ index, property }: ItemProps) => {
         <div className="flex flex-row gap-2">
           <RiMapPinLine />
           <h4 className="text-black text-base font-medium">
-            {property.address}
+            {property.address.length > 14
+              ? property.address.slice(0, 14) + "..."
+              : property.address}
           </h4>
         </div>
         <div className="flex flex-row gap-2">

@@ -68,9 +68,7 @@ const Features = () => {
   return (
     <section className="w-full h-max bg-[url('/images/work-example-1.png')] bg-no-repeat bg-cover">
       <div className="w-full h-max flex items-center justify-center flex-col bg-black bg-opacity-90">
-        <Title className="mb-8 text-white">
-          Descubri nuestros nuevos lanzamientos
-        </Title>
+        <Title className="mb-8 text-white">Nuevos ingresos</Title>
         <div className="w-[90%] h-max flex items-center justify-center flex-col gap-10">
           <div className="w-full h-max flex items-center justify-center"></div>
           <Carousel className="w-full h-max flex flex-col items-center justify-center">

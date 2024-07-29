@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: "Cejas propiedades",
   description:
     "En cejas propiedades ofrecemos los mejores inmuebles de la zona.",
+  icons: [
+    {
+      rel: "icon",
+      type: "image/png",
+      url: "/images/logo-cejas-2.png",
+    },
+  ],
 }
 
 export default function RootLayout({

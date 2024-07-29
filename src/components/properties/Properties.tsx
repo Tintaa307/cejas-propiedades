@@ -24,7 +24,7 @@ const Properties = ({ data }: ItemProps) => {
         </main>
         <div className="w-full h-max flex items-center justify-center">
           <Button className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white">
-            Ver Todas
+            Ver Más
           </Button>
         </div>
       </div>

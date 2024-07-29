@@ -53,13 +53,16 @@ const Navbar = () => {
     >
       <nav className="w-[90%] h-full flex items-center justify-between">
         <picture className="w-max h-3/4">
-          <Link href={"/"} className="">
+          <Link
+            href={"/"}
+            className="w-full h-full flex items-center justify-center"
+          >
             <Image
-              src={"/logo-estudio.png"}
+              src={"/images/logo-cejas-2.png"}
               alt="logo"
-              width={130}
-              height={130}
-              className="cursor-pointer"
+              width={140}
+              height={140}
+              className="cursor-pointer h-full object-fill"
             />
           </Link>
         </picture>

@@ -53,7 +53,7 @@ const AllPropierties = () => {
       ],
     },
     {
-      label: "Tamaño",
+      label: "Superficie",
       options: [
         {
           name: "Menor a 100m2",
@@ -66,6 +66,19 @@ const AllPropierties = () => {
         {
           name: "200m2-300m2",
           value: "200m2-300m2",
+        },
+      ],
+    },
+    {
+      label: "Tipo de operación",
+      options: [
+        {
+          name: "Alquiler",
+          value: "alquiler",
+        },
+        {
+          name: "Venta",
+          value: "venta",
         },
       ],
     },

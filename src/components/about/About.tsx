@@ -35,7 +35,7 @@ const About = () => {
               por eso que te ofrecemosun negocio 100% transparente, de confianza
               y con seguridad.Ofrecemos servicios de tasación y estamos aquí
               para asesorarlo avender su propiedad actual o encontrar la
-              propiedad perfecta paravivir. Estamos aquí para guiarlo en cada
+              propiedad perfecta para vivir. Estamos aquí para guiarlo en cada
               paso del camino.
             </p>
             <div className="w-full h-max flex items-center justify-start">
@@ -47,7 +47,7 @@ const About = () => {
           <div className="w-1/2 h-max flex items-center justify-center">
             <picture>
               <Image
-                src={"/images/image-empty.svg"}
+                src={"/images/imagen-about.jpg"}
                 alt="image-empty"
                 width={600}
                 height={600}
