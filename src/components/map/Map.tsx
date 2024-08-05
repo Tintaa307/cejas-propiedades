@@ -20,13 +20,7 @@ const variants = {
   },
 }
 
-// el retiro: absolute top-2/3 mt-12 -ml-10 left-1/3 w-max h-max rounded-full flex items-center justify-center
-// pueblo chico: absolute top-3/4 mt-[84px] -ml-[108px] left-1/3 w-max h-max rounded-full flex items-center justify-center
-// las gardenias: absolute top-[58%] left-[42%] w-max h-max rounded-full flex items-center justify-center
-// la cañada: absolute top-1/2 mt-4 left-[36%] w-max h-max rounded-full flex items-center justify-center
-// ???: absolute top-[48%] left-1/3 w-max h-max rounded-full flex items-center justify-center
-
-const Map = () => {
+const Map = ({ work }: { work?: string }) => {
   const [isHovered, setIsHovered] = useState(false)
   const [location, setLocation] = useState("")
   const locations = [
@@ -39,6 +33,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "retiro",
     },
     {
       name: "Pueblo Chico",
@@ -49,6 +44,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "pueblo",
     },
     {
       name: "Las Gardenias",
@@ -59,6 +55,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "gardenias",
     },
     {
       name: "La Cañada",
@@ -69,6 +66,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "canada",
     },
     {
       name: "La Comarca",
@@ -79,6 +77,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "comarca",
     },
     {
       name: "Las Magnolias",
@@ -89,6 +88,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "magnolias",
     },
     {
       name: "La Estacion",
@@ -99,6 +99,7 @@ const Map = () => {
       surface: "",
       price: "",
       location: "",
+      pathname: "estacion",
     },
   ]
 
@@ -135,7 +136,13 @@ const Map = () => {
                   variants={variants}
                   initial={"closed"}
                   animate={
-                    isHovered && loc.name === location ? "open" : "closed"
+                    !work
+                      ? isHovered && loc.name === location
+                        ? "open"
+                        : "closed"
+                      : work === loc.pathname
+                      ? "open"
+                      : "closed"
                   }
                   exit={"closed"}
                   className={
@@ -150,9 +157,9 @@ const Map = () => {
                       <Image
                         src={"/images/image-empty.svg"}
                         alt="image"
-                        width={275}
-                        height={275}
-                        className="rounded-bl-[21px]"
+                        width={250}
+                        height={250}
+                        className="w-[270px] h-[250px] rounded-bl-[21px]"
                       />
                     </article>
                     <article className="w-1/2 h-full flex items-center justify-center flex-col gap-1">

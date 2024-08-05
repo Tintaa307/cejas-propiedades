@@ -46,7 +46,10 @@ const Works = () => {
   ]
 
   return (
-    <section className="w-full h-max flex items-center justify-center">
+    <section
+      id="desarrollos"
+      className="w-full h-max flex items-center justify-center"
+    >
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">
           <Title>Desarrollos</Title>

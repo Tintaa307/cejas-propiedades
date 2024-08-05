@@ -2,6 +2,7 @@ import Title from "@/components/title/Title"
 import { IconMap } from "@tabler/icons-react"
 import Image from "next/image"
 import React from "react"
+import InteractiveMap from "@/components/map/Map"
 
 type MapProps = {
   map: string
@@ -14,15 +15,7 @@ const Map = ({ map }: { map: string }) => {
         <IconMap size={40} className="text-black" />
         Ubicacion en mapa
       </Title>
-      <figure className="w-full h-max flex items-center justify-center">
-        <Image
-          src={"/images/gral-map-1.jpg"}
-          alt="map"
-          width={500}
-          height={500}
-          className="w-2/3 object-cover rounded-2xl"
-        />
-      </figure>
+      <InteractiveMap work={map} />
     </article>
   )
 }

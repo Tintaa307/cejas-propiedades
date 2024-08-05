@@ -10,11 +10,13 @@ import { RiMapPinLine } from "@remixicon/react"
 type ItemProps = {
   index: number
   property: {
-    props: string
+    description: string
     address: string
     site: string
     price: string
     location: string
+    onsale: boolean
+    type: string
   }
 }
 
@@ -27,7 +29,7 @@ const Item = ({ index, property }: ItemProps) => {
         duration: 0.5,
         type: "tween",
         ease: "easeInOut",
-        delay: 0.1 + index * 0.1,
+        delay: 0.1 + index * 0.02,
       }}
       viewport={{ once: true }}
       className="max-w-[400px] flex flex-col gap-4"

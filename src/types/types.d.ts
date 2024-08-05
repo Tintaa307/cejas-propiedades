@@ -21,9 +21,19 @@ export interface Property {
 }
 
 export interface BatchProps {
-  props: string
+  description: string
   address: string
   site: string
   price: string
   location: string
+  onsale: boolean
+  type: string
+}
+
+export type FilterProps = {
+  location: string
+  type: string
+  operation: string
+  size: string
+  price: string
 }

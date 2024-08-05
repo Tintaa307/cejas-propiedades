@@ -5,7 +5,10 @@ import Button from "../button/Button"
 
 const About = () => {
   return (
-    <section className="w-full h-max flex items-center justify-center">
+    <section
+      id="sobre-nosotros"
+      className="w-full h-max flex items-center justify-center"
+    >
       <div className="w-[90%] h-max flex items-center justify-center flex-col">
         <article className="w-full h-max flex items-start justify-center flex-row mt-24">
           <div className="w-1/2 h-max flex items-center justify-center flex-col">

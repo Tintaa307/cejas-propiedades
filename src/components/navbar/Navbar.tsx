@@ -11,7 +11,7 @@ const Navbar = () => {
   const navItems = [
     {
       title: "Sobre nosotros",
-      link: "#sobre-nosotros",
+      link: "/#sobre-nosotros",
     },
     {
       title: "Propiedades",
@@ -19,11 +19,11 @@ const Navbar = () => {
     },
     {
       title: "Desarrollos",
-      link: "#desarrollos",
+      link: "/#desarrollos",
     },
     {
       title: "Contacto",
-      link: "#contacto",
+      link: "/#contacto",
     },
   ]
 
