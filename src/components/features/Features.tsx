@@ -13,7 +13,7 @@ const Features = () => {
   const features = [
     {
       title: "La Estacion",
-      image: "/images/work-estacion.svg",
+      image: "/images/desarrollos/work-estacion.svg",
       description:
         "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
       price: {
@@ -26,7 +26,7 @@ const Features = () => {
     },
     {
       title: "Las Magnolias",
-      image: "/images/image-1.png",
+      image: "/images/desarrollos/work-magnolias.jpg",
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
@@ -66,7 +66,10 @@ const Features = () => {
   ]
 
   return (
-    <section className="w-full h-max bg-[url('/images/work-example-1.png')] bg-no-repeat bg-cover">
+    <section
+      id="ingresos"
+      className="w-full h-max bg-[url('/images/work-example-1.png')] bg-no-repeat bg-cover"
+    >
       <div className="w-full h-max flex items-center justify-center flex-col bg-black bg-opacity-90">
         <Title className="mb-8 text-white">Nuevos ingresos</Title>
         <div className="w-[90%] h-max flex items-center justify-center flex-col gap-10">

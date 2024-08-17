@@ -14,12 +14,24 @@ const Navbar = () => {
       link: "/#sobre-nosotros",
     },
     {
+      title: "Desarrollos",
+      link: "/#desarrollos",
+    },
+    {
       title: "Propiedades",
       link: "/properties",
     },
     {
-      title: "Desarrollos",
-      link: "/#desarrollos",
+      title: "Ingresos",
+      link: "/#ingresos",
+    },
+    {
+      title: "Servicios",
+      link: "/#servicios",
+    },
+    {
+      title: "Inmbuebles",
+      link: "/#inmuebles",
     },
     {
       title: "Contacto",
@@ -43,15 +55,15 @@ const Navbar = () => {
   }, [])
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 w-full h-20 flex items-center justify-center bg-[#f3f3f3] z-50 transition-all duration-150",
-        {
-          "shadow-[0_4px_6px_#9a9a9a] transition-all duration-150": isScrolling,
-        }
-      )}
-    >
-      <nav className="w-[90%] h-full flex items-center justify-between">
+    <header className="fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150">
+      <nav
+        className={cn(
+          "w-[90%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
+          {
+            "shadow-2xl": isScrolling,
+          }
+        )}
+      >
         <picture className="w-max h-3/4">
           <Link
             href={"/"}
@@ -66,7 +78,7 @@ const Navbar = () => {
             />
           </Link>
         </picture>
-        <ul className="2xl:w-1/2 lg:w-2/3 h-full flex items-center justify-end flex-row gap-12">
+        <ul className="2xl:w-2/3 h-full flex items-center justify-center flex-row gap-12">
           {navItems.map((item, index) => (
             <Item key={index} item={item} />
           ))}

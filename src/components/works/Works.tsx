@@ -5,42 +5,42 @@ const Works = () => {
   const works = [
     {
       title: "La Cañada",
-      src: "/images/work-canada.svg",
+      src: "/images/desarrollos/work-canada.svg",
       link: "/canada",
     },
     {
       title: "Pueblo Chico",
-      src: "/images/work-pueblo-chico.svg",
+      src: "/images/desarrollos/work-pueblo-chico.svg",
       link: "/pueblo",
     },
     {
       title: "Las Gardenias",
-      src: "/images/work-gardenias.svg",
+      src: "/images/desarrollos/work-gardenias.svg",
       link: "/gardenias",
     },
     {
       title: "El Retiro",
-      src: "/images/work-retiro.svg",
+      src: "/images/desarrollos/work-retiro.svg",
       link: "/retiro",
     },
     {
       title: "La Comarca",
-      src: "/images/work-comarca.svg",
+      src: "/images/desarrollos/work-comarca.svg",
       link: "/comarca",
     },
     {
       title: "La Estación",
-      src: "/images/work-estacion.svg",
+      src: "/images/desarrollos/work-estacion.svg",
       link: "/estacion",
     },
     {
       title: "Las Magnolias",
-      src: "/images/work-estacion.svg",
+      src: "/images/desarrollos/work-magnolias.jpg",
       link: "/magnolias",
     },
     {
       title: "La Cañanda II",
-      src: "/images/work-estacion.svg",
+      src: "/images/desarrollos/work-canada2.jpg",
       link: "/canada2",
     },
   ]
@@ -52,7 +52,9 @@ const Works = () => {
     >
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">
-          <Title>Desarrollos</Title>
+          <Title>
+            Conoce nuestros <span className="text-[#BF0909]">desarrollos</span>
+          </Title>
         </div>
         <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20 mb-24">
           {works.map((work, index) => (

@@ -13,7 +13,9 @@ const About = () => {
         <article className="w-full h-max flex items-start justify-center flex-row mt-24">
           <div className="w-1/2 h-max flex items-center justify-center flex-col">
             <div className="w-full h-max flex items-center justify-start">
-              <Title className="mt-0">¿Quienes somos?</Title>
+              <Title className="mt-0">
+                ¿Quienes <span className="text-[#BF0909]">somos</span>?
+              </Title>
             </div>
             <p className="text-black text-base font-medium my-10 text-justify">
               Somos una inmobiliaria rural dedicada a la venta de campos y
@@ -50,7 +52,7 @@ const About = () => {
           <div className="w-1/2 h-max flex items-center justify-center">
             <picture>
               <Image
-                src={"/images/imagen-about.jpg"}
+                src={"/images/about-image.jpg"}
                 alt="image-empty"
                 width={600}
                 height={600}

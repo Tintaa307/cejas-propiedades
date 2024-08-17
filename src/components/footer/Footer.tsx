@@ -2,10 +2,10 @@ import React from "react"
 import {
   RiInstagramLine,
   RiFacebookBoxFill,
-  RiWhatsappLine,
   RiPhoneFill,
 } from "@remixicon/react"
 import Link from "next/link"
+import WhatsappButton from "./WhatsappButton"
 
 const Footer = () => {
   const socialMedia = [
@@ -36,17 +36,15 @@ const Footer = () => {
           ))}
         </ul>
         <section className="w-max h-max flex items-center justify-center">
-          <Link href={"#"}>
-            <RiWhatsappLine
-              size={55}
-              className="fixed bg-white cursor-pointer p-2 rounded-full transition-all duration-150 bottom-32 right-12 shadow-[0_0_10px_#d9d9d9]"
-            />
+          <Link href="#">
+            <WhatsappButton />
           </Link>
         </section>
       </div>
       <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black flex-col">
         <small className="text-black text-sm font-normal my-3">
-          ©2024 Cejas Propiedades. Todos los derechos reservados
+          ©2024 Cejas Propiedades. Nuestros terminos y condiciones{" "}
+          <span className="underline cursor-pointer">aquí</span>
         </small>
         <small className="text-black/90 text-sm font-medium mb-3">
           Diseñado y desarrollado por{" "}

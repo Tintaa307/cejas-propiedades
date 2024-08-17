@@ -27,11 +27,11 @@ const Item = ({ index, title, link, src }: ItemProps) => {
       className="relative w-full h-max flex items-center justify-center flex-col"
     >
       <Link href={link}>
-        <picture className="">
+        <picture className="w-[370px] h-[324px]">
           <Image
             src={src}
             alt={title}
-            className="w-full h-full object-cover rounded-[30px] cursor-pointer shadow-[0px_4px_4px_#9a9a9a] hover:-translate-y-1 transition-all duration-150"
+            className="w-full h-full rounded-[30px] cursor-pointer shadow-[0px_4px_4px_#9a9a9a] hover:-translate-y-1 transition-all duration-150"
             width={370}
             height={324}
           />

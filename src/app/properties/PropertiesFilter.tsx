@@ -144,13 +144,13 @@ const PropertiesFilter = () => {
   return (
     <aside className="relative w-[25%] h-max mt-20 flex items-center justify-center">
       <Toaster position="bottom-left" />
-      <article className="fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 bg-black rounded-[21px] py-8">
+      <article className="fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60">
         {filterOpts.map((filter, index) => (
           <div
             key={index}
             className="w-[80%] h-max flex flex-col gap-3 items-start justify-center"
           >
-            <label className="text-white text-base font-normal">
+            <label className="text-black text-base font-medium">
               {customPrice && filter.filterName === "price" ? (
                 <div className="flex flex-row gap-2">
                   {filter.label}{" "}
@@ -175,21 +175,21 @@ const PropertiesFilter = () => {
                     onChange={(e) => {
                       setRange((prev) => ({ ...prev, min: e.target.value }))
                     }}
-                    className="w-1/2 h-10 bg-transparent border-[1px] border-white rounded-[8px] text-white px-2 text-sm font-normal"
+                    className="w-1/2 h-10 bg-transparent border-[1px] border-black rounded-[8px] text-black px-2 text-sm font-normal"
                   />
-                  <span className="text-white">{"-"}</span>
+                  <span className="text-black">{"-"}</span>
                   <input
                     type="number"
                     placeholder="Maximo"
                     onChange={(e) => {
                       setRange((prev) => ({ ...prev, max: e.target.value }))
                     }}
-                    className="w-1/2 h-10 bg-transparent border-[1px] border-white rounded-[8px] text-white px-2 text-sm font-normal"
+                    className="w-1/2 h-10 bg-transparent border-[1px] border-black rounded-[8px] text-black px-2 text-sm font-normal"
                   />
                   <button type="submit">
                     <IconSend2
                       size={25}
-                      className="text-white cursor-pointer hover:text-white/80 transition-colors duration-150"
+                      className="text-black cursor-pointer hover:text-black/80 transition-colors duration-150"
                     />
                   </button>
                 </form>
@@ -203,7 +203,7 @@ const PropertiesFilter = () => {
                     }))
                   }}
                 >
-                  <SelectTrigger className="w-full h-max bg-transparent border-[1px] border-white rounded-[8px] text-white gap-2">
+                  <SelectTrigger className="w-full h-max bg-transparent border-[2px] border-black rounded-[8px] text-black gap-2">
                     <SelectValue
                       className="text-black font-bold"
                       placeholder={filter.options[0].name}
@@ -226,7 +226,7 @@ const PropertiesFilter = () => {
                         setCustomPrice(true)
                       }}
                       size={25}
-                      className="text-white cursor-pointer hover:text-white/80 transition-colors duration-150"
+                      className="text-black cursor-pointer hover:text-black/80 transition-colors duration-150"
                     />
                   ) : null}
                 </>

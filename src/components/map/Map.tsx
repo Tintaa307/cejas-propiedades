@@ -28,7 +28,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "El Retiro",
       className:
         "absolute top-2/3 mt-12 -ml-10 left-1/3 w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-retiro.svg",
       logo: "",
       surface: "",
       price: "",
@@ -39,7 +39,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "Pueblo Chico",
       className:
         "absolute top-3/4 mt-[84px] -ml-[108px] left-1/3 w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-pueblo-chico.svg",
       logo: "",
       surface: "",
       price: "",
@@ -50,7 +50,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "Las Gardenias",
       className:
         "absolute top-[58%] left-[42%] w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-gardenias.svg",
       logo: "",
       surface: "",
       price: "",
@@ -61,7 +61,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "La Cañada",
       className:
         "absolute top-1/2 mt-4 left-[36%] w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-canada.svg",
       logo: "",
       surface: "",
       price: "",
@@ -72,7 +72,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "La Comarca",
       className:
         "absolute top-[48%] left-1/3 w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-comarca.svg",
       logo: "",
       surface: "",
       price: "",
@@ -83,7 +83,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "Las Magnolias",
       className:
         "absolute top-3/4 mt-[84px] -ml-[38px] left-1/3 w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-magnolias.jpg",
       logo: "",
       surface: "",
       price: "",
@@ -94,7 +94,7 @@ const Map = ({ work }: { work?: string }) => {
       name: "La Estacion",
       className:
         "absolute top-[69%] mt-[84px] -ml-[5px] left-1/3 w-max h-max rounded-full flex items-center justify-center",
-      image: "",
+      image: "/images/desarrollos/work-estacion.svg",
       logo: "",
       surface: "",
       price: "",
@@ -146,20 +146,22 @@ const Map = ({ work }: { work?: string }) => {
                   }
                   exit={"closed"}
                   className={
-                    "absolute -top-60 left-7 w-[550px] h-[350px] bg-white shadow-[0_0_5px_#d9d9d9] rounded-[21px] border-[1px] border-black flex items-center justify-center flex-col"
+                    "absolute -top-60 left-7 w-[580px] h-[380px] bg-white shadow-[0_0_5px_#d9d9d9] rounded-[21px] border-[1px] border-black flex items-center justify-center flex-col"
                   }
                 >
                   <header className="relative w-full h-28 border-b-[1px] border-black flex items-center justify-center">
-                    <h5>{loc.name}</h5>
+                    <h5 className="text-black text-2xl font-bold uppercase">
+                      {loc.name}
+                    </h5>
                   </header>
                   <main className="w-full h-max flex items-center justify-center flex-row">
                     <article className="w-1/2 h-full flex items-center justify-center">
                       <Image
-                        src={"/images/image-empty.svg"}
+                        src={loc.image}
                         alt="image"
                         width={250}
                         height={250}
-                        className="w-[270px] h-[250px] rounded-bl-[21px]"
+                        className="w-[275px] h-[250px] rounded-md rounded-bl-[21px] border-[1px] border-black mt-1"
                       />
                     </article>
                     <article className="w-1/2 h-full flex items-center justify-center flex-col gap-1">

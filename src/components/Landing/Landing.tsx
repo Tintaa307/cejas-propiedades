@@ -16,11 +16,11 @@ const Landing = () => {
   ]
 
   return (
-    <main className="w-full h-screen">
-      <section className="w-full h-full flex items-center justify-start bg-black bg-opacity-50">
-        <div className="absolute w-full top-0 left-0 h-[calc(100vh-80px)] mt-20 -z-10">
+    <main className="w-full h-screen flex items-center justify-center">
+      <section className="w-[98%] h-[97vh] flex items-center justify-center bg-black bg-opacity-50 rounded-[84px]">
+        <div className="absolute w-[98%] h-[97vh] flex items-center justify-center -z-10">
           <Swiper
-            className="w-full h-full"
+            className="w-full h-full rounded-[84px]"
             centeredSlides={true}
             autoplay={{
               delay: 3400,
@@ -47,21 +47,16 @@ const Landing = () => {
           </Swiper>
         </div>
         <article className="relative w-full h-full flex items-center justify-center flex-col lg:gap-5">
-          <div className="w-[90%] flex flex-col gap-3 animate-fade-in-down">
+          <div className="absolute bottom-20 left-20 animate-fade-in-down text-left">
             <h1 className="text-white 2xl:text-5xl lg:text-3xl font-bold flex flex-col gap-3">
               <span className="uppercase">construyendo tus sueños</span>
               <span className="uppercase">encontrando tu hogar</span>
             </h1>
-            <p className="w-[40%] text-white/70 text-base font-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore.Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-              sed do eiusmod tempor incididunt ut labore.
-            </p>
+          </div>
+          <div className="absolute w-max h-max bottom-20 right-20">
             <Link
               href={"#"}
-              className="w-max h-max py-2 px-8 rounded-md border-[1px] mt-5 text-lg text-white bg-black border-black hover:bg-opacity-90 transition-all duration-150"
+              className="w-max h-max py-4 px-8 rounded-md border-[1px] mt-5 text-lg text-white bg-black border-black transition-all duration-150"
             >
               Ver desarrollos
             </Link>

@@ -1,20 +1,20 @@
 import React from "react"
 import Title from "../title/Title"
+import Card from "./Card"
 
 const Sections = () => {
   return (
-    <section className="w-full h-max flex items-center justify-center">
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
-        <Title className="mt-0">Inmuebles en venta</Title>
-        <article className="w-full h-max flex items-center justify-center flex-row">
-          <div className="w-1/2 h-[50vh] flex items-center justify-center bg-[#13131A]">
-            <h5 className="text-white text-3xl font-semibold">
-              Campos y Chacras
-            </h5>
-          </div>
-          <div className="w-1/2 h-[50vh] flex items-center justify-center bg-black">
-            <h5 className="text-white text-3xl font-semibold">Urbano</h5>
-          </div>
+    <section
+      id="inmuebles"
+      className="w-full h-max flex items-center justify-center"
+    >
+      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-20">
+        <Title className="mt-0">
+          Inmuebles en <span className="text-[#BF0909]">venta</span>
+        </Title>
+        <article className="w-full h-max flex items-center justify-center flex-row my-12">
+          <Card />
+          <Card />
         </article>
       </div>
     </section>
