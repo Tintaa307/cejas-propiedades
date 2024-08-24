@@ -13,8 +13,21 @@ type ItemProps = {
 }
 
 const Property = ({ data }: ItemProps) => {
-  const [filteredData, setFilteredData] = useState<BatchProps[]>(data)
+  const [filteredData, setFilteredData] = useState<
+    {
+      id: string
+      description: string
+      address: string
+      site: string
+      price: string
+      location: string
+      onsale: boolean
+      type: string
+      public_url: string
+    }[]
+  >(data)
   const { scrollY } = useScroll()
+  const [images, setImages] = useState<any>([])
 
   const { filter } = useContext(FilterContext)
 
@@ -76,10 +89,6 @@ const Property = ({ data }: ItemProps) => {
     }
   }, [filteredData, filter])
 
-  useEffect(() => {
-    console.log(filteredData)
-  }, [filteredData])
-
   return (
     <section className="w-full h-max flex items-center justify-center">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
@@ -88,7 +97,7 @@ const Property = ({ data }: ItemProps) => {
         </div>
         <main className="w-full h-max flex items-center justify-center">
           {filteredData.length !== 0 ? (
-            <ul className="grid grid-cols-3 place-content-center gap-16">
+            <ul className="grid grid-cols-3 place-content-center gap-16 5xl:grid-cols-2 xl:5xl:grid-cols-1">
               {filteredData.map((property, index) => (
                 <Item key={index} index={index} property={property} />
               ))}

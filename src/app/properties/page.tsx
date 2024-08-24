@@ -3,7 +3,6 @@ import Property from "@/components/properties/Properties"
 import { createClient } from "@/lib/supabase/server"
 import { cookies } from "next/headers"
 import PropertiesFilter from "./PropertiesFilter"
-import { Toaster } from "sonner"
 
 export default async function Properties() {
   const cookieStore = cookies()

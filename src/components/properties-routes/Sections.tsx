@@ -13,8 +13,8 @@ const Sections = () => {
           Inmuebles en <span className="text-[#BF0909]">venta</span>
         </Title>
         <article className="w-full h-max flex items-center justify-center flex-row my-12">
-          <Card />
-          <Card />
+          <Card title="Campos y chacras" />
+          <Card title="Urbano" />
         </article>
       </div>
     </section>
