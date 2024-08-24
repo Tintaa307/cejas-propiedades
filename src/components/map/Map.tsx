@@ -161,7 +161,7 @@ const Map = ({ work }: { work?: string }) => {
                         alt="image"
                         width={250}
                         height={250}
-                        className="w-[275px] h-[250px] rounded-md rounded-bl-[21px] border-[1px] border-black mt-1"
+                        className="w-[270px] h-[255px] rounded-md rounded-bl-[21px] border-[1px] border-black mt-1"
                       />
                     </article>
                     <article className="w-1/2 h-full flex items-center justify-center flex-col gap-1">
