@@ -21,7 +21,7 @@ const Table = ({
   fraccionC: Property | undefined
 }) => {
   return (
-    <div className="w-max h-max flex items-start justify-center flex-row gap-24">
+    <div className="w-[90%] 2xl:w-[75%] h-max flex items-start justify-center flex-row gap-24">
       <Col fraccion={fraccionA} />
       <Col fraccion={fraccionB} />
       <Col fraccion={fraccionC} />

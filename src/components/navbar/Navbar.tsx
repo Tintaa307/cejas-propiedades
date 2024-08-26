@@ -58,7 +58,7 @@ const Navbar = () => {
     <header className="fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150">
       <nav
         className={cn(
-          "w-[90%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
+          "w-[90%] 2xl:w-[75%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
           {
             "shadow-2xl": isScrolling,
           }
