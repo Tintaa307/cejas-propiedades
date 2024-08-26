@@ -43,7 +43,11 @@ const Work = ({ params }: { params: { slug: string } }) => {
         <Loader />
       ) : (
         <div className="w-full h-full flex flex-col gap-12">
-          <Presentation title={work.value} video={work.video} />
+          <Presentation
+            title={work.value}
+            video={work.video}
+            isSold={work.isSold}
+          />
           <Details
             details={work.details}
             location={work.location}

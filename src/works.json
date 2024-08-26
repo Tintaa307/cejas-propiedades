@@ -17,7 +17,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada.mp4",
-      "map": "canada"
+      "map": "canada",
+      "isSold": false
     },
     {
       "title": "pueblo",
@@ -58,7 +59,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/plano-pueblo.jpg"],
       "video": "/videos/pueblo-chico.mp4",
-      "map": "pueblo"
+      "map": "pueblo",
+      "isSold": false
     },
     {
       "title": "gardenias",
@@ -83,7 +85,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-gardenias.png"],
       "video": "/videos/las-gardenias.mp4",
-      "map": "gardenias"
+      "map": "gardenias",
+      "isSold": false
     },
     {
       "title": "retiro",
@@ -101,7 +104,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-retiro.png"],
       "video": "/videos/el-retiro.mp4",
-      "map": "retiro"
+      "map": "retiro",
+      "isSold": false
     },
     {
       "title": "comarca",
@@ -120,7 +124,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/video.mp4",
-      "map": "comarca"
+      "map": "comarca",
+      "isSold": true
     },
     {
       "title": "estacion",
@@ -138,8 +143,9 @@
       ],
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-canada.png"],
-      "video": "/videos/video.mp4",
-      "map": "estacion"
+      "video": "/videos/la-estacion.mp4",
+      "map": "estacion",
+      "isSold": false
     },
     {
       "title": "magnolias",
@@ -157,7 +163,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/plano-magnolias.jpg"],
       "video": "/videos/video.mp4",
-      "map": "magnolias"
+      "map": "magnolias",
+      "isSold": false
     },
     {
       "title": "canada2",
@@ -176,7 +183,8 @@
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada-2.mp4",
-      "map": "canada2"
+      "map": "canada2",
+      "isSold": false
     }
   ]
 }
