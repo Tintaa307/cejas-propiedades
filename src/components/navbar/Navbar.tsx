@@ -67,14 +67,11 @@ const Navbar = () => {
     >
       <nav
         className={cn(
-<<<<<<< HEAD
-          "w-[90%] 2xl:w-[75%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
-=======
-          "w-[90%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px] transition-all duration-200",
->>>>>>> ac3285300042cb9957f064ceaa9ad0e0c6ed9d8f
+          "w-[90%] 2xl:w-[80%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
           {
             "scale-y-0 rounded-none transition-all duration-200":
               isScrolling && pathname.includes("/properties"),
+            "shadow-2xl": isScrolling,
           }
         )}
       >

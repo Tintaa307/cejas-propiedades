@@ -128,7 +128,7 @@ const Map = ({ work }: { work?: string }) => {
                   setIsHovered(true)
                   setLocation(loc.name)
                 }}
-                className="text-black animate-pulse animation-delay-150 cursor-pointer"
+                className="text-[#BF0909] animate-pulse animation-delay-150 cursor-pointer"
                 size={30}
               />
               <AnimatePresence>
