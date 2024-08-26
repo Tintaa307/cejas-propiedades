@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+public/videos/el-retiro.mp4
+public/videos/la-canada-2.mp4
+public/videos/la-estacion.mp4
+public/videos/las-gardenias.mp4
+public/videos/pueblo-chico.mp4

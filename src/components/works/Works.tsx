@@ -7,41 +7,49 @@ const Works = () => {
       title: "La Cañada",
       src: "/images/desarrollos/work-canada.svg",
       link: "/canada",
+      isSold: false,
     },
     {
       title: "Pueblo Chico",
       src: "/images/desarrollos/work-pueblo-chico.svg",
       link: "/pueblo",
+      isSold: false,
     },
     {
       title: "Las Gardenias",
       src: "/images/desarrollos/work-gardenias.svg",
       link: "/gardenias",
+      isSold: false,
     },
     {
       title: "El Retiro",
       src: "/images/desarrollos/work-retiro.svg",
       link: "/retiro",
+      isSold: false,
     },
     {
       title: "La Comarca",
       src: "/images/desarrollos/work-comarca.svg",
       link: "/comarca",
+      isSold: true,
     },
     {
       title: "La Estación",
       src: "/images/desarrollos/work-estacion.svg",
       link: "/estacion",
+      isSold: false,
     },
     {
       title: "Las Magnolias",
       src: "/images/desarrollos/work-magnolias.jpg",
       link: "/magnolias",
+      isSold: false,
     },
     {
       title: "La Cañanda II",
       src: "/images/desarrollos/work-canada2.jpg",
       link: "/canada2",
+      isSold: false,
     },
   ]
 
@@ -56,7 +64,7 @@ const Works = () => {
             Conoce nuestros <span className="text-[#BF0909]">desarrollos</span>
           </Title>
         </div>
-        <ul className="w-full h-max grid grid-cols-3 place-content-center gap-20 mb-24">
+        <ul className="w-full h-max grid grid-cols-1 place-content-center gap-20 mb-24">
           {works.map((work, index) => (
             <Item key={index} index={index} {...work} />
           ))}

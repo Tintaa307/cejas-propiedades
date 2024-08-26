@@ -61,7 +61,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150",
         {
-          "top-0 transition-all duration-200": pathname !== "/",
+          "top-0 transition-all duration-200": pathname.includes("/properties"),
         }
       )}
     >

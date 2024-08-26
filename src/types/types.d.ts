@@ -13,6 +13,7 @@ export interface Work {
   properties?: Property[]
   list?: string[]
   video: string
+  isSold: boolean
 }
 
 export interface Property {
