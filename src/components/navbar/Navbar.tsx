@@ -5,9 +5,11 @@ import Item from "./Item"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false)
+  const pathname = usePathname()
   const navItems = [
     {
       title: "Sobre nosotros",
@@ -55,12 +57,24 @@ const Navbar = () => {
   }, [])
 
   return (
-    <header className="fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150">
+    <header
+      className={cn(
+        "fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150",
+        {
+          "top-0 transition-all duration-200": pathname !== "/",
+        }
+      )}
+    >
       <nav
         className={cn(
+<<<<<<< HEAD
           "w-[90%] 2xl:w-[75%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px]",
+=======
+          "w-[90%] h-full flex items-center justify-between bg-[#f3f3f3] rounded-[30px] transition-all duration-200",
+>>>>>>> ac3285300042cb9957f064ceaa9ad0e0c6ed9d8f
           {
-            "shadow-2xl": isScrolling,
+            "scale-y-0 rounded-none transition-all duration-200":
+              isScrolling && pathname.includes("/properties"),
           }
         )}
       >

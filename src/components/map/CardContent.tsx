@@ -11,7 +11,7 @@ const CardContent = ({ className, title, content }: CardContentProps) => {
   return (
     <div
       className={cn(
-        "w-1/2 h-max flex items-center justify-center flex-col gap-3 border-[1.5px] border-black rounded-tr-md",
+        "w-1/2 h-max flex items-center justify-center flex-col gap-4 border-[1.5px] border-black rounded-tr-md",
         className
       )}
     >

@@ -21,6 +21,7 @@ export interface Property {
 }
 
 export interface BatchProps {
+  id: string
   description: string
   address: string
   site: string
@@ -28,6 +29,7 @@ export interface BatchProps {
   location: string
   onsale: boolean
   type: string
+  public_url: string
 }
 
 export type FilterProps = {

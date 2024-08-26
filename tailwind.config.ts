@@ -123,9 +123,10 @@ const config = {
         md: { raw: "(max-width: 930px)" },
         card: { raw: "(max-width: 1000px)" },
         lg: { raw: "(max-width: 1050px)" },
-        xl: { raw: "(max-width: 1200px)" },
+        xl: { raw: "(max-width: 1160px)" },
         xxl: { raw: "(max-width: 1473px)" },
         "3xl": { raw: "(max-width: 1543px)" },
+        "5xl": { raw: "(max-width: 1751px)" },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
