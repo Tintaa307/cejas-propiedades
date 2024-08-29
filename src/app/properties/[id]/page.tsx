@@ -30,6 +30,7 @@ export default async function PropertyDetails({
     .from("properties")
     .select("*")
     .neq("id", params.id)
+    .order("id", { ascending: false })
     .limit(4)) as { data: BatchProps[] }
 
   if (!data || !similiarProperties) {
@@ -72,7 +73,7 @@ export default async function PropertyDetails({
         <MainImage images={images} public_url={data[0].public_url} />
 
         {/* Property Info */}
-        <div className="space-y-6">
+        <div className="space-y-6 max-h-[600px] mt-4">
           <div>
             <h1 className="text-3xl font-bold">{data[0].site}</h1>
             <p className="text-muted-foreground">{data[0].address}</p>

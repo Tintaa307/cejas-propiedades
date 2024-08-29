@@ -63,7 +63,7 @@ const Card = ({
             alt="image-features"
             width={500}
             height={500}
-            className="relative rounded-[30px]"
+            className="relative size-[500px] rounded-[30px] object-cover"
           />
           {isInOffer ? (
             <div className="absolute w-2/3 h-16 top-14 left-60 rotate-45 bg-red bg-opacity-90 flex items-center justify-center">

@@ -6,6 +6,7 @@ import { RiMapPinLine } from "@remixicon/react"
 import { AnimatePresence, motion } from "framer-motion"
 import Button from "../button/Button"
 import CardContent from "./CardContent"
+import { useRouter } from "next/navigation"
 
 const variants = {
   open: {
@@ -21,6 +22,7 @@ const variants = {
 }
 
 const Map = ({ work }: { work?: string }) => {
+  const router = useRouter()
   const [isHovered, setIsHovered] = useState(false)
   const [location, setLocation] = useState("")
   const locations = [
@@ -33,7 +35,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "retiro",
+      pathname: "/retiro",
     },
     {
       name: "Pueblo Chico",
@@ -44,7 +46,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "pueblo",
+      pathname: "/pueblo",
     },
     {
       name: "Las Gardenias",
@@ -55,7 +57,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "gardenias",
+      pathname: "/gardenias",
     },
     {
       name: "La Cañada",
@@ -66,7 +68,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "canada",
+      pathname: "/canada",
     },
     {
       name: "La Comarca",
@@ -77,7 +79,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "comarca",
+      pathname: "/comarca",
     },
     {
       name: "Las Magnolias",
@@ -88,7 +90,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "magnolias",
+      pathname: "/magnolias",
     },
     {
       name: "La Estacion",
@@ -99,7 +101,7 @@ const Map = ({ work }: { work?: string }) => {
       surface: "",
       price: "",
       location: "",
-      pathname: "estacion",
+      pathname: "/estacion",
     },
   ]
 
@@ -178,7 +180,10 @@ const Map = ({ work }: { work?: string }) => {
                         content="1000 USD"
                         className="w-[97%] rounded-b-md rounded-tr-none"
                       />
-                      <Button className="bg-black text-white w-[97%] rounded-sm h-11">
+                      <Button
+                        onClick={() => router.push(loc.pathname)}
+                        className="bg-black text-white w-[97%] rounded-sm h-11"
+                      >
                         Ver Desarrollo
                       </Button>
                     </article>

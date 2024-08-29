@@ -39,7 +39,8 @@ const Features = () => {
     },
     {
       title: "Chacra de 3, has en Cañuelas",
-      image: "/images/image-1.png",
+      image:
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/Chacra_35_Has_Santa_Rosa/1.jpg",
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
