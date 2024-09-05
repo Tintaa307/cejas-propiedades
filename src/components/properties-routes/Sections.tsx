@@ -6,13 +6,13 @@ const Sections = () => {
   return (
     <section
       id="inmuebles"
-      className="w-full h-max flex items-center justify-center"
+      className="w-full min-h-screen flex items-center justify-center"
     >
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-20">
+      <div className="w-[90%] flex items-center justify-center flex-col gap-20">
         <Title className="mt-0">
           Inmuebles en <span className="text-[#BF0909]">venta</span>
         </Title>
-        <article className="w-full h-max flex items-center justify-center flex-row my-12">
+        <article className="w-full grid grid-cols-2 place-items-center my-12 3xl:gap-12 xl:grid-cols-1">
           <Card
             title="Campos y chacras"
             filter="chacra"

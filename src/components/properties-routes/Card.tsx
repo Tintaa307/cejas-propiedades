@@ -14,10 +14,10 @@ const Card = ({
   filter: string
 }) => {
   return (
-    <div className="w-1/2 h-[50vh] flex items-center justify-center">
+    <div className="w-full h-max flex items-center justify-center">
       <Link
         href={`/properties/?filter=${filter}`}
-        className="relative w-2/3 h-[60vh] rounded-[32px] border-border border shadow-2xl cursor-pointer"
+        className="relative w-2/3 h-[60vh] rounded-[32px] border-border border shadow-2xl cursor-pointer 3xl:w-[550px] xl:3xl:w-[600px]"
       >
         <div className="w-full h-full">
           <footer className="absolute bottom-0 w-full h-1/3 bg-black/95 rounded-b-[32px] flex items-center justify-center">

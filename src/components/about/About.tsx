@@ -18,7 +18,7 @@ const About = () => {
                 ¿Quienes <span className="text-[#BF0909]">somos</span>?
               </Title>
             </div>
-            <p className="text-black text-base font-medium my-10 text-justify xxl:text-center xxl:w-2/3">
+            <p className="text-black text-base font-medium my-10 text-justify xxl:text-center xxl:w-2/3 lg:xxl:w-full">
               Somos una inmobiliaria rural dedicada a la venta de campos y
               desarrollos urbanos en áreas rurales y nos enorgullece ofrecer un
               servicio personalizado que combina experiencia en el mercado
