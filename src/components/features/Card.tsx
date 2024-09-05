@@ -28,10 +28,12 @@ const Card = ({
 }: CardProps) => {
   return (
     <li className="w-[90%] h-max flex items-center justify-center flex-row">
-      <article className="w-1/2 h-max flex items-center justify-center flex-col">
-        <div className="w-[90%] h-max flex items-start justify-center flex-col">
+      <article className="w-1/2 h-max flex items-center justify-center flex-col xl:flex-1">
+        <div className="w-[90%] h-max flex items-start justify-center flex-col xl:items-center">
           <h5 className="text-white text-3xl font-medium mb-5">{title}</h5>
-          <p className="text-white/80 w-4/5 mb-8">{description}</p>
+          <p className="text-white/80 w-4/5 mb-8 xxl:w-full xl:text-center xl:xxl:w-4/5">
+            {description}
+          </p>
           <div className="flex flex-row justify-between gap-14 mb-8">
             <p className="text-white text-lg font-normal flex flex-row gap-2">
               <RiMapPinLine size={30} /> {location}
@@ -41,7 +43,7 @@ const Card = ({
               {site}
             </p>
           </div>
-          <footer className="w-full h-max flex items-start justify-start flex-row gap-56">
+          <footer className="w-full h-max flex items-start justify-start flex-row gap-56 xxl:justify-between xxl:gap-0">
             <div className="">
               <p className="text-white text-2xl font-semibold mb-3">
                 {price.discount}
@@ -56,14 +58,14 @@ const Card = ({
           </footer>
         </div>
       </article>
-      <picture className="w-1/2 h-max flex items-center justify-end">
+      <picture className="w-1/2 h-max flex items-center justify-end xl:hidden">
         <div className="relative w-max h-max overflow-hidden">
           <Image
             src={image}
             alt="image-features"
             width={500}
             height={500}
-            className="relative size-[500px] rounded-[30px] object-cover"
+            className="relative size-[500px] xxl:size-[350px] rounded-[30px] object-cover"
           />
           {isInOffer ? (
             <div className="absolute w-2/3 h-16 top-14 left-60 rotate-45 bg-red bg-opacity-90 flex items-center justify-center">

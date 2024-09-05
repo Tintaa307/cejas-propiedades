@@ -7,6 +7,7 @@ import { BatchProps } from "@/types/types"
 import Item from "./Item"
 import { FilterContext } from "@/context/FilterContext"
 import { useScroll } from "framer-motion"
+import { useSearchParams } from "next/navigation"
 
 type ItemProps = {
   data: BatchProps[]
@@ -24,16 +25,25 @@ const Property = ({ data }: ItemProps) => {
       onsale: boolean
       type: string
       public_url: string
+      locality: string
     }[]
   >(data)
   const { scrollY } = useScroll()
   const [images, setImages] = useState<any>([])
+
+  const searchParams = useSearchParams()
 
   const { filter } = useContext(FilterContext)
 
   useEffect(() => {
     const applyFilters = () => {
       let filtered = data
+
+      if (searchParams.get("filter")) {
+        const filter = searchParams.get("filter")
+        console.log(filter)
+        filtered = data.filter((property) => property.type === filter)
+      }
 
       // Filtrar por ubicación
       if (filter.location !== "todos") {

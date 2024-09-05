@@ -1,8 +1,26 @@
+"use client"
+
+import { handleSubmit } from "@/actions/sell-actions"
 import Button from "@/components/button/Button"
 import Input from "@/components/contact/Input"
 import React from "react"
+import { toast } from "sonner"
 
 const Sell = () => {
+  const FormAction = async (formData: FormData) => {
+    const res = await handleSubmit(formData)
+    switch (res.status) {
+      case 200:
+        toast.success(res.message)
+        break
+      case 500:
+        res.message.map((msg: string) => toast.error(msg)) as string[]
+        break
+      default:
+        toast.info("Error al enviar el mensaje")
+        break
+    }
+  }
   return (
     <section className="w-full h-[calc(100vh_-_80px)] flex items-start justify-center flex-row mt-24">
       <main className="w-full h-max mt-12 flex items-center justify-center flex-col gap-12">
@@ -12,7 +30,10 @@ const Sell = () => {
             Complete el formulario y nos pondremos en contacto contigo.
           </p>
         </header>
-        <form className="w-full h-max flex items-center justify-center flex-col gap-10">
+        <form
+          action={FormAction}
+          className="w-full h-max flex items-center justify-center flex-col gap-10"
+        >
           <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4">
             <div className="w-full h-max flex flex-col gap-1">
               <label
@@ -24,7 +45,7 @@ const Sell = () => {
               <Input
                 className="w-full placeholder:text-black/60"
                 placeholder="Cejas propiedades"
-                name="name"
+                name="fullname"
                 type="text"
               />
             </div>
@@ -77,14 +98,14 @@ const Sell = () => {
           </div>
           <div className="w-[50%] h-max flex items-start justify-center flex-col gap-1">
             <label
-              htmlFor="type-property"
+              htmlFor="type"
               className="text-black text-base font-semibold"
             >
               Tipo de propiedad*
             </label>
             <Input
               placeholder="Casa, Departamento, Local, etc..."
-              name="type-property"
+              name="type"
               type="text"
               className="w-full placeholder:text-black/60"
             />

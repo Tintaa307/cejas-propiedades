@@ -1,8 +1,7 @@
-import { Star, Heart, Bed, Bath, Square, Car } from "lucide-react"
+import { Bed, Bath, Square, Car } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
 import MainImage from "./MainImage"
 import { createClient } from "@/lib/supabase/server"
 import { cookies } from "next/headers"
@@ -30,6 +29,7 @@ export default async function PropertyDetails({
     .from("properties")
     .select("*")
     .neq("id", params.id)
+    .eq("locality", "canuelas")
     .order("id", { ascending: false })
     .limit(4)) as { data: BatchProps[] }
 

@@ -59,7 +59,7 @@ const Services = () => {
     {
       title: "Usucapion",
       description:
-        "Tramitación de usucapión, proceso legal para adquirir la propiedad de un inmueble por posesión continuada y pacífica durante un tiempo determinado.",
+        "formaliza tu derecho de propiedad mediante posesión continua y legal.",
       icon: <IconNotebook size={30} className="text-white" />,
     },
   ]

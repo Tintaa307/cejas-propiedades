@@ -13,8 +13,19 @@ const Sections = () => {
           Inmuebles en <span className="text-[#BF0909]">venta</span>
         </Title>
         <article className="w-full h-max flex items-center justify-center flex-row my-12">
-          <Card title="Campos y chacras" />
-          <Card title="Urbano" />
+          <Card
+            title="Campos y chacras"
+            filter="chacra"
+            path="/images/img-campos-chacras.jpg"
+            description="En esta seccion se encuentran todos los campos y chacras disponibles para la venta. Cualquier consulta no dude en contactarnos."
+          />
+          <Card
+            title="Lotes"
+            filter="lote"
+            path="/images/img-loteos.jpg"
+            description="En esta seccion se encuentran 
+          todos los lotes disponibles para la venta. Cualquier consulta no dude en contactarnos."
+          />
         </article>
       </div>
     </section>

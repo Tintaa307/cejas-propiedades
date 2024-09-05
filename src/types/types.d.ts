@@ -31,6 +31,7 @@ export interface BatchProps {
   onsale: boolean
   type: string
   public_url: string
+  locality: string
 }
 
 export type FilterProps = {

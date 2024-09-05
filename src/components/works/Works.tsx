@@ -35,7 +35,7 @@ const Works = () => {
     },
     {
       title: "La Estación",
-      src: "/images/dron-images/estacion-dron.jpg",
+      src: "/images/dron-images/img-estacion.jpg",
       link: "/estacion",
       isSold: false,
     },

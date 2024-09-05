@@ -13,6 +13,21 @@ const Contact = ({ title }: { title?: string }) => {
     { type: "tel", placeholder: "Teléfono...", name: "phone" },
   ]
 
+  const FormAction = async (formData: FormData) => {
+    const res = await handleSubmit(formData)
+    switch (res.status) {
+      case 200:
+        toast.success(res.message)
+        break
+      case 500:
+        res.message.map((msg: string) => toast.error(msg)) as string[]
+        break
+      default:
+        toast.info("Error al enviar el mensaje")
+        break
+    }
+  }
+
   return (
     <section
       id="Contact"
@@ -31,22 +46,7 @@ const Contact = ({ title }: { title?: string }) => {
               </p>
             </header>
             <form
-              action={async (formData) => {
-                const res = await handleSubmit(formData)
-                switch (res.status) {
-                  case 200:
-                    toast.success(res.message)
-                    break
-                  case 500:
-                    res.message.map((msg: string) =>
-                      toast.error(msg)
-                    ) as string[]
-                    break
-                  default:
-                    toast.info("Error al enviar el mensaje")
-                    break
-                }
-              }}
+              action={FormAction}
               autoComplete="off"
               className="w-full xl:w-2/3 h-max flex sm:items-center items-center justify-center flex-col gap-8 xl:md:w-full"
             >

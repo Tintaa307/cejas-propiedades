@@ -69,7 +69,7 @@ const MainImage = ({
       <Image
         width={600}
         height={600}
-        src={mainImage}
+        src={mainImage || "/images/image-empty.svg"}
         alt="Main property image"
         loading="lazy"
         onLoad={handleLoadMainImage}
@@ -95,7 +95,7 @@ const MainImage = ({
             width={96}
             height={64}
             key={index}
-            src={img}
+            src={img || "/images/image-empty.svg"}
             onLoad={handleImagesLoad}
             loading="lazy"
             alt={`Property image ${index + 1}`}

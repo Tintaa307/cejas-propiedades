@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 import { cookies } from "next/headers"
 import PropertiesFilter from "./PropertiesFilter"
 
-export default async function Properties() {
+export default async function Properties({}: {}) {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 

@@ -2,6 +2,7 @@ import React from "react"
 import Title from "../title/Title"
 import Image from "next/image"
 import Button from "../button/Button"
+import Link from "next/link"
 
 const About = () => {
   return (
@@ -10,14 +11,14 @@ const About = () => {
       className="w-full h-max flex items-center justify-center"
     >
       <div className="w-[90%] h-max flex items-center justify-center flex-col">
-        <article className="w-full h-max flex items-start justify-center flex-row mt-24">
-          <div className="w-1/2 h-max flex items-center justify-center flex-col">
-            <div className="w-full h-max flex items-center justify-start">
+        <article className="w-full h-max grid grid-cols-2 xxl:flex xxl:items-center xxl:justify-center mt-24">
+          <div className="flex-1 h-max flex items-center justify-center flex-col">
+            <div className="w-full h-max flex items-center justify-start xxl:justify-center">
               <Title className="mt-0">
                 ¿Quienes <span className="text-[#BF0909]">somos</span>?
               </Title>
             </div>
-            <p className="text-black text-base font-medium my-10 text-justify">
+            <p className="text-black text-base font-medium my-10 text-justify xxl:text-center xxl:w-2/3">
               Somos una inmobiliaria rural dedicada a la venta de campos y
               desarrollos urbanos en áreas rurales y nos enorgullece ofrecer un
               servicio personalizado que combina experiencia en el mercado
@@ -43,13 +44,15 @@ const About = () => {
               propiedad perfecta para vivir. Estamos aquí para guiarlo en cada
               paso del camino.
             </p>
-            <div className="w-full h-max flex items-center justify-start">
-              <Button className="bg-black px-5 py-3 hover:bg-opacity-95 text-white">
-                Quiero Vender
-              </Button>
+            <div className="w-full h-max flex items-center justify-start xxl:justify-center">
+              <Link href="/sell">
+                <Button className="bg-black px-5 py-3 hover:bg-opacity-95 text-white">
+                  Quiero Vender
+                </Button>
+              </Link>
             </div>
           </div>
-          <div className="w-1/2 h-max flex items-center justify-center">
+          <div className="flex-1 h-max flex items-center justify-center xxl:hidden xxl:flex-0">
             <picture>
               <Image
                 src={"/images/about-image.jpg"}
