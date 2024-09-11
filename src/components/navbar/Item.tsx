@@ -15,9 +15,9 @@ const Item = ({ item }: ItemProps) => {
       <Link
         href={item.link}
         className={cn(
-          "relative text-black group font-medium transition-all duration-150 flex flex-col",
+          "relative text-black group font-medium transition-all duration-150 flex flex-col xl:text-[12px] text-base ",
           {
-            "w-max h-max px-4 py-2 rounded-md bg-black text-white hover:bg-opacity-90":
+            "w-max h-max px-4 py-2 rounded-md bg-black text-white hover:bg-opacity-90 flex":
               item.title === "Contacto",
           }
         )}
@@ -25,7 +25,7 @@ const Item = ({ item }: ItemProps) => {
         {item.title}
         <div
           className={cn({
-            "absolute bottom-0 w-0 h-[1px] bg-black group-hover:w-full transition-all duration-300":
+            " bottom-0 w-0 h-[1px] bg-black group-hover:w-full transition-all duration-300":
               item.title !== "Contacto",
           })}
         />

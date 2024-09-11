@@ -47,7 +47,7 @@ const Services = () => {
     {
       title: "Construcciones",
       description:
-        "estión integral de proyectos de construcción, planificación inicial, ejecución y entrega final. Incluyendo construcción tradicional, steel framing, etc.",
+        "Gestión integral de proyectos de construcción, planificación inicial, ejecución y entrega final. Incluyendo construcción tradicional, steel framing, etc.",
       icon: <IconHammer size={30} className="text-white" />,
     },
     {
@@ -59,15 +59,15 @@ const Services = () => {
     {
       title: "Usucapion",
       description:
-        "formaliza tu derecho de propiedad mediante posesión continua y legal.",
+        "Dormaliza tu derecho de propiedad mediante posesión continua y legal.",
       icon: <IconNotebook size={30} className="text-white" />,
     },
   ]
 
   return (
     <section
-      id="services"
-      className="w-full h-max flex items-center justify-center"
+      id="servicios"
+      className="w-full h-max flex items-center justify-center overflow-hidden"
     >
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">

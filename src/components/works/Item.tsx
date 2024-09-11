@@ -18,7 +18,7 @@ const Item = ({ index, title, link, src, isSold }: ItemProps) => {
     <li className="relative w-full h-max flex items-center justify-center flex-col">
       <Link
         href={link}
-        className="relative w-max h-max overflow-hidden shadow-[0px_3px_10px_#B7B7B7] rounded-[30px]"
+        className="relative w-full h-max overflow-hidden shadow-[0px_3px_10px_#B7B7B7] rounded-[30px]"
       >
         <picture className="relative w-max h-max">
           <Image
