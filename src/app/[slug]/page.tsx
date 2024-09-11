@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-import Information from "@/components/information/Information"
 import Blueprints from "./components/Blueprints"
 import Presentation from "./components/Presentation"
 import Details from "./components/Details"
@@ -55,9 +54,9 @@ const Work = ({ params }: { params: { slug: string } }) => {
           />
           <Gallery imgs={work.imgs} />
           <Blueprints blueprints={work.blueprints} />
-          {work.title === "canada" || work.title === "pueblo" ? (
+          {/* {work.title === "canada" || work.title === "pueblo" ? (
             <Information />
-          ) : null}
+          ) : null} */}
           <Map map={work.map} />
           <Contact title="Recibí Asesoramiento" />
         </div>

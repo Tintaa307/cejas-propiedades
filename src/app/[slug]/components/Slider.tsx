@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import {
   Carousel,
   CarouselContent,
@@ -13,16 +13,29 @@ type SliderProps = {
 }
 
 const Slider = ({ imgs }: SliderProps) => {
+  const [images, setImages] = React.useState<string[]>()
+
+  useEffect(() => {
+    setImages(imgs)
+  }, [imgs])
+
   return (
-    <Carousel className="w-1/4 h-max flex items-center justify-center">
+    <Carousel className="w-1/2 h-max flex items-center justify-center">
       <CarouselContent>
-        {imgs.map((img, index) => (
-          <CarouselItem key={index}>
-            <figure className="w-full h-max flex items-center justify-center">
-              <Image src={img} alt="image-carrousel" width={900} height={900} />
-            </figure>
-          </CarouselItem>
-        ))}
+        {images &&
+          images.map((img, index) => (
+            <CarouselItem key={index}>
+              <figure className="w-full h-full flex items-center justify-center">
+                <Image
+                  src={img}
+                  alt="image-carrousel"
+                  width={900}
+                  height={900}
+                  className="relative rounded-md object-cover"
+                />
+              </figure>
+            </CarouselItem>
+          ))}
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />

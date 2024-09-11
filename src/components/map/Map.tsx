@@ -138,13 +138,7 @@ const Map = ({ work }: { work?: string }) => {
                   variants={variants}
                   initial={"closed"}
                   animate={
-                    !work
-                      ? isHovered && loc.name === location
-                        ? "open"
-                        : "closed"
-                      : work === loc.pathname
-                      ? "open"
-                      : "closed"
+                    isHovered && location === loc.name ? "open" : "closed"
                   }
                   exit={"closed"}
                   className={

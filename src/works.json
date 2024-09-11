@@ -14,7 +14,11 @@
         "No es condominio ni indiviso.",
         "Financiación."
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": [
+        "/carrousel/canada/1.jpg",
+        "/carrousel/canada/2.jpg",
+        "/carrousel/canada/3.jpg"
+      ],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada.mp4",
       "map": "canada",
@@ -51,12 +55,21 @@
         }
       ],
       "details": [
-        "Todos los lotes se entregan con una construcción de 30 m2 en el plano",
+        "El loteo se encuentra divido en 3 fracciones (1a, 1b y 1c).",
+        "En él se encuentran 36 lotes. Algunos de ellos baldíos y otros con casas de 2 y 3 ambientes.",
+        "Barrio abierto. Sin expensas.",
+        "Tendido Eléctrico, Luminaria en calles internas. Calles empedradas.",
         "Títulos perfectos, listo para escriturar.",
-        "Se aceptan vehículos en parte de pago (Consultar)",
-        "Financiación particular (Anticipo del 60% y saldo en 12, 18 y 24 cuotas)"
+        "Se aceptan vehículos en parte de pago (consultar).",
+        "Financiación particular > Anticipo del 60% y saldo en 12, 18 y 24 cuotas."
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": [
+        "/carrousel/pueblo/1.jpg",
+        "/carrousel/pueblo/2.jpg",
+        "/carrousel/pueblo/3.jpg",
+        "/carrousel/pueblo/4.jpg",
+        "/carrousel/pueblo/5.jpg"
+      ],
       "blueprints": ["/images/planos/plano-pueblo.jpg"],
       "video": "/videos/pueblo-chico.mp4",
       "map": "pueblo",
@@ -82,7 +95,7 @@
         "Escrituración inmediata",
         "Financiación "
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": ["/carrousel/gardenias/1.jpg", "/carrousel/gardenias/2.jpg"],
       "blueprints": ["/images/planos/planos-gardenias.png"],
       "video": "/videos/las-gardenias.mp4",
       "map": "gardenias",
@@ -101,7 +114,11 @@
         "Se aceptan vehículos en parte de pago (Consultar)",
         "Se puede entregar con vivienda (Consultar modelos y valores)"
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": [
+        "/carrousel/retiro/1.jpg",
+        "/carrousel/retiro/2.jpg",
+        "/carrousel/retiro/3.jpg"
+      ],
       "blueprints": ["/images/planos/planos-retiro.png"],
       "video": "/videos/el-retiro.mp4",
       "map": "retiro",
@@ -160,7 +177,15 @@
         "Financiación particular.",
         "Se aceptan vehículos en parte de pago (Consultar)"
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": [
+        "/carrousel/magnolias/1.jpg",
+        "/carrousel/magnolias/2.jpg",
+        "/carrousel/magnolias/3.jpg",
+        "/carrousel/magnolias/4.jpg",
+        "/carrousel/magnolias/5.jpg",
+        "/carrousel/magnolias/6.jpg",
+        "/carrousel/magnolias/7.jpg"
+      ],
       "blueprints": ["/images/planos/plano-magnolias.jpg"],
       "video": "/videos/video.mp4",
       "map": "magnolias",
@@ -180,7 +205,16 @@
         "Se aceptan vehículos en parte de pago (Consultar)",
         "Financiación."
       ],
-      "imgs": ["/images/image-carrousel.png"],
+      "imgs": [
+        "/carrousel/canada2/1.jpg",
+        "/carrousel/canada2/2.jpg",
+        "/carrousel/canada2/3.jpg",
+        "/carrousel/canada2/4.jpg",
+        "/carrousel/canada2/5.jpg",
+        "/carrousel/canada2/6.jpg",
+        "/carrousel/canada2/7.jpg",
+        "/carrousel/canada2/8.jpg"
+      ],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/la-canada-2.mp4",
       "map": "canada2",

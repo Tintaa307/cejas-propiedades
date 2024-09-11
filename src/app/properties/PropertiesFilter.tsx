@@ -11,8 +11,9 @@ import {
 import { FilterContext } from "@/context/FilterContext"
 import { IconEdit, IconSend2, IconArrowBackUp } from "@tabler/icons-react"
 import { toast, Toaster } from "sonner"
+import { cn } from "@/lib/utils"
 
-const PropertiesFilter = () => {
+const PropertiesFilter = ({ open }: { open: boolean }) => {
   const filterOpts = [
     {
       label: "Ubicación",
@@ -142,9 +143,24 @@ const PropertiesFilter = () => {
   }
 
   return (
-    <aside className="relative w-[25%] h-max mt-20 flex items-center justify-center">
+    <aside
+      className={cn(
+        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2",
+        {
+          "ms:w-full ms:z-20": open,
+        }
+      )}
+    >
       <Toaster position="bottom-left" />
-      <article className="fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60">
+      <article
+        className={cn(
+          "fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60 xl:w-1/3 ms:-translate-x-full transition-all duration-200 ms:left-0",
+          {
+            "ms:xl:w-full ms:bg-white ms:h-screen ms:top-0 ms:translate-x-0 transition-all duration-200":
+              open,
+          }
+        )}
+      >
         {filterOpts.map((filter, index) => (
           <div
             key={index}

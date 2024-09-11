@@ -14,7 +14,7 @@ export default function Home() {
       <About />
       <Works />
       <Features />
-      <Services />
+      {/* <Services /> */}
       <Map />
       <Sections />
       <Contact />

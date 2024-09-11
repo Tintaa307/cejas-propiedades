@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { BatchProps } from "@/types/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import React, { useEffect } from "react"
+import React from "react"
 
 const SimilarProperties = ({
   recentProperties,
@@ -15,7 +15,7 @@ const SimilarProperties = ({
   return (
     <div className="mt-12">
       <h2 className="text-2xl font-bold mb-4">Otras propiedades similares</h2>
-      <div className="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-2 gap-4">
+      <div className="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-2 gap-4 ls:lg:grid-cols-1">
         {recentProperties.map((item) => (
           <div
             key={item.id}

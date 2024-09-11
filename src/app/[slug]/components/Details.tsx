@@ -1,9 +1,18 @@
 import Title from "@/components/title/Title"
 import { Property } from "@/types/types"
-import { RiMapPinLine } from "@remixicon/react"
-import { IconCheck, IconListDetails, IconHomeEdit } from "@tabler/icons-react"
+import { IconHomeEdit } from "@tabler/icons-react"
 import React, { useEffect, useState } from "react"
 import Col from "./Col"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Check } from "lucide-react"
 
 type DetailsProps = {
   details: string[]
@@ -52,13 +61,41 @@ const Details = ({ details, location, properties }: DetailsProps) => {
 
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-24">
-      <div className="w-full h-max flex items-center justify-center text-justify flex-col gap-8">
-        <Title className="flex flex-row items-center gap-5 text-black text-4xl font-bold">
-          <RiMapPinLine size={40} className="text-black" />
-          Ubicacion
-        </Title>
-        <p className="w-[40%] text-black/80 text-lg font-normal">{location}</p>
-      </div>
+      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto">
+        <TabsList className="grid w-full grid-cols-2 bg-gray-200">
+          <TabsTrigger className="text-black" value="details">
+            Detalles
+          </TabsTrigger>
+          <TabsTrigger className="text-black" value="location">
+            Ubicacion
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="details">
+          <Card>
+            <CardHeader>
+              <CardTitle>Detalles de la propiedad</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {details.map((detail, index) => (
+                <div key={index} className="flex items-start space-x-2">
+                  <Check className="h-5 w-5 mt-0.5 text-green-500" />
+                  <p>{detail}</p>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="location">
+          <Card>
+            <CardHeader>
+              <CardTitle>Ubicación de la propiedad</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{location}</p>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
       {properties && (
         <div className="w-full h-max flex items-center justify-center flex-col gap-12">
           <Title className="flex flex-row items-center gap-5 text-black text-4xl font-bold">
@@ -74,23 +111,6 @@ const Details = ({ details, location, properties }: DetailsProps) => {
           </article>
         </div>
       )}
-      <div className="w-full h-max flex items-center justify-center flex-col gap-6">
-        <Title className="flex flex-row items-center gap-5 text-black text-4xl font-bold">
-          <IconListDetails size={40} className="text-black" />
-          Detalles
-        </Title>
-        <ul className="w-[40%] flex flex-col gap-4">
-          {details.map((detail, index) => (
-            <li
-              key={index}
-              className="text-black text-lg font-normal flex items-center justify-start flex-row gap-2"
-            >
-              <IconCheck size={25} className="" />
-              {detail}
-            </li>
-          ))}
-        </ul>
-      </div>
     </article>
   )
 }

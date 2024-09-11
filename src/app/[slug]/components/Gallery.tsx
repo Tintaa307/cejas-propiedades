@@ -9,7 +9,7 @@ type GalleryProps = {
 
 const Gallery = ({ imgs }: GalleryProps) => {
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-24">
+    <article className="w-full h-max flex items-center justify-center flex-col gap-12">
       <div className="w-full h-max flex items-center justify-center flex-col gap-4">
         <Title className="flex flex-row items-center gap-3 text-black text-4xl font-bold">
           <IconSatellite size={40} className="text-black" />
@@ -21,7 +21,6 @@ const Gallery = ({ imgs }: GalleryProps) => {
         </p>
       </div>
       <div className="w-full h-max flex items-center justify-center flex-row gap-28">
-        <Slider imgs={imgs} />
         <Slider imgs={imgs} />
       </div>
     </article>
