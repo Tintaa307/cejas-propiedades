@@ -33,6 +33,7 @@ const Work = ({ params }: { params: { slug: string } }) => {
 
   useEffect(() => {
     const work = verifyData()
+
     setWork(work)
   }, [params])
 

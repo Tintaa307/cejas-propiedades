@@ -20,7 +20,7 @@
         "/carrousel/canada/3.jpg"
       ],
       "blueprints": ["/images/planos/planos-canada.png"],
-      "video": "/videos/la-canada.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada.mp4?t=2024-09-11T20%3A27%3A57.533Z",
       "map": "canada",
       "isSold": false
     },
@@ -71,7 +71,7 @@
         "/carrousel/pueblo/5.jpg"
       ],
       "blueprints": ["/images/planos/plano-pueblo.jpg"],
-      "video": "/videos/pueblo-chico.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/pueblo.mp4?t=2024-09-11T20%3A28%3A31.071Z",
       "map": "pueblo",
       "isSold": false
     },
@@ -97,7 +97,7 @@
       ],
       "imgs": ["/carrousel/gardenias/1.jpg", "/carrousel/gardenias/2.jpg"],
       "blueprints": ["/images/planos/planos-gardenias.png"],
-      "video": "/videos/las-gardenias.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/gardenias.mp4?t=2024-09-11T20%3A28%3A18.563Z",
       "map": "gardenias",
       "isSold": false
     },
@@ -120,7 +120,7 @@
         "/carrousel/retiro/3.jpg"
       ],
       "blueprints": ["/images/planos/planos-retiro.png"],
-      "video": "/videos/el-retiro.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
       "map": "retiro",
       "isSold": false
     },
@@ -160,7 +160,7 @@
       ],
       "imgs": ["/images/image-carrousel.png"],
       "blueprints": ["/images/planos/planos-canada.png"],
-      "video": "/videos/la-estacion.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/estacion.mp4?t=2024-09-11T20%3A28%3A07.845Z",
       "map": "estacion",
       "isSold": false
     },
@@ -216,7 +216,7 @@
         "/carrousel/canada2/8.jpg"
       ],
       "blueprints": ["/images/planos/planos-canada.png"],
-      "video": "/videos/la-canada-2.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada2.mp4?t=2024-09-11T20%3A27%3A37.931Z",
       "map": "canada2",
       "isSold": false
     }

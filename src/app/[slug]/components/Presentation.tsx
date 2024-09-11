@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 type PresentationProps = {
   title: string
@@ -7,6 +7,9 @@ type PresentationProps = {
 }
 
 const Presentation = ({ title, video, isSold }: PresentationProps) => {
+  useEffect(() => {
+    console.log(video)
+  }, [video])
   return (
     <div className="w-full h-screen flex items-start justify-start bg-black bg-opacity-30">
       {!isSold ? (
