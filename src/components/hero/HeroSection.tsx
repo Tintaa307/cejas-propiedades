@@ -8,7 +8,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules"
 import "swiper/css"
 import "swiper/css/pagination"
 
-const Landing = () => {
+const HeroSection = () => {
   const videos = [
     "/videos/paneo-gardenias.mp4",
     "/videos/paneo-canada2.mp4",
@@ -69,4 +69,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default HeroSection
