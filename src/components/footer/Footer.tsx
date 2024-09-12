@@ -27,7 +27,7 @@ const Footer = () => {
   ]
   return (
     <footer className="w-full h-max flex items-center justify-center mt-12 flex-col gap-12">
-      <div className="w-[90%] h-max flex items-center justify-between flex-row">
+      <div className="w-[90%] h-max flex items-center justify-between sm:justify-center sm:items-center flex-row">
         <ul className="w-max h-max flex flex-row gap-12">
           {socialMedia.map((item, idx) => (
             <li key={idx} className="rounded-full cursor-pointer">
@@ -42,7 +42,7 @@ const Footer = () => {
         </section>
       </div>
       <div className="w-full h-max flex items-center justify-center border-t-[1px] border-t-black flex-col">
-        <small className="text-black text-sm font-normal my-3">
+        <small className="text-black text-sm font-normal my-3 sm:text-center">
           ©2024 Cejas Propiedades. Nuestros terminos y condiciones{" "}
           <span className="underline cursor-pointer">aquí</span>
         </small>

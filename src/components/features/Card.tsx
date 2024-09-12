@@ -30,8 +30,8 @@ const Card = ({
     <li className="w-full h-max flex items-center justify-center flex-row xl:flex-col xl:gap-12">
       <article className="w-1/2 h-max flex items-center justify-center flex-col xl:w-full">
         <div className="w-[90%] h-max flex items-start justify-center flex-col xl:items-center ls:w-full">
-          <h5 className="text-white text-3xl font-medium mb-5">{title}</h5>
-          <p className="text-white/80 w-4/5 mb-8 xxl:w-full xl:text-center xl:xxl:w-4/5">
+          <h5 className="text-white text-3xl sm:text-2xl font-medium mb-5 sm:h-1/5">{title}</h5>
+          <p className="text-white/80 w-4/5 mb-8 xxl:w-full xl:text-center xl:xxl:w-4/5 sm:text-sm">
             {description}
           </p>
           <div className="flex flex-row justify-between gap-14 mb-8">
@@ -43,16 +43,16 @@ const Card = ({
               {site}
             </p>
           </div>
-          <footer className="w-full h-max flex items-start justify-start flex-row gap-56 xxl:justify-between xxl:gap-0 xl:xxl:justify-around">
+          <footer className="w-full h-max flex items-start justify-start xs:items-center xs:justify-center flex-row gap-56 xxl:justify-between xxl:gap-0 xl:xxl:justify-around">
             <div className="">
-              <p className="text-white text-2xl font-semibold mb-3">
+              <p className="text-white text-2xl xs:text-xl font-semibold mb-3 xs:mb-1">
                 {price.discount}
               </p>
               <p className="text-white/80 text-sm font-semibold line-through">
                 {price.original}
               </p>
             </div>
-            <Button className="px-5 py-3 hover:bg-white hover:text-black border-white text-white">
+            <Button className="px-5 py-3 hover:bg-white hover:text-black border-white text-white xs:px-4 xs:py-2">
               Mas detalles
             </Button>
           </footer>

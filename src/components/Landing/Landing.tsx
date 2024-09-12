@@ -17,10 +17,10 @@ const Landing = () => {
 
   return (
     <main className="w-full h-screen flex items-center justify-center">
-      <section className="w-[98%] h-[97vh] flex items-center justify-center bg-black bg-opacity-50 rounded-[84px]">
-        <div className="absolute w-[98%] h-[97vh] flex items-center justify-center -z-10">
+      <section className="w-full h-[97vh] flex items-center justify-center bg-black bg-opacity-50 rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px]">
+        <div className="absolute w-full h-[97vh] flex items-center justify-center -z-10">
           <Swiper
-            className="w-full h-full rounded-[84px]"
+            className="w-full h-full rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px]"
             centeredSlides={true}
             autoplay={{
               delay: 3400,
@@ -46,8 +46,8 @@ const Landing = () => {
             ))}
           </Swiper>
         </div>
-        <article className="relative xxl:w-max w-full h-full flex items-end p-24">
-          <div className="w-full h-full flex items-center justify-center xxl:w-max xxl:h-max xxl:flex xxl:items-center xxl:justify-end xxl:flex-col lg:gap-5 xxl:gap-12 xxl:bg-white/40 xxl:rounded-[40px] p-12">
+        <article className="relative w-full h-full flex justify-center items-end p-24 lg:p-0">
+          <div className="w-full h-full flex items-center justify-center xxl:w-max xxl:h-max xxl:flex xxl:items-center xxl:justify-end xxl:flex-col lg:gap-5 xxl:gap-12 xl:bg-white/40  rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px] p-12">
             <div className="absolute bottom-20 left-20 animate-fade-in-down text-left xxl:relative xxl:left-0 xxl:bottom-0 xxl:text-center">
               <h1 className="text-white text-5xl font-bold flex flex-col gap-3 card:text-3xl ls:card:text-2xl">
                 <span className="uppercase">construyendo tus sueños</span>

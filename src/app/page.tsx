@@ -4,8 +4,8 @@ import Map from "@/components/map/Map"
 import Works from "@/components/works/Works"
 import Services from "@/components/services/Services"
 import Features from "@/components/features/Features"
-import Landing from "@/components/landing/Landing"
 import Sections from "@/components/properties-routes/Sections"
+import Landing from "@/components/Landing/Landing"
 
 export default function Home() {
   return (

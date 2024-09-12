@@ -38,7 +38,8 @@ const Features = () => {
       site: "Cañuelas",
     },
     {
-      title: "Chacra de 3, has en Cañuelas",
+      // de 3, has
+      title: "Chacra en Cañuelas",
       image:
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/Chacra_35_Has_Santa_Rosa/1.jpg",
       description:
@@ -52,7 +53,8 @@ const Features = () => {
       site: "Cañuelas",
     },
     {
-      title: "18 has en san Miguel del monte",
+      // 18 has en
+      title: "San Miguel del monte",
       image: "/images/image-1.png",
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
@@ -69,23 +71,26 @@ const Features = () => {
   return (
     <section
       id="ingresos"
-      className="w-full h-max bg-[url('/images/work-example-1.png')] bg-no-repeat bg-cover"
+      className="w-full h-max bg-[url('/images/work-example-1.png')] bg-no-repeat bg-cover flex justify-center items-center"
     >
       <div className="w-full h-max flex items-center justify-center flex-col bg-black bg-opacity-90">
-        <Title className="mb-8 text-white">Nuevos ingresos</Title>
+        <Title className="mb-8  text-white sm:text-3xl">Nuevos ingresos</Title>
         <div className="w-[90%] h-max flex items-center justify-center flex-col gap-10">
-          <div className="w-full h-max flex items-center justify-center"></div>
           <Carousel className="w-full h-max flex flex-col items-center justify-center">
             <main className="w-full h-max flex items-center justify-center">
               <CarouselContent className="mb-24">
                 {features.map((feature, idx) => (
-                  <CarouselItem key={idx}>
+                  <CarouselItem key={idx} className="">
                     <Card {...feature} />
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <div className="flex lg:hidden">
+                <CarouselPrevious />
+              </div>
+              <div className="flex lg:hidden">
+                <CarouselNext />
+              </div>
             </main>
           </Carousel>
         </div>

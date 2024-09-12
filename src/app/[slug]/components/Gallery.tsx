@@ -10,8 +10,8 @@ type GalleryProps = {
 const Gallery = ({ imgs }: GalleryProps) => {
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-12">
-      <div className="w-full h-max flex items-center justify-center flex-col gap-4">
-        <Title className="flex flex-row items-center gap-3 text-black text-4xl font-bold">
+      <div className="w-full h-max flex items-center justify-center flex-col gap-4 ">
+        <Title className="flex flex-row items-center gap-3 text-black text-4xl sm:text-xl sm:text-center font-bold">
           <IconSatellite size={40} className="text-black" />
           Imágenes Satelitales y Terrestres
         </Title>

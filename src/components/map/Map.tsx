@@ -106,8 +106,8 @@ const Map = ({ work }: { work?: string }) => {
   ]
 
   return (
-    <div className="w-full h-max flex items-center justify-center">
-      <div className="relative w-max h-max">
+    <div className="w-full h-max flex items-center justify-center xxl:hidden">
+      <div className="relative w-max h-max ">
         <Image
           src={"/images/mapa-cejas-big.jpg"}
           alt="image-empty"
@@ -124,7 +124,7 @@ const Map = ({ work }: { work?: string }) => {
               setLocation("")
             }}
           >
-            <div className="relative w-max h-max">
+            <div className="relative w-max h-max  ">
               <RiMapPinLine
                 onMouseEnter={() => {
                   setIsHovered(true)
