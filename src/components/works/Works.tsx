@@ -46,7 +46,7 @@ const Works = () => {
       isSold: false,
     },
     {
-      title: "La Cañanda II",
+      title: "La Cañada II",
       src: "/images/dron-images/canada2-dron.jpg",
       link: "/canada2",
       isSold: false,
