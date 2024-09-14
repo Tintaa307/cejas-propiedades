@@ -26,7 +26,7 @@ const Sell = () => {
       <main className="w-full h-max mt-12 flex items-center justify-center flex-col gap-12">
         <header className="w-full h-max flex items-center justify-center flex-col gap-4">
           <h4 className="text-black text-4xl font-bold">Vende tu propiedad</h4>
-          <p className="text-base text-black/80">
+          <p className="text-base text-black/80 xs:text-sm">
             Complete el formulario y nos pondremos en contacto contigo.
           </p>
         </header>
@@ -34,7 +34,7 @@ const Sell = () => {
           action={FormAction}
           className="w-full h-max flex items-center justify-center flex-col gap-10"
         >
-          <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4">
+          <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4 md:w-[80%] ls:w-[90%]">
             <div className="w-full h-max flex flex-col gap-1">
               <label
                 htmlFor="name"
@@ -64,7 +64,7 @@ const Sell = () => {
               />
             </div>
           </div>
-          <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4">
+          <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4 md:w-[80%] ls:w-[90%]">
             <div className="w-full h-max flex flex-col gap-1">
               <label
                 htmlFor="phone"
@@ -96,7 +96,7 @@ const Sell = () => {
               />
             </div>
           </div>
-          <div className="w-[50%] h-max flex items-start justify-center flex-col gap-1">
+          <div className="w-[50%] h-max flex items-start justify-center flex-col gap-1 md:w-[80%] ls:w-[90%]">
             <label
               htmlFor="type"
               className="text-black text-base font-semibold"
@@ -110,7 +110,7 @@ const Sell = () => {
               className="w-full placeholder:text-black/60"
             />
           </div>
-          <div className="w-[50%] h-max flex items-start justify-center flex-col gap-1">
+          <div className="w-[50%] h-max flex items-start justify-center flex-col gap-1 md:w-[80%] ls:w-[90%]">
             <label
               htmlFor="message"
               className="text-black text-base font-semibold"
@@ -126,11 +126,11 @@ const Sell = () => {
               className="w-full h-[120px] px-4 bg-transparent border-[1px] border-black/80 rounded-md placeholder:text-black/60 text-sm text-black font-medium outline-none focus:outline-2 focus:outline-black/80 transition-all duration-200 py-2 resize-none shadow-[0_4px_8px_#d9d9d9]"
             />
           </div>
-          <div className="w-[50%] h-max flex items-center justify-center flex-col gap-4">
+          <div className="w-[50%] h-max flex items-center justify-center flex-col gap-4 md:w-[80%] ls:w-[90%]">
             <Button className="w-full h-max py-3 rounded-md text-white bg-black hover:opacity-95 transition-all duration-150">
               Enviar
             </Button>
-            <p className="text-sm text-black/80">
+            <p className="text-sm text-black/80 md:text-center">
               Al enviar se están aceptando los{" "}
               <span className="font-bold underline">
                 Términos y Condiciones
