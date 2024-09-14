@@ -23,6 +23,7 @@ const Features = () => {
       isInOffer: true,
       location: "Ruta 3 Km 71,600",
       site: "Cañuelas",
+      link: "/estacion",
     },
     {
       title: "Las Magnolias",
@@ -30,12 +31,13 @@ const Features = () => {
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
-        original: "18.000 USD",
-        discount: "16.000 USD",
+        original: "16.000 USD",
+        discount: "14.500 USD",
       },
       isInOffer: true,
       location: "Ruta 3 Km 71,600",
       site: "Cañuelas",
+      link: "/magnoilias",
     },
     {
       // de 3, has
@@ -45,12 +47,13 @@ const Features = () => {
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
-        original: "18.000 USD",
-        discount: "16.000 USD",
+        original: "140.000 USD",
+        discount: "120.000 USD",
       },
       isInOffer: true,
       location: "Ruta 3 Km 71,600",
       site: "Cañuelas",
+      link: "/properties/2009",
     },
     {
       // 18 has en
@@ -59,12 +62,13 @@ const Features = () => {
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
-        original: "18.000 USD",
-        discount: "16.000 USD",
+        original: "210.000 USD",
+        discount: "200.000 USD",
       },
       isInOffer: true,
       location: "Ruta 3 Km 71,600",
       site: "Cañuelas",
+      link: "#",
     },
   ]
 
