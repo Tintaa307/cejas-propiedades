@@ -17,7 +17,7 @@ const Footer = () => {
     {
       title: "Facebook",
       icon: <RiFacebookBoxFill size={40} className="rounded-full" />,
-      link: "#",
+      link: "https://www.facebook.com/estudio.integral11",
     },
     {
       title: "Phone",
