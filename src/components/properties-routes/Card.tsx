@@ -23,7 +23,7 @@ const Card = ({
           <footer className="absolute bottom-0 w-full h-1/3 bg-black/95 rounded-b-[32px] flex items-center justify-center">
             <div className="w-[90%] h-max flex flex-col gap-4">
               <h5 className="text-white text-2xl font-semibold">{title}</h5>
-              <p className="w-3/4 text-white/60 ">{description}</p>
+              <p className="w-3/4 text-white/60 xs:text-sm">{description}</p>
               <small className="text-white">+15 propiedades</small>
             </div>
           </footer>

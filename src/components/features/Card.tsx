@@ -27,10 +27,12 @@ const Card = ({
   description,
 }: CardProps) => {
   return (
-    <li className="w-full h-max flex items-center justify-center flex-row xl:flex-col xl:gap-12">
+    <li className="w-full h-max flex items-center justify-center flex-row xl:gap-12 xl:flex-col-reverse">
       <article className="w-1/2 h-max flex items-center justify-center flex-col xl:w-full">
         <div className="w-[90%] h-max flex items-start justify-center flex-col xl:items-center ls:w-full">
-          <h5 className="text-white text-3xl sm:text-2xl font-medium mb-5 sm:h-1/5">{title}</h5>
+          <h5 className="text-white text-3xl sm:text-2xl font-medium mb-5 sm:h-1/5">
+            {title}
+          </h5>
           <p className="text-white/80 w-4/5 mb-8 xxl:w-full xl:text-center xl:xxl:w-4/5 sm:text-sm">
             {description}
           </p>
