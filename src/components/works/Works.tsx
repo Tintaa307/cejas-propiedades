@@ -5,25 +5,25 @@ const Works = () => {
   const works = [
     {
       title: "La Cañada",
-      src: "/images/dron-images/canada-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/canada-dron.JPG",
       link: "/canada",
       isSold: false,
     },
     {
       title: "Pueblo Chico",
-      src: "/images/dron-images/pueblo-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/pueblo-dron.JPG",
       link: "/pueblo",
       isSold: false,
     },
     {
       title: "Las Gardenias",
-      src: "/images/dron-images/gardenias-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/gardenias-dron.JPG",
       link: "/gardenias",
       isSold: false,
     },
     {
       title: "El Retiro",
-      src: "/images/dron-images/retiro-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/retiro-dron.JPG",
       link: "/retiro",
       isSold: false,
     },
@@ -35,19 +35,19 @@ const Works = () => {
     },
     {
       title: "La Estación",
-      src: "/images/dron-images/img-estacion.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/img-estacion.jpg",
       link: "/estacion",
       isSold: false,
     },
     {
       title: "Las Magnolias",
-      src: "/images/dron-images/magnolias-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/magnolias-dron.jpg",
       link: "/magnolias",
       isSold: false,
     },
     {
       title: "La Cañada II",
-      src: "/images/dron-images/canada2-dron.jpg",
+      src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/canada2-dron.JPG",
       link: "/canada2",
       isSold: false,
     },
