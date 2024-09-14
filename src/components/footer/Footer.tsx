@@ -36,7 +36,7 @@ const Footer = () => {
           ))}
         </ul>
         <section className="w-max h-max flex items-center justify-center">
-          <Link href="#">
+          <Link href="https://wa.me/+5491133683251">
             <WhatsappButton />
           </Link>
         </section>
