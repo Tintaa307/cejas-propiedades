@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server"
 import { cookies } from "next/headers"
 import { BatchProps } from "@/types/types"
 import SimilarProperties from "../SimilarProperties"
+import Link from "next/link"
 
 export default async function PropertyDetails({
   params,
@@ -81,40 +82,22 @@ export default async function PropertyDetails({
 
           <p className="text-3xl font-bold">${data[0].price}</p>
 
-          <div className="flex space-x-4 text-muted-foreground">
-            <div className="flex items-center">
-              <Bed className="w-5 h-5 mr-2" />
-              <span>4 Beds</span>
-            </div>
-            <div className="flex items-center">
-              <Bath className="w-5 h-5 mr-2" />
-              <span>3 Baths</span>
-            </div>
-            <div className="flex items-center">
-              <Square className="w-5 h-5 mr-2" />
-              <span>2,500 sqft</span>
-            </div>
-            <div className="flex items-center">
-              <Car className="w-5 h-5 mr-2" />
-              <span>2 Garage</span>
-            </div>
-          </div>
           {/* Property Features */}
           <div className="">
             <h3 className="text-lg font-semibold mb-2">Cosas a destacar</h3>
             <div className="flex flex-wrap gap-2">
               <Badge variant="secondary">Recien Renovada</Badge>
-              <Badge variant="secondary">Pisos de Madera en toda la casa</Badge>
-              <Badge variant="secondary">Amplio Jardín con Piscina</Badge>
               <Badge variant="secondary">Cocina Moderna</Badge>
             </div>
           </div>
 
           {/* Call to Action */}
           <div className="flex space-x-4">
-            <Button className="w-3/4 bg-black hover:bg-black/95 mt-4">
-              Contactános para más información
-            </Button>
+            <Link href={"/#contacto"} className="w-full">
+              <Button className="w-3/4 bg-black hover:bg-black/95 mt-4">
+                Contactános para más información
+              </Button>
+            </Link>
           </div>
 
           {/* Property Details */}

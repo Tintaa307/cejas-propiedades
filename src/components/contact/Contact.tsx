@@ -30,7 +30,7 @@ const Contact = ({ title }: { title?: string }) => {
 
   return (
     <section
-      id="Contact"
+      id="contacto"
       className="w-full h-full flex items-center justify-center mt-24 sm:mt-10"
     >
       <Toaster position="top-center" duration={3000} richColors />
