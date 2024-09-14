@@ -12,7 +12,7 @@ const Footer = () => {
     {
       title: "Instagram",
       icon: <RiInstagramLine size={40} />,
-      link: "#",
+      link: "https://www.instagram.com/estudio.integral1/",
     },
     {
       title: "Facebook",
@@ -20,9 +20,9 @@ const Footer = () => {
       link: "#",
     },
     {
-      title: "Whatsapp",
+      title: "Phone",
       icon: <RiPhoneFill size={40} />,
-      link: "#",
+      link: "+5491133683251",
     },
   ]
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
           ))}
         </ul>
         <section className="w-max h-max flex items-center justify-center">
-          <Link href="https://wa.me/+5491133683251">
+          <Link href="https://wa.me/+5491133683251" target="_blank">
             <WhatsappButton />
           </Link>
         </section>
