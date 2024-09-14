@@ -11,9 +11,13 @@ import Loader from "@/components/loader/Loader"
 export default function Properties({}: {}) {
   const supabase = createClient()
   const [open, setOpen] = useState(false)
+  const [limit, setLimit] = useState(9)
 
   const fetchData = async () => {
-    const { data: todos } = (await supabase.from("properties").select()) as {
+    const { data: todos } = (await supabase
+      .from("properties")
+      .select()
+      .limit(limit)) as {
       data: BatchProps[]
     }
     return todos
@@ -29,7 +33,7 @@ export default function Properties({}: {}) {
     } finally {
       console.log("Data fetched")
     }
-  }, [])
+  }, [limit])
 
   return (
     <section className="relative w-full mt-8 h-full flex items-start justify-center flex-row gap-12 ms:flex-col ms:gap-0">
@@ -43,7 +47,7 @@ export default function Properties({}: {}) {
         </div>
         <PropertiesFilter open={open} />
         <div className="w-[75%] h-max flex items-center justify-center ms:w-full">
-          <Property data={todos} />
+          <Property setLimit={setLimit} data={todos} />
         </div>
       </Suspense>
     </section>

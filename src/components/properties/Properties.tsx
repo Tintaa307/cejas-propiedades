@@ -1,6 +1,12 @@
 "use client"
 
-import React, { useContext, useEffect, useState } from "react"
+import React, {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react"
 import Title from "../title/Title"
 import Button from "../button/Button"
 import { BatchProps } from "@/types/types"
@@ -11,9 +17,10 @@ import { useSearchParams } from "next/navigation"
 
 type ItemProps = {
   data: BatchProps[]
+  setLimit: Dispatch<SetStateAction<number>>
 }
 
-const Property = ({ data }: ItemProps) => {
+const Property = ({ data, setLimit }: ItemProps) => {
   const [filteredData, setFilteredData] = useState<
     {
       id: string
@@ -95,7 +102,7 @@ const Property = ({ data }: ItemProps) => {
     if (scrollY.get() > 0) {
       window.scrollTo(0, 0)
     }
-  }, [filteredData, filter])
+  }, [filter])
 
   return (
     <section className="w-full h-max flex items-center justify-center">
@@ -120,7 +127,10 @@ const Property = ({ data }: ItemProps) => {
           )}
         </main>
         <div className="w-full h-max flex items-center justify-center">
-          <Button className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white">
+          <Button
+            onClick={() => setLimit((prev) => prev + 6)}
+            className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white"
+          >
             Ver Más
           </Button>
         </div>
