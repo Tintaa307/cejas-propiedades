@@ -5,6 +5,7 @@ import Works from "@/components/works/Works"
 import Features from "@/components/features/Features"
 import Sections from "@/components/properties-routes/Sections"
 import HeroSection from "@/components/hero/HeroSection"
+import Services from "@/components/services/Services"
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <About />
       <Works />
       <Features />
-      {/* <Services /> */}
+      <Services />
       <Map />
       <Sections />
       <Contact />
