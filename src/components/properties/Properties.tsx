@@ -29,8 +29,6 @@ const Property = ({ data }: ItemProps) => {
     }[]
   >(data)
   const { scrollY } = useScroll()
-  const [images, setImages] = useState<any>([])
-
   const searchParams = useSearchParams()
 
   const { filter } = useContext(FilterContext)
@@ -48,7 +46,7 @@ const Property = ({ data }: ItemProps) => {
       // Filtrar por ubicación
       if (filter.location !== "todos") {
         filtered = filtered.filter(
-          (property) => property.location === filter.location
+          (property) => property.locality === filter.location
         )
       }
 

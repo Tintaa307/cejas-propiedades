@@ -39,13 +39,20 @@ const Item = ({ index, property }: ItemProps) => {
       viewport={{ once: true }}
       className="w-[400px] flex flex-col gap-4 border border-black/20 shadow-lg p-5 rounded-3xl"
     >
-      <Image
-        src={property.public_url}
-        alt={"Image of the property"}
-        width={400}
-        height={400}
-        className="w-[500px] h-[300px] relative rounded-[40px] object-cover"
-      />
+      {property.address !== "6 has" ? (
+        <Image
+          src={property.public_url}
+          alt={"Image of the property"}
+          width={400}
+          height={400}
+          className="w-[500px] h-[300px] relative rounded-[40px] object-cover"
+        />
+      ) : (
+        <div className="w-[500px] h-[300px] relative rounded-[40px]">
+          <strong className="text-red text-xl">Coming soon!</strong>
+        </div>
+      )}
+
       <div className="w-full h-max flex items-center justify-between flex-row">
         <div className="flex flex-row gap-2">
           <RiMapPinLine />

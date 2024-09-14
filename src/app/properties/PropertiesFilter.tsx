@@ -21,9 +21,7 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
       options: [
         { name: "Todos", value: "todos" },
         { name: "Cañuelas", value: "canuelas" },
-        { name: "San Vicente", value: "san-vicente" },
-        { name: "Ezeiza", value: "ezeiza" },
-        { name: "Monte Grande", value: "monte-grande" },
+        { name: "San Miguel Del Monte", value: "san_miguel_monte" },
       ],
     },
     {
@@ -43,37 +41,37 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
           value: "quinta",
         },
         {
-          name: "Departamento",
-          value: "departamento",
+          name: "Chacra",
+          value: "chacra",
         },
         {
-          name: "Terreno",
-          value: "terreno",
+          name: "Lotes",
+          value: "lote",
         },
       ],
     },
-    {
-      label: "Superficie",
-      filterName: "size",
-      options: [
-        {
-          name: "Todos",
-          value: "todos",
-        },
-        {
-          name: "Menor a 100m2",
-          value: "menor-a-100m2",
-        },
-        {
-          name: "100m2-200m2",
-          value: "100m2-200m2",
-        },
-        {
-          name: "200m2-300m2",
-          value: "200m2-300m2",
-        },
-      ],
-    },
+    // {
+    //   label: "Superficie",
+    //   filterName: "size",
+    //   options: [
+    //     {
+    //       name: "Todos",
+    //       value: "todos",
+    //     },
+    //     {
+    //       name: "Menor a 100m2",
+    //       value: "menor-a-100m2",
+    //     },
+    //     {
+    //       name: "100m2-200m2",
+    //       value: "100m2-200m2",
+    //     },
+    //     {
+    //       name: "200m2-300m2",
+    //       value: "200m2-300m2",
+    //     },
+    //   ],
+    // },
     {
       label: "Tipo de operación",
       filterName: "operation",
