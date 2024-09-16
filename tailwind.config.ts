@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { custom } from "zod"
 
 // const {
 //   default: flattenColorPalette,
@@ -127,6 +128,7 @@ const config = {
         xxl: { raw: "(max-width: 1473px)" },
         "3xl": { raw: "(max-width: 1543px)" },
         "5xl": { raw: "(max-width: 1751px)" },
+        custom: { raw: "(max-height: 1000px)" },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

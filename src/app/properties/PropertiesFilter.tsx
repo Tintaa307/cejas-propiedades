@@ -12,6 +12,7 @@ import { FilterContext } from "@/context/FilterContext"
 import { IconEdit, IconSend2, IconArrowBackUp } from "@tabler/icons-react"
 import { toast, Toaster } from "sonner"
 import { cn } from "@/lib/utils"
+import { useMotionValueEvent, useScroll } from "framer-motion"
 
 const PropertiesFilter = ({ open }: { open: boolean }) => {
   const filterOpts = [
@@ -114,6 +115,11 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
     max: "0",
   })
   const [customPrice, setCustomPrice] = useState(false)
+  const { scrollY } = useScroll()
+  const [scroll, setScroll] = useState(0)
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScroll(latest)
+  })
 
   const { setFilter } = useContext(FilterContext)
 
@@ -143,7 +149,7 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
   return (
     <aside
       className={cn(
-        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2",
+        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2 ",
         {
           "ms:w-full ms:z-20": open,
         }
@@ -156,7 +162,10 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
           {
             "ms:xl:w-full ms:bg-white ms:h-screen ms:top-0 ms:translate-x-0 transition-all duration-200":
               open,
-          }
+            "custom:top-[20px] ": scroll > 3400,
+            "top-[180px] ": scroll > 0 && scroll < 3400,
+          },
+
         )}
       >
         {filterOpts.map((filter, index) => (
