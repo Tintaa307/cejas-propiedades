@@ -69,9 +69,9 @@ const Services = () => {
       id="servicios"
       className="w-full h-max flex items-center justify-center overflow-hidden"
     >
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
+      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12 sm:gap-6">
         <div className="w-full h-max flex items-center justify-center">
-          <Title>
+          <Title className="sm:text-center">
             Nuestros <span className="text-[#BF0909]">servicios</span>
           </Title>
         </div>

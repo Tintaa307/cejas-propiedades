@@ -36,7 +36,7 @@ const Contact = ({ title }: { title?: string }) => {
       <Toaster position="top-center" duration={3000} richColors />
       <div className="w-[90%] h-max flex items-center justify-center flex-col ">
         <section className="w-full h-max flex items-start sm:items-center justify-center flex-row">
-          <div className="w-1/2 h-max flex items-center justify-center flex-col gap-12 xl:w-full">
+          <div className="w-1/2 h-max flex items-center justify-center flex-col gap-12 sm:gap-6 xl:w-full">
             <header className="w-full h-max flex sm:items-center items-center justify-center flex-col gap-2">
               <h4 className="text-black/90 text-4xl font-bold sm:text-xl">
                 {title ?? "Contactate"}
@@ -48,7 +48,7 @@ const Contact = ({ title }: { title?: string }) => {
             <form
               action={FormAction}
               autoComplete="off"
-              className="w-full xl:w-2/3 h-max flex sm:items-center items-center justify-center flex-col gap-8 xl:md:w-5/6 xs:w-full"
+              className="w-full xl:w-2/3 h-max flex sm:items-center items-center justify-center flex-col gap-8 sm:gap-6 xl:md:w-5/6 xs:w-full"
             >
               {inputs.map((input, index) => (
                 <Input key={index} {...input} />

@@ -58,9 +58,9 @@ const Works = () => {
       id="desarrollos"
       className="w-full h-max flex items-center justify-center"
     >
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
+      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12 ">
         <div className="w-full h-max flex items-center justify-center">
-          <Title>
+          <Title className="sm:text-center">
             Conoce nuestros <span className="text-[#BF0909]">desarrollos</span>
           </Title>
         </div>

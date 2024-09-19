@@ -8,11 +8,11 @@ const Sections = () => {
       id="inmuebles"
       className="w-full min-h-screen flex items-center justify-center"
     >
-      <div className="w-[90%] flex items-center justify-center flex-col gap-20">
-        <Title className="mt-0">
+      <div className="w-[90%] flex items-center justify-center flex-col gap-20 sm:gap-6">
+        <Title className="mt-0 sm:text-center">
           Inmuebles en <span className="text-[#BF0909]">venta</span>
         </Title>
-        <article className="w-full grid grid-cols-2 place-items-center my-12 3xl:gap-12 xl:grid-cols-1">
+        <article className="w-full h-max grid grid-cols-2 place-items-center my-12 3xl:gap-12 xl:grid-cols-1">
           <Card
             title="Campos y chacras"
             filter="chacra"
