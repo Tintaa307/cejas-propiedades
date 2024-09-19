@@ -22,17 +22,17 @@ const Sell = () => {
     }
   }
   return (
-    <section className="w-full h-[calc(100vh_-_80px)] flex items-start justify-center flex-row mt-24">
+    <section className="w-full h-max flex items-start justify-center flex-row mt-24 p-2">
       <main className="w-full h-max mt-12 flex items-center justify-center flex-col gap-12">
         <header className="w-full h-max flex items-center justify-center flex-col gap-4">
           <h4 className="text-black text-4xl font-bold">Vende tu propiedad</h4>
-          <p className="text-base text-black/80 xs:text-sm">
+          <p className="text-base text-black/80 xs:text-sm sm:text-center">
             Complete el formulario y nos pondremos en contacto contigo.
           </p>
         </header>
         <form
           action={FormAction}
-          className="w-full h-max flex items-center justify-center flex-col gap-10"
+          className="w-full h-max flex items-center justify-center flex-col gap-10 "
         >
           <div className="w-[50%] h-max flex items-center justify-center flex-row gap-4 md:w-[80%] ls:w-[90%]">
             <div className="w-full h-max flex flex-col gap-1">
