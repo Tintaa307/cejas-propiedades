@@ -38,16 +38,14 @@ export default function Properties({}: {}) {
   return (
     <section className="relative w-full mt-8 h-full flex items-start justify-center flex-row gap-12 ms:flex-col ms:gap-0">
       <Suspense fallback={<Loader />}>
-        <div className="w-full h-max hidden ms:flex items-center justify-end mt-20 px-20">
-          <ListFilter
-            onClick={() => setOpen(!open)}
-            className="text-black z-30"
-            size={35}
-          />
-        </div>
-        <PropertiesFilter open={open} />
+        <PropertiesFilter setOpen={setOpen} open={open} />
         <div className="w-[75%] h-max flex items-center justify-center ms:w-full">
-          <Property setLimit={setLimit} data={todos} />
+          <Property
+            open={open}
+            setOpen={setOpen}
+            setLimit={setLimit}
+            data={todos}
+          />
         </div>
       </Suspense>
     </section>

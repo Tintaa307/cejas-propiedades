@@ -14,13 +14,17 @@ import Item from "./Item"
 import { FilterContext } from "@/context/FilterContext"
 import { useScroll } from "framer-motion"
 import { useSearchParams } from "next/navigation"
+import { ListFilter } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type ItemProps = {
   data: BatchProps[]
   setLimit: Dispatch<SetStateAction<number>>
+  setOpen: Dispatch<SetStateAction<boolean>>
+  open: boolean
 }
 
-const Property = ({ data, setLimit }: ItemProps) => {
+const Property = ({ data, setLimit, setOpen, open }: ItemProps) => {
   const [filteredData, setFilteredData] = useState<
     {
       id: string
@@ -108,7 +112,20 @@ const Property = ({ data, setLimit }: ItemProps) => {
     <section className="w-full h-max flex items-center justify-center">
       <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
         <div className="w-full h-max flex items-center justify-center">
-          <Title>Inmuebles en Venta</Title>
+          <Title className="ms:flex ms:flex-row ms:gap-6 ms:justify-center ms:items-center sm:text-2xl">
+            Inmuebles en Venta{" "}
+            <div
+              className={cn("w-max h-max hidden ms:flex", {
+                "ms:hidden": open,
+                "ms:flex": !open,
+              })}
+            >
+              <ListFilter
+                onClick={() => setOpen(!open)}
+                className="text-black z-20 size-10 sm:size-6"
+              />
+            </div>
+          </Title>
         </div>
         <main className="w-full h-max flex items-center justify-center">
           {filteredData.length !== 0 ? (

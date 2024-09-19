@@ -37,7 +37,7 @@ const Item = ({ index, property }: ItemProps) => {
         delay: 0.1 + index * 0.02,
       }}
       viewport={{ once: true }}
-      className="w-[400px] flex flex-col gap-4 border border-black/20 shadow-lg p-5 rounded-3xl"
+      className="w-[400px] flex flex-col gap-4 border border-black/20 shadow-lg p-5 rounded-3xl sm:w-[350px]"
     >
       {property.address !== "6 has" ? (
         <Image

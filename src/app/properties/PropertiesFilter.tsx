@@ -1,6 +1,12 @@
 "use client"
 
-import React, { useContext, useEffect, useState } from "react"
+import React, {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react"
 import {
   Select,
   SelectContent,
@@ -13,8 +19,15 @@ import { IconEdit, IconSend2, IconArrowBackUp } from "@tabler/icons-react"
 import { toast, Toaster } from "sonner"
 import { cn } from "@/lib/utils"
 import { useMotionValueEvent, useScroll } from "framer-motion"
+import { RiCloseCircleLine, RiCloseLine } from "@remixicon/react"
 
-const PropertiesFilter = ({ open }: { open: boolean }) => {
+const PropertiesFilter = ({
+  open,
+  setOpen,
+}: {
+  open: boolean
+  setOpen: Dispatch<SetStateAction<boolean>>
+}) => {
   const filterOpts = [
     {
       label: "Ubicación",
@@ -149,25 +162,32 @@ const PropertiesFilter = ({ open }: { open: boolean }) => {
   return (
     <aside
       className={cn(
-        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2 ",
+        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2 ms:z-20",
         {
-          "ms:w-full ms:z-20": open,
+          "ms:w-full ms:fixed": open,
         }
       )}
     >
       <Toaster position="bottom-left" />
       <article
         className={cn(
-          "fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60 xl:w-1/3 ms:-translate-x-full transition-all duration-200 ms:left-0",
+          "fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60 xl:w-1/3 ms:-translate-x-full transition-all duration-200 ms:left-0 ms:xl:w-full ms:bg-white ms:h-screen ms:top-0",
           {
-            "ms:xl:w-full ms:bg-white ms:h-screen ms:top-0 ms:translate-x-0 transition-all duration-200":
-              open,
+            "ms:translate-x-0 transition-all duration-200": open,
             "custom:top-[20px] ": scroll > 3400,
             "top-[180px] ": scroll > 0 && scroll < 3400,
-          },
-
+          }
         )}
       >
+        <div
+          onClick={() => setOpen(false)}
+          className={cn("absolute top-20 right-6 hidden", {
+            "ms:hidden": !open,
+            "ms:block": open,
+          })}
+        >
+          <RiCloseLine className="size-10" />
+        </div>
         {filterOpts.map((filter, index) => (
           <div
             key={index}
