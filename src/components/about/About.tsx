@@ -10,8 +10,8 @@ const About = () => {
       id="sobre-nosotros"
       className="w-full h-max flex items-center justify-center"
     >
-      <div className="w-[90%] h-max flex items-center justify-center flex-col">
-        <article className="w-full h-max grid grid-cols-2 xxl:flex xxl:items-center xxl:justify-center mt-24">
+      <div className="w-[90%] h-max flex items-center justify-center flex-col scroll-m-10">
+        <article className="w-full h-max grid grid-cols-2 xxl:flex xxl:items-center xxl:justify-center mt-24 sm:mt-0">
           <div className="flex-1 h-max flex items-center justify-center flex-col">
             <div className="w-full h-max flex items-center justify-start xxl:justify-center">
               <Title className="mt-0 sm:text-center">
