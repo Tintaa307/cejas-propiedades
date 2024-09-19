@@ -39,7 +39,7 @@ const About = () => {
               Contamos con un equipo altamente calificado de profesionales,
               incluyendo agrimensores,abogados, escribanos y otros expertos, es
               por eso que te ofrecemosun negocio 100% transparente, de confianza
-              y con seguridad.Ofrecemos servicios de tasación y estamos aquí
+              y con seguridad. Ofrecemos servicios de tasación y estamos aquí
               para asesorarlo avender su propiedad actual o encontrar la
               propiedad perfecta para vivir. Estamos aquí para guiarlo en cada
               paso del camino.
