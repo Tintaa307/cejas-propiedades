@@ -142,13 +142,13 @@ const PropertiesFilter = ({
 
   const handleCustomPrice = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (range.max < range.min) {
-      toast.error("El valor máximo no puede ser menor al mínimo")
+    if (Number(range.max) < Number(range.min)) {
+      toast.warning("El valor máximo no puede ser menor al mínimo")
     } else if (range.min === null && range.max === null) {
-      toast.error("Completa todos los campos")
+      toast.warning("Completa todos los campos")
     } else if (range.min === null && range.max !== null) {
       setRange({ min: "0", max: range.max })
-    } else if (range.min !== null && range.max === null) {
+    } else if (Number(range.min) !== null && Number(range.max) === null) {
       setRange({ min: range.min, max: "1000000" })
     } else {
       // @ts-ignore
