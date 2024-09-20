@@ -13,7 +13,7 @@ const Contact = ({ title }: { title?: string }) => {
     { type: "tel", placeholder: "Teléfono...", name: "phone" },
   ]
 
-  const FormAction = async (formData: FormData) => {
+  const FormAction = async (formData: any) => {
     const res = await handleSubmit(formData)
     switch (res.status) {
       case 200:
