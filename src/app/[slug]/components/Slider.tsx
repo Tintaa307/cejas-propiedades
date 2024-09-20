@@ -27,7 +27,7 @@ const Slider = ({ imgs }: SliderProps) => {
             <CarouselItem key={index}>
               <figure className="w-full h-full flex items-center justify-center">
                 <Image
-                  src={"https://cejaspropiedades.com" + img}
+                  src={img}
                   alt="image-carrousel"
                   width={900}
                   height={900}
