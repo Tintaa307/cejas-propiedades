@@ -31,7 +31,9 @@ const Footer = () => {
         <ul className="w-max h-max flex flex-row gap-12">
           {socialMedia.map((item, idx) => (
             <li key={idx} className="rounded-full cursor-pointer">
-              {item.icon}
+              <Link href={item.link}>
+                {item.icon}
+              </Link>
             </li>
           ))}
         </ul>
