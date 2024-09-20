@@ -93,7 +93,7 @@ const Map = ({ work }: { work?: string }) => {
       pathname: "/magnolias",
     },
     {
-      name: "La Estacion",
+      name: "La Estación",
       className:
         "absolute top-[69%] mt-[84px] -ml-[5px] left-1/3 w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-estacion.svg",
