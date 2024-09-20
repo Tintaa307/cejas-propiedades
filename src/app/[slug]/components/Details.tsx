@@ -60,8 +60,8 @@ const Details = ({ details, location, properties }: DetailsProps) => {
   }, [fraccionA])
 
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-24">
-      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto">
+    <article className="w-full  h-max flex items-center justify-center flex-col gap-24">
+      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto lg:w-[85%]">
         <TabsList className="grid w-full grid-cols-2 bg-gray-200">
           <TabsTrigger className="text-black" value="details">
             Detalles
