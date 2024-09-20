@@ -58,7 +58,7 @@ const Sell = () => {
               </label>
               <Input
                 className="w-full placeholder:text-black/60"
-                placeholder="cejas@example.com"
+                placeholder="cejas@ejemplo.com"
                 name="email"
                 type="email"
               />

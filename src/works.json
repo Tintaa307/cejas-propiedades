@@ -15,9 +15,9 @@
         "Financiación."
       ],
       "imgs": [
-        "/carrousel/canada/1.jpg",
-        "/carrousel/canada/2.jpg",
-        "/carrousel/canada/3.jpg"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/1.jpg?t=2024-09-20T00%3A25%3A49.214Z",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/2.jpg?t=2024-09-20T00%3A26%3A05.780Z",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/3.jpg"
       ],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada.mp4?t=2024-09-11T20%3A27%3A57.533Z",
@@ -64,11 +64,11 @@
         "Financiación particular > Anticipo del 60% y saldo en 12, 18 y 24 cuotas."
       ],
       "imgs": [
-        "/carrousel/pueblo/1.jpg",
-        "/carrousel/pueblo/2.jpg",
-        "/carrousel/pueblo/3.jpg",
-        "/carrousel/pueblo/4.jpg",
-        "/carrousel/pueblo/5.jpg"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/2.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/3.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/4.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/5.jpg"
       ],
       "blueprints": ["/images/planos/plano-pueblo.jpg"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/pueblo.mp4?t=2024-09-11T20%3A28%3A31.071Z",
@@ -95,7 +95,10 @@
         "Escrituración inmediata",
         "Financiación "
       ],
-      "imgs": ["/carrousel/gardenias/1.jpg", "/carrousel/gardenias/2.jpg"],
+      "imgs": [
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/2.jpg"
+      ],
       "blueprints": ["/images/planos/planos-gardenias.png"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/gardenias.mp4?t=2024-09-11T20%3A28%3A18.563Z",
       "map": "gardenias",
@@ -115,9 +118,9 @@
         "Se puede entregar con vivienda (Consultar modelos y valores)"
       ],
       "imgs": [
-        "/carrousel/retiro/1.jpg",
-        "/carrousel/retiro/2.jpg",
-        "/carrousel/retiro/3.jpg"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/2.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/3.jpg"
       ],
       "blueprints": ["/images/planos/planos-retiro.png"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
@@ -178,13 +181,12 @@
         "Se aceptan vehículos en parte de pago (Consultar)"
       ],
       "imgs": [
-        "/carrousel/magnolias/1.jpg",
-        "/carrousel/magnolias/2.jpg",
-        "/carrousel/magnolias/3.jpg",
-        "/carrousel/magnolias/4.jpg",
-        "/carrousel/magnolias/5.jpg",
-        "/carrousel/magnolias/6.jpg",
-        "/carrousel/magnolias/7.jpg"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/2.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/4.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/5.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/6.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/7.jpg"
       ],
       "blueprints": ["/images/planos/plano-magnolias.jpg"],
       "video": "/videos/video.mp4",
@@ -206,14 +208,14 @@
         "Financiación."
       ],
       "imgs": [
-        "/carrousel/canada2/1.jpg",
-        "/carrousel/canada2/2.jpg",
-        "/carrousel/canada2/3.jpg",
-        "/carrousel/canada2/4.jpg",
-        "/carrousel/canada2/5.jpg",
-        "/carrousel/canada2/6.jpg",
-        "/carrousel/canada2/7.jpg",
-        "/carrousel/canada2/8.jpg"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/2.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/3.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/4.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/5.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/6.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/7.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/8.jpg"
       ],
       "blueprints": ["/images/planos/planos-canada.png"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada2.mp4?t=2024-09-11T20%3A27%3A37.931Z",

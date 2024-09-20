@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "dmcxbrwufzuvbiooeyde.supabase.co",
       },
+      {
+        protocol: "https",
+        hostname: "cejaspropiedades.com",
+      },
     ],
   },
 }
