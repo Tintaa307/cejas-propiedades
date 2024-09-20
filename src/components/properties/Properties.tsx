@@ -22,9 +22,10 @@ type ItemProps = {
   setLimit: Dispatch<SetStateAction<number>>
   setOpen: Dispatch<SetStateAction<boolean>>
   open: boolean
+  limit: number
 }
 
-const Property = ({ data, setLimit, setOpen, open }: ItemProps) => {
+const Property = ({ data, setLimit, setOpen, open, limit }: ItemProps) => {
   const [filteredData, setFilteredData] = useState<
     {
       id: string
@@ -47,11 +48,11 @@ const Property = ({ data, setLimit, setOpen, open }: ItemProps) => {
   useEffect(() => {
     const applyFilters = () => {
       let filtered = data
+      console.log(filtered)
 
       if (searchParams.get("filter")) {
         const filter = searchParams.get("filter")
-        console.log(filter)
-        filtered = data.filter((property) => property.type === filter)
+        filtered = filtered.filter((property) => property.type === filter)
       }
 
       // Filtrar por ubicación
@@ -95,7 +96,7 @@ const Property = ({ data, setLimit, setOpen, open }: ItemProps) => {
         )
       }
 
-      return filtered
+      return filtered.slice(0, limit)
     }
 
     const filteredData = applyFilters()
@@ -136,21 +137,23 @@ const Property = ({ data, setLimit, setOpen, open }: ItemProps) => {
             </ul>
           ) : (
             <div className="w-full h-[50vh] flex items-center justify-center">
-              <p className="text-black text-xl font-normal">
+              <p className="text-black text-xl font-normal text-center">
                 No se encontraron propiedades con las características
                 seleccionadas.
               </p>
             </div>
           )}
         </main>
-        <div className="w-full h-max flex items-center justify-center">
-          <Button
-            onClick={() => setLimit((prev) => prev + 6)}
-            className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white"
-          >
-            Ver Más
-          </Button>
-        </div>
+        {filteredData.length !== 0 ? (
+          <div className="w-full h-max flex items-center justify-center">
+            <Button
+              onClick={() => setLimit((prev) => prev + 6)}
+              className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white"
+            >
+              Ver Más
+            </Button>
+          </div>
+        ) : null}
       </div>
     </section>
   )

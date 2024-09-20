@@ -4,7 +4,6 @@ import { BatchProps } from "@/types/types"
 import Property from "@/components/properties/Properties"
 import { createClient } from "@/lib/supabase/client"
 import PropertiesFilter from "./PropertiesFilter"
-import { ListFilter } from "lucide-react"
 import { Suspense, useEffect, useState } from "react"
 import Loader from "@/components/loader/Loader"
 
@@ -14,10 +13,7 @@ export default function Properties({}: {}) {
   const [limit, setLimit] = useState(9)
 
   const fetchData = async () => {
-    const { data: todos } = (await supabase
-      .from("properties")
-      .select()
-      .limit(limit)) as {
+    const { data: todos } = (await supabase.from("properties").select()) as {
       data: BatchProps[]
     }
     return todos
@@ -44,6 +40,7 @@ export default function Properties({}: {}) {
             open={open}
             setOpen={setOpen}
             setLimit={setLimit}
+            limit={limit}
             data={todos}
           />
         </div>
