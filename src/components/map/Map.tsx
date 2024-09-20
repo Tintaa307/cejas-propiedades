@@ -106,7 +106,7 @@ const Map = ({ work }: { work?: string }) => {
   ]
 
   return (
-    <div className="w-full h-max flex items-center justify-center xxl:hidden">
+    <div className="w-full h-max flex items-center justify-center xl:hidden">
       <div className="relative w-max h-max ">
         <Image
           src={"/images/mapa-cejas-big.jpg"}
