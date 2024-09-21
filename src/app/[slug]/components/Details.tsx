@@ -30,7 +30,7 @@ const Table = ({
   fraccionC: Property | undefined
 }) => {
   return (
-    <div className="w-[90%] 2xl:w-[75%] h-max flex items-start justify-center flex-row gap-24">
+    <div className="w-[90%] 2xl:w-[75%] lg:w-[90%] lg:items-center lg:flex-col h-max flex items-start justify-center flex-row gap-24">
       <Col fraccion={fraccionA} />
       <Col fraccion={fraccionB} />
       <Col fraccion={fraccionC} />
@@ -60,8 +60,8 @@ const Details = ({ details, location, properties }: DetailsProps) => {
   }, [fraccionA])
 
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-24">
-      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto">
+    <article className="w-full  h-max flex items-center justify-center flex-col gap-24">
+      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto lg:w-[85%]">
         <TabsList className="grid w-full grid-cols-2 bg-gray-200">
           <TabsTrigger className="text-black" value="details">
             Detalles

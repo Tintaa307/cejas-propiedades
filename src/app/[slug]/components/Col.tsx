@@ -6,7 +6,7 @@ import React from "react"
 
 const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
   return (
-    <div className="w-1/3 h-max border-[2px] border-black rounded-[15px]">
+    <div className="w-1/3 h-max border-[2px] border-black rounded-[15px] lg:w-full">
       <header className="w-full h-max bg-black flex items-center justify-center rounded-t-[10px]">
         <h6 className="text-white font-semibold text-lg p-5">
           {fraccion?.title}

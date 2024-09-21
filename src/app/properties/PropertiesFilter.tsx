@@ -174,8 +174,8 @@ const PropertiesFilter = ({
           "fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60 xl:w-1/3 ms:-translate-x-full transition-all duration-200 ms:left-0 ms:xl:w-full ms:bg-white ms:h-screen",
           {
             "ms:top-0 ms:translate-x-0 transition-all duration-200": open,
-            "custom:top-[20px] ": scroll > 3400,
-            "top-[180px] ": scroll > 0 && scroll < 3400,
+            "custom:top-[20px] ": scroll > 0,
+            "top-[180px] ": scroll > 0 && scroll < 0,
           }
         )}
       >

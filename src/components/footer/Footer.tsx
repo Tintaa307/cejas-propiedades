@@ -22,7 +22,7 @@ const Footer = () => {
     {
       title: "Phone",
       icon: <RiPhoneFill size={40} />,
-      link: "+5491133683251",
+      link: "tel:+5491133683251",
     },
   ]
   return (
@@ -31,7 +31,9 @@ const Footer = () => {
         <ul className="w-max h-max flex flex-row gap-12">
           {socialMedia.map((item, idx) => (
             <li key={idx} className="rounded-full cursor-pointer">
-              {item.icon}
+              <Link href={item.link} target="_blank">
+                {item.icon}
+              </Link>
             </li>
           ))}
         </ul>

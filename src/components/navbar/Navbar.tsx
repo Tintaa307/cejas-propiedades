@@ -34,7 +34,7 @@ const Navbar = () => {
       link: "/#servicios",
     },
     {
-      title: "Inmbuebles",
+      title: "Inmuebles",
       link: "/#inmuebles",
     },
     {

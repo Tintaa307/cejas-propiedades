@@ -20,7 +20,7 @@ const Slider = ({ imgs }: SliderProps) => {
   }, [imgs])
 
   return (
-    <Carousel className="w-1/2 h-max flex items-center justify-center">
+    <Carousel className="w-1/2 lg:w-[70%] h-max flex items-center justify-center">
       <CarouselContent>
         {images &&
           images.map((img, index) => (
