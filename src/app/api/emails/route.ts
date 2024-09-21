@@ -22,9 +22,9 @@ export async function POST(req: Request) {
     const { name, email, phone, message } = data
 
     await resend.emails.send({
-      from: "Cejas Inmobiliaria <Estudiointegral1@hotmail.com>",
-      to: "Estudiointegral1@hotmail.com",
-      subject: "Nuevo mensaje desde cejaspropiedades.com",
+      from: "Cejas Inmobiliaria <contact@cejaspropiedades.com>",
+      to: ["estudiointegral1@hotmail.com"],
+      subject: "Nuevo mensaje desde Cejas Propiedades",
       react: EmailTemplate({
         name: name,
         message: message,
