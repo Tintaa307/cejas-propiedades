@@ -21,9 +21,9 @@ export async function POST(req: Request) {
 
     const { name, email, phone, message } = data
 
-    await resend.emails.send({
+    const { data: emailData, error } = await resend.emails.send({
       from: "Cejas Inmobiliaria <contact@cejaspropiedades.com>",
-      to: ["synera@synera.com.ar"],
+      to: ["estudiointegral1@hotmail.com"],
       subject: "Nuevo mensaje desde Cejas Propiedades",
       react: EmailTemplate({
         name: name,
@@ -34,14 +34,24 @@ export async function POST(req: Request) {
       text: "",
     })
 
+    if (error) {
+      console.error(error)
+      return NextResponse.json({
+        message: "Error al enviar el mensaje.",
+        status: 500,
+      })
+    } else {
+      console.log(emailData)
+    }
+
     return NextResponse.json({
-      message: "The email was sent successfully.",
+      message: "El mensaje ha sido enviado correctamente.",
       status: 200,
     })
   } catch (error) {
     console.error(error)
     return NextResponse.json({
-      message: "The email could not be sent. Please try again later.",
+      message: "Error al enviar el mensaje.",
       status: 500,
     })
   }
