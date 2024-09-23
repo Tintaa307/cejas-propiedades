@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     await resend.emails.send({
       from: "Cejas Inmobiliaria <contact@cejaspropiedades.com>",
-      to: ["estudiointegral1@hotmail.com"],
+      to: ["synera@synera.com.ar"],
       subject: "Nuevo mensaje desde Cejas Propiedades",
       react: EmailTemplate({
         name: name,
