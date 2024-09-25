@@ -11,7 +11,7 @@ const Blueprints = ({ blueprints }: BlueprintsProps) => {
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-24 sm:gap-10">
       <Title className="flex flex-row items-center gap-3 text-black text-4xl sm:text-xl font-bold">
-        <IconReceipt2 size={40} className="text-black" />
+        <IconReceipt2 size={40} className="text-black sm:hidden" />
         Plano General y Precios
       </Title>
       <figure className="w-full h-max flex items-center justify-center ">
