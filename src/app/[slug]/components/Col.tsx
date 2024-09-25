@@ -1,8 +1,8 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { cn } from "@/lib/utils"
-import { Property } from "@/types/types"
-import { IconArrowNarrowRight } from "@tabler/icons-react"
-import React from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
+import { Property } from "@/types/types";
+import { IconArrowNarrowRight } from "@tabler/icons-react";
+import React from "react";
 
 const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
   return (
@@ -25,19 +25,25 @@ const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
             >
               <AccordionItem value={`item-${index}`} className="border-b-0">
                 <p className="text-black text-base font-medium flex flex-row gap-3">
-                  <AccordionTrigger className="text-black text-base font-medium flex flex-row gap-3 ">
+                  <AccordionTrigger className="text-black text-base font-medium flex flex-row gap-3">
                     {property}
                   </AccordionTrigger>
                 </p>
-                <AccordionContent className="">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vitae dolorem unde fugit quos, temporibus minima blanditiis mollitia consectetur sit reiciendis voluptates rerum beatae sint odit sapiente eaque, ea animi!
+                <AccordionContent>
+                  {/* Muestra el precio que corresponde al índice del lote */}
+                  <div>
+                    <p className="text-black text-base font-medium flex flex-row gap-3">
+                      <IconArrowNarrowRight size={20} className="text-black" />
+                      {fraccion.prices[index] || "Precio no disponible"}
+                    </p>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
           ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Col
+export default Col;

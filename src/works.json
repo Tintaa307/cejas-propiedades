@@ -34,11 +34,14 @@
         {
           "title": "Fraccion 1A",
           "list": [
-            "Lotes 1, 2, 3 y 4",
+            "Lotes 1 a 4",
             "Lote 5",
-            "Lotes 6 y 7",
-            "Lote 10",
-            "Lote 13"
+            "Lotes 6 y 7"
+          ],
+          "prices": [
+            "Desde U$S 31.000",
+            "Desde U$S 53.000",
+            "Desde U$S 36.500"
           ]
         },
         {
@@ -46,17 +49,27 @@
           "list": [
             "Lotes 1",
             "Lote 8",
-            "Lotes 10, 11 y 12"
+            "Lotes 10 a 13"
+          ],
+          "prices": [
+            "Desde U$S 23.000",
+            "Desde U$S 48.000",
+            "Desde U$S 23.500"
           ]
         },
         {
           "title": "Fraccion 1C",
           "list": [
-            "Lotes 1 y 2",
-            "Lote 3 y 10",
-            "Lotes 4",
-            "Lote 5 y 6",
-            "Lote 7"
+            "Lotes 1, 2, 3 y 5",
+            "Lote 6 y 10",
+            "Lotes 7",
+            "Lote 8 y 9"
+          ],
+          "prices": [
+            "Desde U$S 26.000",
+            "Desde U$S 24.000",
+            "Desde U$S 58.000",
+            "Desde U$S ---"
           ]
         }
       ],

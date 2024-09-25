@@ -19,6 +19,7 @@ export interface Work {
 export interface Property {
   title: string
   list: string[]
+  prices: string[]
 }
 
 export interface BatchProps {
