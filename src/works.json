@@ -19,7 +19,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/2.jpg?t=2024-09-20T00%3A26%3A05.780Z",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/3.jpg"
       ],
-      "blueprints": ["/images/planos/planos-canada.png"],
+      "blueprints": [
+        "/images/planos/planos-canada.png"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada.mp4?t=2024-09-11T20%3A27%3A57.533Z",
       "map": "canada",
       "isSold": false
@@ -41,7 +43,11 @@
         },
         {
           "title": "Fraccion 1B",
-          "list": ["Lotes 1", "Lote 8", "Lotes 10, 11 y 12"]
+          "list": [
+            "Lotes 1",
+            "Lote 8",
+            "Lotes 10, 11 y 12"
+          ]
         },
         {
           "title": "Fraccion 1C",
@@ -70,7 +76,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/4.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/5.jpg"
       ],
-      "blueprints": ["/images/planos/plano-pueblo.jpg"],
+      "blueprints": [
+        "/images/planos/plano-pueblo.jpg"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/pueblo.mp4?t=2024-09-11T20%3A28%3A31.071Z",
       "map": "pueblo",
       "isSold": false
@@ -99,7 +107,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/1.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/2.jpg"
       ],
-      "blueprints": ["/images/planos/planos-gardenias.png"],
+      "blueprints": [
+        "/images/planos/planos-gardenias.png"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/gardenias.mp4?t=2024-09-11T20%3A28%3A18.563Z",
       "map": "gardenias",
       "isSold": false
@@ -122,7 +132,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/2.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/3.jpg"
       ],
-      "blueprints": ["/images/planos/planos-retiro.png"],
+      "blueprints": [
+        "/images/planos/planos-retiro.png"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
       "map": "retiro",
       "isSold": false
@@ -141,8 +153,12 @@
         "Se aceptan vehículos en parte de pago (Consultar)",
         "Financiación."
       ],
-      "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos/planos-canada.png"],
+      "imgs": [
+        "/images/image-carrousel.png"
+      ],
+      "blueprints": [
+        "/images/planos/planos-canada.png"
+      ],
       "video": "/videos/video.mp4",
       "map": "comarca",
       "isSold": true
@@ -161,8 +177,12 @@
         "Se aceptan vehículos en parte de pago (Consultar)",
         "Financiación."
       ],
-      "imgs": ["/images/image-carrousel.png"],
-      "blueprints": ["/images/planos/planos-canada.png"],
+      "imgs": [
+        "/images/image-carrousel.png"
+      ],
+      "blueprints": [
+        "/images/planos/plano-estacion.jpg"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/estacion.mp4?t=2024-09-11T20%3A28%3A07.845Z",
       "map": "estacion",
       "isSold": false
@@ -188,7 +208,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/6.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/7.jpg"
       ],
-      "blueprints": ["/images/planos/plano-magnolias.jpg"],
+      "blueprints": [
+        "/images/planos/plano-magnolias.jpg"
+      ],
       "video": "/videos/video.mp4",
       "map": "magnolias",
       "isSold": false
@@ -217,7 +239,9 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/7.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/8.jpg"
       ],
-      "blueprints": ["/images/planos/planos-canada.png"],
+      "blueprints": [
+        "/images/planos/planos-canada.png"
+      ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada2.mp4?t=2024-09-11T20%3A27%3A37.931Z",
       "map": "canada2",
       "isSold": false
