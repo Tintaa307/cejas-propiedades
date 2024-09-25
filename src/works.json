@@ -178,7 +178,10 @@
         "Financiación."
       ],
       "imgs": [
-        "/images/image-carrousel.png"
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/1.jpg?t=2024-09-25T19%3A11%3A05.951Z",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/2.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/3.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/4.jpg?t=2024-09-25T19%3A11%3A42.562Z"
       ],
       "blueprints": [
         "/images/planos/plano-estacion.jpg"
