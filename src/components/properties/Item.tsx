@@ -42,7 +42,7 @@ const Item = ({ index, property }: ItemProps) => {
       {property.address !== "6 has" ? (
         <Image
           src={property.public_url}
-          alt={"Image of the property"}
+          alt={"Propiedad en " + property.address}
           width={400}
           height={400}
           className="w-[500px] h-[300px] relative rounded-[40px] object-cover"
