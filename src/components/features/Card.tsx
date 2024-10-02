@@ -3,6 +3,7 @@ import React from "react"
 import Button from "../button/Button"
 import { IconMap } from "@tabler/icons-react"
 import { RiMapPinLine } from "@remixicon/react"
+import Link from "next/link"
 
 type CardProps = {
   title: string
@@ -15,6 +16,7 @@ type CardProps = {
   isInOffer: boolean
   location: string
   site: string
+  link: string
 }
 
 const Card = ({
@@ -25,6 +27,7 @@ const Card = ({
   site,
   location,
   description,
+  link,
 }: CardProps) => {
   return (
     <li className="w-full h-max flex items-center justify-center flex-row xl:gap-12 xl:flex-col-reverse">
@@ -54,9 +57,9 @@ const Card = ({
                 {price.original}
               </p>
             </div>
-            <Button className="px-5 py-3 hover:bg-white hover:text-black border-white text-white xs:px-4 xs:py-2">
+            <Link href={link} className="w-max h-max flex items-center justify-center text-lg font-normal border-[2px] rounded-[15px] transition-all duration-150 px-5 py-3 hover:bg-white hover:text-black border-white text-white xs:px-4 xs:py-2">
               Mas detalles
-            </Button>
+            </Link>
           </footer>
         </div>
       </article>
