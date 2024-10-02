@@ -36,6 +36,11 @@ const PropertiesFilter = ({
         { name: "Todos", value: "todos" },
         { name: "Cañuelas", value: "canuelas" },
         { name: "San Miguel Del Monte", value: "san_miguel_monte" },
+        { name: "Ituzaingó", value: "ituzaingo" },
+        { name: "Navarro", value: "navarro" },
+        { name: "Las Flores", value: "flores" },
+        { name: "Marcos Paz", value: "marcos_paz" },
+        { name: "Lujan", value: "lujan" },
       ],
     },
     {
@@ -248,13 +253,13 @@ const PropertiesFilter = ({
                 >
                   <SelectTrigger className="w-full h-max bg-transparent border-[2px] border-black rounded-[8px] text-black gap-2">
                     <SelectValue
-                      className="text-black font-bold"
+                      className="text-black font-bold cursor-pointer"
                       placeholder={filter.options[0].name}
                     />
                   </SelectTrigger>
                   <SelectContent className="">
                     {filter.options.map((option, index) => (
-                      <SelectItem key={index} value={option.value}>
+                      <SelectItem className=" cursor-pointer" key={index} value={option.value}>
                         {option.name}
                       </SelectItem>
                     ))}

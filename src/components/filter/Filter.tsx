@@ -128,7 +128,7 @@ const Filter = () => {
               <SelectContent>
                 {item.data.map((data, index) => (
                   <SelectItem
-                    className="text-black font-medium"
+                    className="text-black font-medium cursor-pointer"
                     key={index}
                     value={data.value}
                   >
