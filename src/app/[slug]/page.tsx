@@ -19,10 +19,8 @@ const Work = ({ params }: { params: { slug: string } }) => {
   const verifyData = () => {
     try {
       if (!params.slug) notFound()
-
       const work = data.works.find((work) => work.title === params.slug)
       if (!work) notFound()
-
       return work as WorkType
     } catch (error) {
       notFound()
