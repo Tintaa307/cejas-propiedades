@@ -50,7 +50,7 @@ const HeroSection = () => {
               variant="outline"
               className="bg-cream hover:bg-cream/90 text-cta_red border-none rounded-md px-6 py-2 text-base font-medium transition-all duration-300"
             >
-              <Link href="#">Ver Desarrollos</Link>
+              <Link href="#desarrollos">Ver Desarrollos</Link>
             </Button>
           </div>
         </div>
