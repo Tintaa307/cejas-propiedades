@@ -88,15 +88,17 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="text-primary_green hover:text-primary_green/80 py-2 text-sm lg:text-base font-medium transition-colors whitespace-nowrap"
-                >
-                  {item.title}
-                </Link>
-              ))}
+              {navItems
+                .filter((item) => item.title !== "Ubicacion")
+                .map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.link}
+                    className="text-primary_green hover:text-primary_green/80 py-2 text-sm lg:text-base font-medium transition-colors whitespace-nowrap"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               <Button
                 asChild
                 className="bg-primary_green hover:bg-primary_green/90 text-cream rounded-md px-4 lg:px-6 whitespace-nowrap"

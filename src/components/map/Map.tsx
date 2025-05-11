@@ -112,7 +112,10 @@ const Map = ({ work }: { work?: string }) => {
   }, [work])
 
   return (
-    <section className="w-full h-max flex items-center justify-center py-16 bg-primary_green max-md:hidden">
+    <section
+      id="ubicacion"
+      className="w-full h-max flex items-center justify-center py-16 bg-primary_green max-md:hidden"
+    >
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="relative mx-auto flex items-center justify-center">
           <Image
