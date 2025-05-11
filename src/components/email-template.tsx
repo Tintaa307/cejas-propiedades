@@ -7,13 +7,12 @@ interface EmailTemplateProps {
   phone: string
 }
 
-export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
+export const EmailTemplate = ({
   name,
   message,
   email,
   phone,
-}) => {
-
+}: EmailTemplateProps) => {
   return (
     <div className="relative w-[600px] h-full bg-[#f2f2f2] flex-col rounded-md">
       <header className="w-full h-20 bg-email-gradient rounded-t-md flex items-center justify-start">
