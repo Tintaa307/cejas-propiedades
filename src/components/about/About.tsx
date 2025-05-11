@@ -64,7 +64,7 @@ const About = () => {
           </div>
 
           {/* Image */}
-          <div className="relative h-[400px] md:h-[500px] lg:h-[700px] rounded-3xl overflow-hidden">
+          <div className="relative h-[400px] md:h-[500px] lg:h-[700px] rounded-3xl overflow-hidden max-lg:hidden">
             <Image
               src="/images/about-image.jpg"
               alt="Cejas Propiedades"

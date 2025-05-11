@@ -8,7 +8,7 @@ const SectionsExample = () => {
       filter: "chacra",
       path: "/images/img-campos-chacras.jpg",
       description:
-        "En esta seccion se encuentran todos los campos y chacras disponibles para la venta. Cualquier consulta no dude en contactarnos.",
+        "En esta sección se encuentran todos los campos y chacras disponibles para la venta. Cualquier consulta no dude en contactarnos.",
       count: "+150 propiedades",
     },
     {
@@ -16,7 +16,7 @@ const SectionsExample = () => {
       filter: "lote",
       path: "/images/img-loteos.jpg",
       description:
-        "En esta seccion se encuentran todos los lotes disponibles para la venta. Cualquier consulta no dude en contactarnos.",
+        "En esta sección se encuentran todos los lotes disponibles para la venta. Cualquier consulta no dude en contactarnos.",
       count: "+200 propiedades",
     },
   ]

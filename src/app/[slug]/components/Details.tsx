@@ -73,7 +73,7 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="details">
-            <Card className="border-2 border-primary_green/70 bg-cream shadow-none">
+            <Card className="border-2 border-primary_green bg-cream shadow-none">
               <CardHeader className="pb-2">
                 <CardTitle className="text-primary_green text-xl">
                   Detalles de la propiedad
@@ -90,7 +90,7 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
             </Card>
           </TabsContent>
           <TabsContent value="location">
-            <Card className="border-2 border-primary_green/70 bg-cream shadow-none">
+            <Card className="border-2 border-primary_green bg-cream shadow-none">
               <CardHeader className="pb-2">
                 <CardTitle className="text-primary_green text-xl">
                   Ubicación de la propiedad

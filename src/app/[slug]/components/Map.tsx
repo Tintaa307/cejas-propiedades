@@ -10,9 +10,8 @@ type MapProps = {
 
 const Map = ({ map }: { map: string }) => {
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-24 xxl:hidden">
-      <Title className="flex flex-row items-center gap-3 text-primary_green text-5xl font-normal">
-        <IconMap size={40} className="text-primary_green" />
+    <article className="w-full h-max flex items-center justify-center flex-col gap-24 max-lg:hidden">
+      <Title className="flex flex-row items-center gap-3 text-primary_green text-5xl max-sm:text-2xl text-center font-normal">
         Ubicacion en mapa
       </Title>
       <InteractiveMap work={map} />

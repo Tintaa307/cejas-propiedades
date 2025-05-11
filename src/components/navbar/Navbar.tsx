@@ -88,17 +88,15 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
-              {navItems
-                .filter((item) => item.title !== "Ubicacion")
-                .map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.link}
-                    className="text-primary_green hover:text-primary_green/80 py-2 text-sm lg:text-base font-medium transition-colors whitespace-nowrap"
-                  >
-                    {item.title}
-                  </Link>
-                ))}
+              {navItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.link}
+                  className="text-primary_green hover:text-primary_green/80 py-2 text-sm lg:text-base font-medium transition-colors whitespace-nowrap"
+                >
+                  {item.title}
+                </Link>
+              ))}
               <Button
                 asChild
                 className="bg-primary_green hover:bg-primary_green/90 text-cream rounded-md px-4 lg:px-6 whitespace-nowrap"
@@ -133,16 +131,18 @@ const Navbar = () => {
                     />
                   </div>
                   <nav className="flex flex-col p-4 space-y-4 flex-grow">
-                    {navItems.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.link}
-                        className="text-primary_green hover:text-primary_green/80 py-2 text-base font-medium border-b border-primary_green/10 pb-3"
-                        onClick={handleLinkClick}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
+                    {navItems
+                      .filter((item) => item.title !== "Ubicacion")
+                      .map((item, index) => (
+                        <Link
+                          key={index}
+                          href={item.link}
+                          className="text-primary_green hover:text-primary_green/80 py-2 text-base font-medium border-b border-primary_green/10 pb-3"
+                          onClick={handleLinkClick}
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
                   </nav>
                   <div className="p-4 mt-auto border-t border-primary_green/20">
                     <Button

@@ -74,12 +74,11 @@ const Works = () => {
               >
                 <div className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-2xl overflow-hidden">
                   {work.isSold ? (
-                    // Fallback for sold properties
-                    <div className="absolute inset-0 bg-primary_green/90 flex flex-col items-center justify-center text-cream">
-                      <div className="bg-cta_red rounded-full p-3 mb-4">
+                    <div className="absolute inset-0 bg-primary_green/90 flex flex-col items-center justify-center text-cream space-y-1">
+                      <div className="bg-cta_red rounded-full p-3">
                         <Check size={32} className="text-cream" />
                       </div>
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif mb-2">
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif">
                         {work.title}
                       </h3>
                       <p className="text-lg md:text-xl font-medium">VENDIDO</p>
@@ -89,7 +88,6 @@ const Works = () => {
                       </p>
                     </div>
                   ) : (
-                    // Regular image for available properties
                     <>
                       <Image
                         src={work.src || "/placeholder.svg"}
