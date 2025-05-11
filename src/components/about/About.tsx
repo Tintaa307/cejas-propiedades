@@ -11,7 +11,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">
+            <h2 className="text-4xl md:text-5xl font-normal">
               <span className="text-primary_green">¿Quiénes </span>
               <span className="text-cta_red">somos</span>
               <span className="text-primary_green">?</span>

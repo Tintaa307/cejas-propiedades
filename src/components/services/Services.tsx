@@ -67,7 +67,7 @@ const ServicesExample = () => {
   return (
     <section className="w-full py-16 bg-cream">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">
+        <h2 className="text-5xl font-normal text-center mb-12">
           <span className="text-primary_green">¿Por qué </span>
           <span className="text-cta_red">elegirnos</span>
           <span className="text-primary_green">?</span>

@@ -60,7 +60,7 @@ const Works = () => {
     <section id="desarrollos" className="w-full py-16 md:py-24 bg-cream">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-[1440px] mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal mb-12 md:mb-16">
             <span className="text-primary_green">Conocé nuestros </span>
             <span className="text-cta_red">desarrollos</span>
           </h2>
