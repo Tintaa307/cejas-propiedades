@@ -10,7 +10,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-10 py-16 bg-cream">
       <div className="w-full h-max flex items-center justify-center flex-col gap-4">
-        <Title className="text-primary_green text-4xl font-bold flex items-center gap-3">
+        <Title className="text-primary_green text-5xl font-normal flex items-center gap-3">
           <IconSatellite
             size={36}
             className="text-primary_green md:w-6 md:h-6 sm:hidden"

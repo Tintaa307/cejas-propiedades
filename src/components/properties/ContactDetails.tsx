@@ -53,7 +53,7 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column - Property Info */}
         <div className="order-2 md:order-1">
-          <h1 className="text-2xl md:text-3xl font-bold text-primary_green mb-2">
+          <h1 className="text-2xl md:text-5xl font-normal text-primary_green mb-2">
             {property.site}
           </h1>
 

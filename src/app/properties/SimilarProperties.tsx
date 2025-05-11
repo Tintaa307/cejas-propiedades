@@ -19,9 +19,9 @@ const SimilarProperties = ({
 
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-bold mb-6">
-        <span className="text-primary_green">Otras </span>
-        <span className="text-cta_red">propiedades</span>
+      <h2 className="text-4xl font-normal mb-6">
+        <span className="text-primary_green">Propiedades </span>
+        <span className="text-cta_red">Similares</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -9,7 +9,7 @@ type BlueprintsProps = {
 const Blueprints = ({ blueprints }: BlueprintsProps) => {
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-10 py-16 bg-cream">
-      <Title className="text-primary_green text-4xl font-bold flex items-center gap-3">
+      <Title className="text-primary_green text-5xl font-normal flex items-center gap-3">
         Plano General y Precios
       </Title>
       <figure className="w-full h-max flex items-center justify-center">

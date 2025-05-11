@@ -53,7 +53,7 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
 
   return (
     <article className="w-full h-max flex items-center justify-center flex-col gap-16 py-12 bg-cream">
-      <h1 className="text-primary_green text-6xl font-bold flex items-center gap-3">
+      <h1 className="text-primary_green text-5xl font-normal flex items-center gap-3">
         {title}
       </h1>
       <div className="w-full max-w-5xl mx-auto px-4">

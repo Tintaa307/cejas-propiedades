@@ -29,7 +29,7 @@ const ContactForm = () => {
     <div className="mb-16">
       <Toaster position="top-center" richColors />
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold mb-6 text-center">
+        <h2 className="text-5xl font-normal mb-6 text-center">
           <span className="text-primary_green">¿Te gustó la </span>
           <span className="text-cta_red">propiedad?</span>
         </h2>

@@ -71,7 +71,7 @@ export default function Properties() {
   return (
     <section className="w-full bg-cream min-h-screen py-32">
       <div className="container mx-auto px-4 md:px-6 pt-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">
+        <h1 className="text-3xl md:text-5xl font-normal mb-8">
           <span className="text-primary_green">Inmuebles en </span>
           <span className="text-cta_red">venta</span>
         </h1>
