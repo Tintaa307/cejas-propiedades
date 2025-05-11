@@ -8,20 +8,18 @@ import ContactForm from "@/components/properties/ContactForm"
 export default async function PropertyPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore)
 
-  if (params.id === undefined) {
-    return null
-  }
+  const { id } = await params
 
   // Fetch property data
   const { data } = (await supabase
     .from("properties")
     .select("*")
-    .eq("id", params.id)) as { data: BatchProps[] }
+    .eq("id", id)) as { data: BatchProps[] }
 
   if (!data || data.length === 0) {
     return (
@@ -35,7 +33,7 @@ export default async function PropertyPage({
   const { data: similarProperties } = (await supabase
     .from("properties")
     .select("*")
-    .neq("id", params.id)
+    .neq("id", id)
     .eq("locality", data[0].locality || "canuelas")
     .order("id", { ascending: false })
     .limit(3)) as { data: BatchProps[] }
