@@ -1,162 +1,117 @@
 "use client"
 
-import React, {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react"
-import Title from "../title/Title"
-import Button from "../button/Button"
-import { BatchProps } from "@/types/types"
-import Item from "./Item"
-import { FilterContext } from "@/context/FilterContext"
-import { useScroll } from "framer-motion"
-import { useSearchParams } from "next/navigation"
-import { ListFilter } from "lucide-react"
-import { cn } from "@/lib/utils"
+import type { BatchProps } from "@/types/types"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { Grid2X2, MapPin, Tag } from "lucide-react"
+import { Button } from "../ui/button"
+import { firstLetterUppercase } from "@/lib/utils"
 
-type ItemProps = {
-  data: BatchProps[]
-  setLimit: Dispatch<SetStateAction<number>>
-  setOpen: Dispatch<SetStateAction<boolean>>
-  open: boolean
+interface PropertyGridProps {
+  properties: BatchProps[]
   limit: number
+  setLimit: (limit: number) => void
 }
 
-const Property = ({ data, setLimit, setOpen, open, limit }: ItemProps) => {
-  const [filteredData, setFilteredData] = useState<
-    {
-      id: string
-      description: string
-      address: string
-      site: string
-      price: string
-      location: string
-      onsale: boolean
-      type: string
-      public_url: string
-      locality: string
-    }[]
-  >(data)
-  const { scrollY } = useScroll()
-  const searchParams = useSearchParams()
-
-  const { filter } = useContext(FilterContext)
-
-  useEffect(() => {
-    const applyFilters = () => {
-      let filtered = data
-      console.log(filtered)
-
-      if (searchParams.get("filter")) {
-        const filter = searchParams.get("filter")
-        filtered = filtered.filter((property) => property.type === filter)
-      }
-
-      // Filtrar por ubicación
-      if (filter.location !== "todos") {
-        filtered = filtered.filter(
-          (property) => property.locality === filter.location
-        )
-      }
-
-      // Filtrar por tipo
-      if (filter.type !== "todos") {
-        filtered = filtered.filter((property) => property.type === filter.type)
-      }
-
-      // Filtrar por precio
-      if (filter.price !== "todos" && filter.price.includes("-")) {
-        const [min, max] = filter.price.split("-")
-        filtered = filtered.filter((property) => {
-          const price = parseInt(property.price.replace(/\D/g, ""))
-          return price >= parseInt(min) && price <= parseInt(max)
-        })
-      }
-
-      // Filtrar por operación
-      if (filter.operation !== "todos") {
-        if (filter.operation === "venta") {
-          filtered = filtered.filter((property) => property.onsale === true)
-        } else {
-          filtered = filtered.filter((property) => property.onsale !== true)
-        }
-      }
-
-      // Ordenar por precio
-      if (filter.price === "asc") {
-        filtered = filtered.sort(
-          (a, b) => parseInt(b.price) - parseInt(a.price)
-        )
-      } else if (filter.price === "desc") {
-        filtered = filtered.sort(
-          (a, b) => parseInt(a.price) - parseInt(b.price)
-        )
-      }
-
-      return filtered.slice(0, limit)
-    }
-
-    const filteredData = applyFilters()
-    setFilteredData(filteredData)
-  }, [filter, data])
-
-  useEffect(() => {
-    if (scrollY.get() > 0) {
-      window.scrollTo(0, 0)
-    }
-  }, [filter])
+const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
+  const router = useRouter()
 
   return (
-    <section className="w-full h-max flex items-center justify-center">
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12">
-        <div className="w-full h-max flex items-center justify-center">
-          <Title className="ms:flex ms:flex-row ms:gap-6 ms:justify-center ms:items-center sm:text-2xl">
-            Inmuebles en Venta{" "}
-            <div
-              className={cn("w-max h-max hidden ms:flex", {
-                "ms:hidden": open,
-                "ms:flex": !open,
-              })}
-            >
-              <ListFilter
-                onClick={() => setOpen(!open)}
-                className="text-black z-20 size-10 sm:size-6"
+    <div className="space-y-8">
+      {/* Property Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {properties.map((property) => (
+          <div
+            key={property.id}
+            className="bg-cream overflow-hidden flex flex-col h-[420px]"
+          >
+            {/* Property Image */}
+            <div className="relative h-[240px] w-full">
+              <Image
+                src={
+                  property.public_url || "/placeholder.svg?height=400&width=600"
+                }
+                alt={property.address || "Property"}
+                fill
+                className="object-cover rounded-md"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+                loading="eager"
               />
             </div>
-          </Title>
-        </div>
-        <main className="w-full h-max flex items-center justify-center">
-          {filteredData.length !== 0 ? (
-            <ul className="grid grid-cols-3 place-content-center gap-16 5xl:grid-cols-2 xl:5xl:grid-cols-1">
-              {filteredData.map((property, index) => (
-                <Item key={index} index={index} property={property} />
-              ))}
-            </ul>
-          ) : (
-            <div className="w-full h-[50vh] flex items-center justify-center">
-              <p className="text-black text-xl font-normal text-center">
-                No se encontraron propiedades con las características
-                seleccionadas.
-              </p>
+
+            {/* Property Details */}
+            <div className="py-4 flex flex-col space-y-4">
+              {/* Location */}
+              <div className="flex items-center text-primary_green">
+                <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
+                <p className="text-sm truncate">
+                  {property.locality === "canuelas" && "Cañuelas"}
+                  {property.locality === "san_miguel_monte" &&
+                    "San Miguel del Monte"}
+                  {property.locality === "ituzaingo" && "Ituzaingó"}
+                  {property.locality === "lujan" && "Luján"}
+                  {property.locality === "flores" && "Flores"}
+                  {property.locality === "marcos_paz" && "Marcos Paz"}
+                  {property.locality === "navarro" && "Navarro"}
+                </p>
+              </div>
+
+              {/* Property Specs */}
+              <div className="flex items-center space-x-6">
+                <div className="flex items-center text-primary_green">
+                  <Grid2X2 className="h-4 w-4 mr-1 flex-shrink-0" />
+                  <span className="text-sm">
+                    {firstLetterUppercase(property.type)}
+                  </span>
+                </div>
+
+                <div className="flex items-center text-primary_green">
+                  <Tag className="h-4 w-4 mr-1 flex-shrink-0" />
+                  <span className="text-sm">
+                    {property.onsale ? "En Venta" : "En Alquiler"}
+                  </span>
+                </div>
+
+                <div className="flex items-center text-primary_green">
+                  <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
+                  <span className="text-sm">
+                    {property.address.slice(0, 14) + "..."}
+                  </span>
+                </div>
+              </div>
+
+              {/* Price and Details Button */}
+              <div className="flex items-center justify-between mt-auto">
+                <p className="font-bold text-primary_green">
+                  ${property.price} usd
+                </p>
+
+                <Button
+                  onClick={() => router.push(`/properties/${property.id}`)}
+                  className="bg-transparent border border-primary_green text-primary_green hover:bg-primary_green hover:text-cream transition-colors duration-200 rounded-sm px-4 py-1 text-sm"
+                >
+                  Más Detalles
+                </Button>
+              </div>
             </div>
-          )}
-        </main>
-        {filteredData.length !== 0 ? (
-          <div className="w-full h-max flex items-center justify-center">
-            <Button
-              onClick={() => setLimit((prev) => prev + 6)}
-              className="px-7 py-3 text-lg mb-2 hover:bg-opacity-90 bg-black text-white"
-            >
-              Ver Más
-            </Button>
           </div>
-        ) : null}
+        ))}
       </div>
-    </section>
+
+      {/* Load More Button */}
+      {properties.length >= limit && (
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={() => setLimit(limit + 9)}
+            className="bg-primary_green text-cream hover:bg-primary_green/90 px-6 py-2 rounded-sm"
+          >
+            Ver Más
+          </Button>
+        </div>
+      )}
+    </div>
   )
 }
 
-export default Property
+export default PropertyGrid

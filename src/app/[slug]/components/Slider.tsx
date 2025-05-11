@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect } from "react"
 import {
   Carousel,
@@ -20,25 +22,25 @@ const Slider = ({ imgs }: SliderProps) => {
   }, [imgs])
 
   return (
-    <Carousel className="w-1/2 lg:w-[70%] h-max flex items-center justify-center">
+    <Carousel className="relative w-[70%] md:w-[85%] sm:w-[95%] h-[500px]">
       <CarouselContent>
         {images &&
           images.map((img, index) => (
             <CarouselItem key={index}>
-              <figure className="w-full h-full flex items-center justify-center">
+              <figure className="w-full flex items-center justify-center">
                 <Image
-                  src={img}
+                  src={img || "/placeholder.svg"}
                   alt="image-carrousel"
                   width={900}
                   height={900}
-                  className="relative rounded-md object-cover"
+                  className="relative rounded-md object-cover border-2 border-primary_green/30"
                 />
               </figure>
             </CarouselItem>
           ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="bg-primary_green text-cream border-none hover:bg-primary_green/80 -left-4 md:-left-2" />
+      <CarouselNext className="bg-primary_green text-cream border-none hover:bg-primary_green/80 -right-4 md:-right-2" />
     </Carousel>
   )
 }

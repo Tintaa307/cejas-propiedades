@@ -1,12 +1,15 @@
 "use client"
 
-import React, {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react"
+import { type Dispatch, type SetStateAction, useContext } from "react"
+import { FilterContext } from "@/context/FilterContext"
+import { X } from "lucide-react"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetClose,
+} from "@/components/ui/sheet"
 import {
   Select,
   SelectContent,
@@ -14,12 +17,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { FilterContext } from "@/context/FilterContext"
-import { IconEdit, IconSend2, IconArrowBackUp } from "@tabler/icons-react"
-import { toast, Toaster } from "sonner"
-import { cn } from "@/lib/utils"
-import { useMotionValueEvent, useScroll } from "framer-motion"
-import { RiCloseCircleLine, RiCloseLine } from "@remixicon/react"
+import { Label } from "@/components/ui/label"
+import { FilterProps } from "@/types/types"
 
 const PropertiesFilter = ({
   open,
@@ -32,6 +31,7 @@ const PropertiesFilter = ({
     {
       label: "Ubicación",
       filterName: "location",
+      placeholder: "Cañuelas",
       options: [
         { name: "Todos", value: "todos" },
         { name: "Cañuelas", value: "canuelas" },
@@ -46,244 +46,110 @@ const PropertiesFilter = ({
     {
       label: "Tipo",
       filterName: "type",
+      placeholder: "Chacra",
       options: [
-        {
-          name: "Todos",
-          value: "todos",
-        },
-        {
-          name: "Casa",
-          value: "casa",
-        },
-        {
-          name: "Quinta",
-          value: "quinta",
-        },
-        {
-          name: "Chacra",
-          value: "chacra",
-        },
-        {
-          name: "Lotes",
-          value: "lote",
-        },
+        { name: "Todos", value: "todos" },
+        { name: "Casa", value: "casa" },
+        { name: "Quinta", value: "quinta" },
+        { name: "Chacra", value: "chacra" },
+        { name: "Lotes", value: "lote" },
       ],
     },
-    // {
-    //   label: "Superficie",
-    //   filterName: "size",
-    //   options: [
-    //     {
-    //       name: "Todos",
-    //       value: "todos",
-    //     },
-    //     {
-    //       name: "Menor a 100m2",
-    //       value: "menor-a-100m2",
-    //     },
-    //     {
-    //       name: "100m2-200m2",
-    //       value: "100m2-200m2",
-    //     },
-    //     {
-    //       name: "200m2-300m2",
-    //       value: "200m2-300m2",
-    //     },
-    //   ],
-    // },
+
     {
-      label: "Tipo de operación",
+      label: "Estado",
       filterName: "operation",
+      placeholder: "Alquiler",
       options: [
-        {
-          name: "Todos",
-          value: "todos",
-        },
-        {
-          name: "Alquiler",
-          value: "alquiler",
-        },
-        {
-          name: "Venta",
-          value: "venta",
-        },
+        { name: "Todos", value: "todos" },
+        { name: "Alquiler", value: "alquiler" },
+        { name: "Venta", value: "venta" },
       ],
     },
     {
       label: "Precio",
       filterName: "price",
+      placeholder: "$10000-$100000",
       options: [
-        {
-          name: "Todos",
-          value: "todos",
-        },
-        {
-          name: "Menor",
-          value: "asc",
-        },
-        {
-          name: "Mayor",
-          value: "desc",
-        },
+        { name: "Todos", value: "todos" },
+        { name: "$10000-$100000", value: "10000-100000" },
+        { name: "$100000-$200000", value: "100000-200000" },
+        { name: "$200000-$300000", value: "200000-300000" },
+        { name: "$300000+", value: "300000+" },
       ],
     },
   ]
-  const [range, setRange] = useState({
-    min: "0",
-    max: "0",
-  })
-  const [customPrice, setCustomPrice] = useState(false)
-  const { scrollY } = useScroll()
-  const [scroll, setScroll] = useState(0)
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScroll(latest)
-  })
 
-  const { setFilter } = useContext(FilterContext)
+  const { setFilter, filter } = useContext(FilterContext)
 
-  useEffect(() => {
-    !customPrice ? setRange({ min: "0", max: "0" }) : null
-  }, [customPrice])
-
-  const handleCustomPrice = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (Number(range.max) < Number(range.min)) {
-      toast.warning("El valor máximo no puede ser menor al mínimo")
-    } else if (range.min === null && range.max === null) {
-      toast.warning("Completa todos los campos")
-    } else if (range.min === null && range.max !== null) {
-      setRange({ min: "0", max: range.max })
-    } else if (Number(range.min) !== null && Number(range.max) === null) {
-      setRange({ min: range.min, max: "1000000" })
-    } else {
-      // @ts-ignore
-      setFilter((prev) => ({
-        ...prev,
-        price: `${range.min}-${range.max}`,
-      }))
-    }
-  }
+  // Filter options component - reused in both desktop and mobile views
+  const FilterOptions = () => (
+    <div className="space-y-6">
+      {filterOpts.map((filterOpt, index) => (
+        <div key={index} className="space-y-2">
+          <Label className="text-sm font-medium text-primary_green">
+            {filterOpt.label}
+          </Label>
+          <Select
+            value={filter[filterOpt.filterName as keyof FilterProps]}
+            onValueChange={(value) => {
+              setFilter((prev: FilterProps) => ({
+                ...prev,
+                [filterOpt.filterName]: value,
+              }))
+            }}
+          >
+            <SelectTrigger className="w-full h-10 bg-cream border border-primary_green/30 text-primary_green text-sm focus:ring-primary_green focus:ring-opacity-30 cursor-pointer">
+              <SelectValue placeholder={filterOpt.placeholder} />
+            </SelectTrigger>
+            <SelectContent className="bg-cream border border-primary_green/30">
+              {filterOpt.options.map((option, idx) => (
+                <SelectItem
+                  key={idx}
+                  value={option.value}
+                  className="text-primary_green hover:bg-primary_green/10 focus:bg-primary_green/10 cursor-pointer"
+                >
+                  {option.name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      ))}
+    </div>
+  )
 
   return (
-    <aside
-      className={cn(
-        "relative w-[25%] h-max mt-20 flex items-center justify-center xl:w-1/2 ms:z-20",
-        {
-          "ms:w-full ms:fixed": open,
-        }
-      )}
-    >
-      <Toaster position="bottom-left" />
-      <article
-        className={cn(
-          "fixed top-[216px] w-[23%] left-12 h-max flex flex-col items-center justify-center gap-4 py-8 border-r-[1px] border-black/60 xl:w-1/3 ms:-translate-x-full transition-all duration-200 ms:left-0 ms:xl:w-full ms:bg-white ms:h-screen",
-          {
-            "ms:top-0 ms:translate-x-0 transition-all duration-200": open,
-            "custom:top-[20px] ": scroll > 0,
-            "top-[180px] ": scroll > 0 && scroll < 0,
-          }
-        )}
-      >
-        <div
-          onClick={() => setOpen(false)}
-          className={cn("absolute top-20 right-6 hidden", {
-            "ms:hidden": !open,
-            "ms:block": open,
-          })}
-        >
-          <RiCloseLine className="size-10" />
+    <>
+      {/* Desktop Filter - Hidden on mobile */}
+      <aside className="hidden md:block md:w-1/4 lg:w-1/5 pr-6">
+        <div className="space-y-6">
+          <h2 className="text-base font-medium text-primary_green mb-4">
+            Filtro de búsqueda
+          </h2>
+          <FilterOptions />
         </div>
-        {filterOpts.map((filter, index) => (
-          <div
-            key={index}
-            className="w-[80%] h-max flex flex-col gap-3 items-start justify-center"
-          >
-            <label className="text-black text-base font-medium">
-              {customPrice && filter.filterName === "price" ? (
-                <div className="flex flex-row gap-2">
-                  {filter.label}{" "}
-                  <IconArrowBackUp
-                    className="cursor-pointer"
-                    onClick={() => setCustomPrice(false)}
-                  />
-                </div>
-              ) : (
-                <>{filter.label}</>
-              )}
-            </label>
-            <div className="w-full h-max flex items-center justify-center flex-row gap-2">
-              {customPrice && filter.filterName === "price" ? (
-                <form
-                  onSubmit={handleCustomPrice}
-                  className="w-full h-max flex items-center justify-center gap-3"
-                >
-                  <input
-                    type="number"
-                    placeholder="Minimo"
-                    onChange={(e) => {
-                      setRange((prev) => ({ ...prev, min: e.target.value }))
-                    }}
-                    className="w-1/2 h-10 bg-transparent border-[1px] border-black rounded-[8px] text-black px-2 text-sm font-normal"
-                  />
-                  <span className="text-black">{"-"}</span>
-                  <input
-                    type="number"
-                    placeholder="Maximo"
-                    onChange={(e) => {
-                      setRange((prev) => ({ ...prev, max: e.target.value }))
-                    }}
-                    className="w-1/2 h-10 bg-transparent border-[1px] border-black rounded-[8px] text-black px-2 text-sm font-normal"
-                  />
-                  <button type="submit">
-                    <IconSend2
-                      size={25}
-                      className="text-black cursor-pointer hover:text-black/80 transition-colors duration-150"
-                    />
-                  </button>
-                </form>
-              ) : (
-                <Select
-                  onValueChange={(value) => {
-                    // @ts-ignore
-                    setFilter((prev) => ({
-                      ...prev,
-                      [filter.filterName]: value,
-                    }))
-                  }}
-                >
-                  <SelectTrigger className="w-full h-max bg-transparent border-[2px] border-black rounded-[8px] text-black gap-2">
-                    <SelectValue
-                      className="text-black font-bold cursor-pointer"
-                      placeholder={filter.options[0].name}
-                    />
-                  </SelectTrigger>
-                  <SelectContent className="">
-                    {filter.options.map((option, index) => (
-                      <SelectItem className=" cursor-pointer" key={index} value={option.value}>
-                        {option.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              )}
-              {filter.filterName === "price" && (
-                <>
-                  {!customPrice ? (
-                    <IconEdit
-                      onClick={() => {
-                        setCustomPrice(true)
-                      }}
-                      size={25}
-                      className="text-black cursor-pointer hover:text-black/80 transition-colors duration-150"
-                    />
-                  ) : null}
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-      </article>
-    </aside>
+      </aside>
+
+      {/* Mobile Filter Sheet - Only shown on mobile */}
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetContent
+          side="left"
+          className="w-[85%] sm:w-[350px] bg-cream p-6 border-r border-primary_green/20"
+        >
+          <SheetHeader className="text-left mb-6">
+            <SheetTitle className="text-primary_green">
+              Filtro de búsqueda
+            </SheetTitle>
+            <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+              <X className="h-4 w-4 text-primary_green" />
+              <span className="sr-only">Close</span>
+            </SheetClose>
+          </SheetHeader>
+          <FilterOptions />
+        </SheetContent>
+      </Sheet>
+    </>
   )
 }
 

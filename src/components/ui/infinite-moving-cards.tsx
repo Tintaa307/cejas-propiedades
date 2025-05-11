@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import React, { useEffect, useState } from "react"
+import React, { type JSX, useEffect, useState } from "react"
 
 export const InfiniteMovingCards = ({
   items,
@@ -26,7 +26,9 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation()
   }, [])
+
   const [start, setStart] = useState(false)
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children)
@@ -43,6 +45,7 @@ export const InfiniteMovingCards = ({
       setStart(true)
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -58,6 +61,7 @@ export const InfiniteMovingCards = ({
       }
     }
   }
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -69,6 +73,7 @@ export const InfiniteMovingCards = ({
       }
     }
   }
+
   return (
     <div
       ref={containerRef}
@@ -80,22 +85,29 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
           <li
-            className="w-[450px] max-w-full relative rounded-[15px] flex-shrink-0 px-8 py-6 md:w-[450px] border-[2px] border-black flex flex-col items-center justify-center"
+            className="w-[350px] max-w-full relative rounded-3xl flex-shrink-0 px-8 py-6 md:w-[350px] border border-primary_green/20 bg-cream flex flex-col items-center justify-center"
             key={idx}
           >
-            <main className="w-full h-max flex items-center justify-center flex-col gap-6">
-              <div className="w-max h-max bg-black rounded-full p-4">
-                {item.icon}
+            <main className="w-full h-max flex items-center justify-center flex-col gap-4">
+              <div className="w-16 h-16 bg-primary_green rounded-full flex items-center justify-center">
+                {React.cloneElement(item.icon, {
+                  className: "text-cream",
+                  size: 28,
+                })}
               </div>
-              <h4 className="text-black text-2xl font-medium">{item.title}</h4>
-              <p className="text-black text-center">{item.description}</p>
+              <h4 className="text-primary_green text-xl font-medium text-center">
+                {item.title}
+              </h4>
+              <p className="text-primary_green/80 text-sm text-center">
+                {item.description}
+              </p>
             </main>
           </li>
         ))}

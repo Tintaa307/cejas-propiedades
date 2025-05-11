@@ -1,12 +1,7 @@
 import type { Config } from "tailwindcss"
-import { custom } from "zod"
-
-// const {
-//   default: flattenColorPalette,
-// } = require("tailwindcss/lib/util/flattenColorPalette")
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["class", "media"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -17,11 +12,9 @@ const config = {
   theme: {
     extend: {
       colors: {
-        black: "#000",
-        white: "#fff",
-        grey: "#B7B7B7",
-        red: "#FF0000",
-        green: "#25D366",
+        cream: "#f1e1ba",
+        primary_green: "#063930",
+        cta_red: "#BF0909",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -115,20 +108,6 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
-      },
-      screens: {
-        xs: { raw: "(max-width: 550px)" },
-        ls: { raw: "(max-width: 680px)" },
-        sm: { raw: "(max-width: 750px)" },
-        ms: { raw: "(max-width: 817px)" },
-        md: { raw: "(max-width: 930px)" },
-        card: { raw: "(max-width: 1000px)" },
-        lg: { raw: "(max-width: 1050px)" },
-        xl: { raw: "(max-width: 1160px)" },
-        xxl: { raw: "(max-width: 1473px)" },
-        "3xl": { raw: "(max-width: 1543px)" },
-        "5xl": { raw: "(max-width: 1751px)" },
-        custom: { raw: "(max-height: 1000px)" },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

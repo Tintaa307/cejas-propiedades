@@ -1,72 +1,110 @@
 "use client"
 
-import React from "react"
-import Input from "./Input"
+import { useState } from "react"
 import { Toaster, toast } from "sonner"
-import Button from "../button/Button"
 import { handleSubmit } from "@/actions/contact-actions"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Button } from "@/components/ui/button"
 
-const Contact = ({ title }: { title?: string }) => {
-  const inputs = [
-    { type: "text", placeholder: "Nombre completo...", name: "name" },
-    { type: "email", placeholder: "Correo electrónico...", name: "email" },
-    { type: "tel", placeholder: "Teléfono...", name: "phone" },
-  ]
+const Contact = ({ title }: { title: string }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const FormAction = async (formData: any) => {
-    const res = await handleSubmit(formData)
-    switch (res.status) {
-      case 200:
-        toast.success(res.message)
-        break
-      case 500:
-        res.message.map((msg: string) => toast.error(msg)) as string[]
-        break
-      default:
-        toast.info("Error al enviar el mensaje")
-        break
+  const FormAction = async (formData: FormData) => {
+    setIsSubmitting(true)
+    try {
+      const res = await handleSubmit(formData)
+      switch (res.status) {
+        case 200:
+          toast.success(res.message)
+          // Clear form
+          const form = document.getElementById(
+            "contact-form"
+          ) as HTMLFormElement
+          form?.reset()
+          break
+        case 500:
+          if (Array.isArray(res.message)) {
+            res.message.forEach((msg: string) => toast.error(msg))
+          } else {
+            toast.error(res.message || "Error al enviar el mensaje")
+          }
+          break
+        default:
+          toast.info("Error al enviar el mensaje")
+          break
+      }
+    } catch (error) {
+      toast.error("Ocurrió un error al enviar el mensaje")
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
   return (
-    <section
-      id="contacto"
-      className="w-full h-full flex items-center justify-center mt-24 sm:mt-10"
-    >
+    <section id="contacto" className="w-full py-16 md:py-24 bg-cream">
       <Toaster position="top-center" duration={3000} richColors />
-      <div className="w-[90%] h-max flex items-center justify-center flex-col ">
-        <section className="w-full h-max flex items-start sm:items-center justify-center flex-row">
-          <div className="w-1/2 h-max flex items-center justify-center flex-col gap-12 sm:gap-6 xl:w-full">
-            <header className="w-full h-max flex sm:items-center items-center justify-center flex-col gap-2">
-              <h4 className="text-black/90 text-4xl font-bold sm:text-xl">
-                {title ?? "Contactate"}
-              </h4>
-              <p className="text-black/70 text-sm font-medium text-center sm:text-xs">
-                Deja un mensaje y nos comunicaremos contigo.
-              </p>
-            </header>
-            <form
-              action={FormAction}
-              autoComplete="off"
-              className="w-full xl:w-2/3 h-max flex sm:items-center items-center justify-center flex-col gap-8 sm:gap-6 xl:md:w-5/6 xs:w-full"
-            >
-              {inputs.map((input, index) => (
-                <Input key={index} {...input} />
-              ))}
-              <textarea
-                placeholder="Escribe un mensaje..."
-                rows={5}
-                cols={5}
-                name="message"
-                maxLength={200}
-                className="w-full sm:w-full h-[104px] px-4 bg-transparent border-[1px] border-black/80 rounded-md placeholder:text-black/80 text-sm text-black font-medium outline-none focus:outline-2 focus:outline-black/80 transition-all duration-200 py-2 resize-none shadow-[0_4px_8px_#d9d9d9]"
-              />
-              <Button className="w-full sm:w-full h-12 bg-[#070707] rounded-md text-white text-sm border-[1px] border-white/20 font-normal outline-none hover:bg-opacity-90">
-                Enviar mensaje
-              </Button>
-            </form>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+              <span className="text-primary_green">Pongámonos en </span>
+              <span className="text-cta_red">contacto</span>
+            </h2>
+            <p className="text-primary_green/80 text-sm">
+              Deja un mensaje y nos comunicaremos contigo
+            </p>
           </div>
-        </section>
+
+          <form id="contact-form" action={FormAction} className="space-y-4">
+            <div>
+              <Input
+                type="text"
+                name="name"
+                placeholder="Nombre Completo..."
+                required
+                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:border focus-visible:border-primary_green"
+              />
+            </div>
+
+            <div>
+              <Input
+                type="email"
+                name="email"
+                placeholder="Correo Electronico..."
+                required
+                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:border focus-visible:border-primary_green"
+              />
+            </div>
+
+            <div>
+              <Input
+                type="tel"
+                name="phone"
+                placeholder="Telefono..."
+                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:border focus-visible:border-primary_green"
+              />
+            </div>
+
+            <div>
+              <Textarea
+                name="message"
+                placeholder="Escribe Un Mensaje..."
+                rows={4}
+                required
+                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 resize-none"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full bg-primary_green hover:bg-primary_green/90 text-cream"
+            >
+              {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+            </Button>
+          </form>
+        </div>
       </div>
     </section>
   )

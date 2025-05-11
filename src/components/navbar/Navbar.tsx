@@ -1,25 +1,32 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
-import Item from "./Item"
+import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import BarsIcon from "./BarsIcon"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false)
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+
   const navItems = [
     {
-      title: "Sobre nosotros",
+      title: "Sobre Nosotros",
       link: "/#sobre-nosotros",
     },
     {
-      title: "Desarrollos",
-      link: "/#desarrollos",
+      title: "Servicios",
+      link: "/#servicios",
     },
     {
       title: "Propiedades",
@@ -30,16 +37,16 @@ const Navbar = () => {
       link: "/#ingresos",
     },
     {
-      title: "Servicios",
-      link: "/#servicios",
+      title: "Desarrollos",
+      link: "/#desarrollos",
+    },
+    {
+      title: "Ubicacion",
+      link: "/#ubicacion",
     },
     {
       title: "Inmuebles",
       link: "/#inmuebles",
-    },
-    {
-      title: "Contacto",
-      link: "/#contacto",
     },
   ]
 
@@ -54,74 +61,104 @@ const Navbar = () => {
     }
   }, [])
 
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <header
-      className={cn(
-        `fixed top-10 left-0 w-full h-20 flex items-center justify-center z-50 transition-all duration-150  lg:h-[80px] lg:fixed lg:z-30 lg:flex lg:sm:justify-start lg:justify-center lg:items-center lg:top-0 lg:px-5 lg:transition-all lg:border-b-[1px] lg:border-white/0 lg:bg-white `,
-        {
-          "top-0 transition-all duration-200":
-            pathname.includes("/properties") || pathname == "/sell",
-        }
-      )}
-    >
-      <nav className={cn(
-        " w-[90%] h-full items-center justify-evenly 2xl:justify-between bg-white rounded-[30px] flex lg:hidden",
-        {
-          "scale-y-0 rounded-none transition-all duration-200":
-            isScrolling && pathname.includes("/properties"),
-          "shadow-2xl": isScrolling,
-        }
-      )}>
-        <Link href={"/"}>
-          <Image
-            src={"/images/logo-cejas-2.png"}
-            alt="logo"
-            width={140}
-            height={140}
-            className="cursor-pointer"
-          />
-        </Link>
-        <ul className="2xl:w-2/3 w-5/6 h-full flex items-center justify-center flex-row gap-12">
-          {navItems.map((item, index) => (
-            <Item key={index} item={item} />
-          ))}
-        </ul>
-      </nav>
-
-      <div className="w-full h-max lg:flex hidden items-center justify-between px-8 sm:px-0 overflow-hidden">
-        <Link href={"/"}>
-          <Image
-            src={"/images/logo-cejas-2.png"}
-            alt="logo"
-            width={140}
-            height={140}
-            className="cursor-pointer"
-          />
-        </Link>
-        <div onClick={() => setIsOpen(!isOpen)} className="cursor-pointer">
-          <BarsIcon isOpen={isOpen} setIsOpen={setIsOpen} />
-        </div>
-      </div>
-
-      <aside
+    <div className="w-full flex justify-center fixed top-10 z-50">
+      <header
         className={cn(
-          "fixed top-0 left-0 w-[70%] h-screen bg-white hidden lg:flex flex-col transform transition-transform duration-500 ease-in-out",
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          "w-[80%] rounded-xl transition-all duration-300 bg-cream",
+          isScrolling ? "shadow-md border border-primary_green" : ""
         )}
       >
-        <div className="flex flex-col items-center mt-20">
-          <ul className="flex flex-col items-center gap-6">
-            {navItems.map((item, index) => (
-              <li key={index}>
-                <Link href={item.link} onClick={() => setIsOpen(false)}>
+        <div className="w-full px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/new-logo.png"
+                alt="CEJAS PROPIEDADES"
+                width={120}
+                height={40}
+                className="h-auto"
+              />
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+              {navItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.link}
+                  className="text-primary_green hover:text-primary_green/80 py-2 text-sm lg:text-base font-medium transition-colors whitespace-nowrap"
+                >
                   {item.title}
                 </Link>
-              </li>
-            ))}
-          </ul>
+              ))}
+              <Button
+                asChild
+                className="bg-primary_green hover:bg-primary_green/90 text-cream rounded-md px-4 lg:px-6 whitespace-nowrap"
+              >
+                <Link href="/#contacto">Contacto</Link>
+              </Button>
+            </nav>
+
+            {/* Mobile Menu Button with Sheet */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <button
+                  className="md:hidden focus:outline-none"
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                >
+                  <Menu className="h-6 w-6 text-primary_green" />
+                </button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="bg-cream p-0 w-[80%] sm:w-[350px]"
+              >
+                <SheetTitle className="sr-only">Menu</SheetTitle>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center justify-between p-4 border-b border-primary_green/20">
+                    <Image
+                      src="/new-logo.png"
+                      alt="CEJAS PROPIEDADES"
+                      width={100}
+                      height={30}
+                      className="h-auto"
+                    />
+                  </div>
+                  <nav className="flex flex-col p-4 space-y-4 flex-grow">
+                    {navItems.map((item, index) => (
+                      <Link
+                        key={index}
+                        href={item.link}
+                        className="text-primary_green hover:text-primary_green/80 py-2 text-base font-medium border-b border-primary_green/10 pb-3"
+                        onClick={handleLinkClick}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </nav>
+                  <div className="p-4 mt-auto border-t border-primary_green/20">
+                    <Button
+                      asChild
+                      className="bg-primary_green hover:bg-primary_green/90 text-cream rounded-md w-full"
+                    >
+                      <Link href="/#contacto" onClick={handleLinkClick}>
+                        Contacto
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-      </aside>
-    </header>
+      </header>
+    </div>
   )
 }
 

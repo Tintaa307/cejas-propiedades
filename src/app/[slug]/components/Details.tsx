@@ -1,20 +1,16 @@
+"use client"
+
 import Title from "@/components/title/Title"
-import { Property } from "@/types/types"
+import type { Property } from "@/types/types"
 import { IconHomeEdit } from "@tabler/icons-react"
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import Col from "./Col"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 
 type DetailsProps = {
+  title: string
   details: string[]
   location: string
   properties?: Property[]
@@ -30,7 +26,7 @@ const Table = ({
   fraccionC: Property | undefined
 }) => {
   return (
-    <div className="w-[90%] 2xl:w-[75%] lg:w-[90%] lg:items-center lg:flex-col h-max flex items-start justify-center flex-row gap-24">
+    <div className="w-[90%] 2xl:w-[75%] lg:w-[90%] lg:items-center lg:flex-col h-max flex items-start justify-center flex-row gap-8 md:gap-6 sm:gap-4">
       <Col fraccion={fraccionA} />
       <Col fraccion={fraccionB} />
       <Col fraccion={fraccionC} />
@@ -38,7 +34,7 @@ const Table = ({
   )
 }
 
-const Details = ({ details, location, properties }: DetailsProps) => {
+const Details = ({ title, details, location, properties }: DetailsProps) => {
   const [fraccionA, setFraccionA] = useState<Property | undefined>(undefined)
   const [fraccionB, setFraccionB] = useState<Property | undefined>(undefined)
   const [fraccionC, setFraccionC] = useState<Property | undefined>(undefined)
@@ -55,51 +51,66 @@ const Details = ({ details, location, properties }: DetailsProps) => {
     setFraccionC(C)
   }, [properties])
 
-  useEffect(() => {
-    console.log(fraccionA)
-  }, [fraccionA])
-
   return (
-    <article className="w-full  h-max flex items-center justify-center flex-col gap-24">
-      <Tabs defaultValue="details" className="w-full max-w-5xl mx-auto lg:w-[85%]">
-        <TabsList className="grid w-full grid-cols-2 bg-gray-200">
-          <TabsTrigger className="text-black" value="details">
-            Detalles
-          </TabsTrigger>
-          <TabsTrigger className="text-black" value="location">
-            Ubicacion
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="details">
-          <Card>
-            <CardHeader>
-              <CardTitle>Detalles de la propiedad</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              {details.map((detail, index) => (
-                <div key={index} className="flex items-start space-x-2">
-                  <Check className="h-5 w-5 mt-0.5 text-green-500" />
-                  <p>{detail}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </TabsContent>
-        <TabsContent value="location">
-          <Card>
-            <CardHeader>
-              <CardTitle>Ubicación de la propiedad</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>{location}</p>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
+    <article className="w-full h-max flex items-center justify-center flex-col gap-16 py-12 bg-cream">
+      <h1 className="text-primary_green text-6xl font-bold flex items-center gap-3">
+        {title}
+      </h1>
+      <div className="w-full max-w-5xl mx-auto px-4">
+        <Tabs defaultValue="details" className="w-full lg:w-[95%] mx-auto">
+          <TabsList className="grid w-full h-full grid-cols-2 bg-cream border-2 border-primary_green">
+            <TabsTrigger
+              className="data-[state=active]:bg-primary_green data-[state=active]:text-cream text-primary_green"
+              value="details"
+            >
+              Detalles
+            </TabsTrigger>
+            <TabsTrigger
+              className="data-[state=active]:bg-primary_green data-[state=active]:text-cream text-primary_green"
+              value="location"
+            >
+              Ubicación
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="details">
+            <Card className="border-2 border-primary_green/70 bg-cream shadow-none">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-primary_green text-xl">
+                  Detalles de la propiedad
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {details.map((detail, index) => (
+                  <div key={index} className="flex items-start space-x-2">
+                    <Check className="h-5 w-5 mt-0.5 text-primary_green flex-shrink-0" />
+                    <p className="text-primary_green/90">{detail}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </TabsContent>
+          <TabsContent value="location">
+            <Card className="border-2 border-primary_green/70 bg-cream shadow-none">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-primary_green text-xl">
+                  Ubicación de la propiedad
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-primary_green/90">{location}</p>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
+      </div>
+
       {properties && (
-        <div className="w-full h-max flex items-center justify-center flex-col gap-12">
-          <Title className="flex flex-row items-center gap-5 text-black text-4xl font-bold">
-            <IconHomeEdit size={40} className="text-black" />
+        <div className="w-full h-max flex items-center justify-center flex-col gap-10">
+          <Title className="text-primary_green text-3xl md:text-2xl sm:text-xl font-bold flex items-center gap-3">
+            <IconHomeEdit
+              size={36}
+              className="text-primary_green md:w-6 md:h-6"
+            />
             Características
           </Title>
           <article className="w-full h-max flex items-center justify-center flex-row">

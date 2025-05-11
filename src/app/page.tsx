@@ -12,12 +12,12 @@ export default function Home() {
     <>
       <HeroSection />
       <About />
-      <Works />
-      <Features />
       <Services />
+      <Features />
+      <Works />
       <Map />
       <Sections />
-      <Contact />
+      <Contact title="Pongamonos en contacto" />
     </>
   )
 }

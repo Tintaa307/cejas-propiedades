@@ -1,17 +1,11 @@
-import React, { useEffect } from "react"
-
 type PresentationProps = {
-  title: string
   video: string
   isSold: boolean
 }
 
-const Presentation = ({ title, video, isSold }: PresentationProps) => {
-  useEffect(() => {
-    console.log(video)
-  }, [video])
+const Presentation = ({ video, isSold }: PresentationProps) => {
   return (
-    <div className="w-full h-screen flex items-start justify-start bg-black bg-opacity-30">
+    <div className="w-full h-screen flex items-center justify-center relative overflow-hidden">
       {!isSold ? (
         <>
           <video
@@ -22,13 +16,18 @@ const Presentation = ({ title, video, isSold }: PresentationProps) => {
           >
             <source src={video} type="video/mp4" />
           </video>
-          <h4 className="relative text-5xl text-white font-semibold z-20 opacity-0">
-            {title}
-          </h4>
+          <div className="absolute inset-0 bg-primary_green/30 z-0"></div>
         </>
       ) : (
-        <div className="w-full h-screen bg-white/60 flex items-center justify-center">
-          <h1 className="text-[#BF0909] text-6xl font-bold">Vendido!</h1>
+        <div className="w-full h-screen bg-cream/90 flex items-center justify-center flex-col gap-10">
+          <h1 className="text-primary_green text-6xl md:text-5xl sm:text-4xl font-serif font-bold">
+            Este desarrollo se encuentra{" "}
+            <span className="underline">VENDIDO</span>
+          </h1>
+          <p className="text-primary_green text-lg font-normal">
+            Si estás interesado en adquirir una propiedad similar, no dudes en
+            contactarnos. Abajo te dejamos la información del desarrollo.
+          </p>
         </div>
       )}
     </div>

@@ -1,15 +1,11 @@
-import { Bed, Bath, Square, Car } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Badge } from "@/components/ui/badge"
-import MainImage from "./MainImage"
 import { createClient } from "@/lib/supabase/server"
 import { cookies } from "next/headers"
-import { BatchProps } from "@/types/types"
+import type { BatchProps } from "@/types/types"
+import PropertyDetails from "@/components/properties/ContactDetails"
 import SimilarProperties from "../SimilarProperties"
-import Link from "next/link"
+import ContactForm from "@/components/properties/ContactForm"
 
-export default async function PropertyDetails({
+export default async function PropertyPage({
   params,
 }: {
   params: { id: string }
@@ -18,135 +14,64 @@ export default async function PropertyDetails({
   const supabase = createClient(cookieStore)
 
   if (params.id === undefined) {
-    return
+    return null
   }
 
+  // Fetch property data
   const { data } = (await supabase
     .from("properties")
     .select("*")
     .eq("id", params.id)) as { data: BatchProps[] }
 
-  const { data: similiarProperties } = (await supabase
+  if (!data || data.length === 0) {
+    return (
+      <div className="container mx-auto py-20 text-center">
+        Propiedad no encontrada
+      </div>
+    )
+  }
+
+  // Fetch similar properties
+  const { data: similarProperties } = (await supabase
     .from("properties")
     .select("*")
     .neq("id", params.id)
-    .eq("locality", "canuelas")
+    .eq("locality", data[0].locality || "canuelas")
     .order("id", { ascending: false })
-    .limit(4)) as { data: BatchProps[] }
+    .limit(3)) as { data: BatchProps[] }
 
-  if (!data || !similiarProperties) {
-    return
-  }
-
+  // Fetch property images
   let images = [] as any
-
   const folderPath = data[0].address
     .replaceAll(" ", "_")
     .replaceAll(".", "")
     .replace("ü", "u")
     .replaceAll(",", "")
 
-  console.log(folderPath)
-
   const propertyImages = (
     await supabase.storage.from("images").list(folderPath)
   ).data
 
-  if (!propertyImages) {
-    return
+  if (propertyImages) {
+    images = [
+      ...images,
+      ...propertyImages.map((file) => ({
+        ...file,
+        path: {
+          relativePath: `${folderPath}/${file.name}`,
+          publicURL: supabase.storage.from("images").getPublicUrl(file.name),
+        },
+      })),
+    ]
   }
 
-  images = [
-    ...images,
-    ...propertyImages.map((file) => ({
-      ...file,
-      path: {
-        relativePath: `${folderPath}/${file.name}`,
-        publicURL: supabase.storage.from("images").getPublicUrl(file.name),
-      },
-    })),
-  ]
-
   return (
-    <div className="w-full h-full mt-32 mx-auto px-4 py-8">
-      <div className="grid grid-cols-2 lg:grid-cols-1 gap-16">
-        {/* Property Images */}
-        <MainImage images={images} public_url={data[0].public_url} />
-
-        {/* Property Info */}
-        <div className="space-y-6 max-h-[600px] mt-4">
-          <div>
-            <h1 className="text-3xl font-bold">{data[0].site}</h1>
-            <p className="text-muted-foreground">{data[0].address}</p>
-          </div>
-
-          <p className="text-3xl font-bold">${data[0].price}</p>
-
-          {/* Property Features */}
-          <div className="">
-            <h3 className="text-lg font-semibold mb-2">Cosas a destacar</h3>
-            <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Recien Renovada</Badge>
-              <Badge variant="secondary">Cocina Moderna</Badge>
-            </div>
-          </div>
-
-          {/* Call to Action */}
-          <div className="flex space-x-4">
-            <Link href={"/#contacto"} className="w-full">
-              <Button className="w-3/4 bg-black hover:bg-black/95 mt-4">
-                Contactános para más información
-              </Button>
-            </Link>
-          </div>
-
-          {/* Property Details */}
-          <Tabs defaultValue="description">
-            <TabsList>
-              <TabsTrigger
-                className="text-black border-[1px] border-border"
-                value="description"
-              >
-                Descripción
-              </TabsTrigger>
-              <TabsTrigger
-                className="text-black border-[1px] border-border"
-                value="details"
-              >
-                Detalles
-              </TabsTrigger>
-              <TabsTrigger
-                className="text-black border-[1px] border-border"
-                value="location"
-              >
-                Ubicación
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent
-              value="description"
-              className="text-base text-black/60"
-            >
-              <p>{data[0].description}</p>
-            </TabsContent>
-            <TabsContent value="details" className="text-base text-black/60">
-              <ul className="list-disc list-inside">
-                <li>Year Built: 1995</li>
-                <li>Lot Size: 0.25 acres</li>
-                <li>Heating: Forced air, natural gas</li>
-                <li>Cooling: Central air</li>
-                <li>Property Type: Single family</li>
-                <li>School District: Anytown Unified</li>
-              </ul>
-            </TabsContent>
-            <TabsContent value="location" className="text-base text-black/60">
-              <p>{data[0].location}</p>
-            </TabsContent>
-          </Tabs>
-        </div>
+    <div className="w-full bg-cream min-h-screen">
+      <div className="container mx-auto px-4 py-36">
+        <PropertyDetails property={data[0]} images={images} />
+        <ContactForm />
+        <SimilarProperties recentProperties={similarProperties || []} />
       </div>
-
-      {/* Similar Properties */}
-      <SimilarProperties recentProperties={similiarProperties} />
     </div>
   )
 }

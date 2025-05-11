@@ -1,18 +1,18 @@
-import React from "react"
-import Title from "../title/Title"
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards"
+"use client"
+
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards"
 import {
   IconCrane,
   IconRulerMeasure,
   IconMoneybag,
-  IconDimensions,
   IconHammer,
-  IconHierarchy3,
-  IconSortAscending,
   IconNotebook,
+  IconHierarchy3,
+  IconDimensions,
+  IconSortAscending,
 } from "@tabler/icons-react"
 
-const Services = () => {
+const ServicesExample = () => {
   const testimonials = [
     {
       title: "Planos",
@@ -65,17 +65,15 @@ const Services = () => {
   ]
 
   return (
-    <section
-      id="servicios"
-      className="w-full h-max flex items-center justify-center overflow-hidden"
-    >
-      <div className="w-[90%] h-max flex items-center justify-center flex-col gap-12 sm:gap-6">
-        <div className="w-full h-max flex items-center justify-center">
-          <Title className="sm:text-center">
-            Nuestros <span className="text-[#BF0909]">servicios</span>
-          </Title>
-        </div>
-        <div className="h-[25rem] rounded-md flex flex-col antialiased dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <section className="w-full py-16 bg-cream">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12">
+          <span className="text-primary_green">¿Por qué </span>
+          <span className="text-cta_red">elegirnos</span>
+          <span className="text-primary_green">?</span>
+        </h2>
+
+        <div className="flex justify-center">
           <InfiniteMovingCards
             items={testimonials}
             direction="right"
@@ -87,4 +85,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default ServicesExample

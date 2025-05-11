@@ -1,70 +1,60 @@
 "use client"
 
 import Link from "next/link"
-import { Swiper, SwiperSlide } from "swiper/react"
-import React from "react"
-import { Autoplay, Pagination, Navigation } from "swiper/modules"
-
-import "swiper/css"
-import "swiper/css/pagination"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const HeroSection = () => {
-  const videos = [
-    "/videos/paneo-gardenias.mp4",
-    "/videos/paneo-canada2.mp4",
-    "/videos/paneo-retiro.mp4",
-  ]
-
   return (
-    <main className="w-full h-screen flex items-center justify-center">
-      <section className="w-full h-[97vh] flex items-center justify-center bg-black bg-opacity-50 rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px]">
-        <div className="absolute w-full h-[97vh] flex items-center justify-center -z-10">
-          <Swiper
-            className="w-full h-full rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px]"
-            centeredSlides={true}
-            autoplay={{
-              delay: 3400,
-              disableOnInteraction: false,
+    <main className="w-full min-h-screen relative overflow-hidden bg-cream p-[10px]">
+      {/* Main content container with rounded corners */}
+      <div className="relative w-full h-[calc(100vh_-_25px)] rounded-3xl overflow-hidden">
+        {/* Static background image */}
+        <div className="absolute inset-0 z-10">
+          <Image
+            src="/hero-image-test.png" // Replace with your actual image path
+            alt="Agricultural field"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Fallback for when Image fails */}
+          <div
+            className="absolute inset-0 bg-primary_green/20 z-10"
+            style={{
+              backgroundImage: "url('/images/field-background.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
-            pagination={{
-              clickable: true,
-            }}
-            loop={true}
-            modules={[Autoplay, Pagination, Navigation]}
-          >
-            {videos.map((video, index) => (
-              <SwiperSlide key={index} className="w-full h-full">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  className="absolute w-full h-full object-cover"
-                >
-                  <source src={video} type="video/mp4" />
-                </video>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          ></div>
         </div>
-        <article className="relative w-full h-full flex justify-center items-end p-24 lg:p-0">
-          <div className="w-full h-full flex items-center justify-center xxl:w-max xxl:h-max xxl:flex xxl:items-center xxl:justify-end xxl:flex-col lg:gap-5 xxl:gap-12 xl:bg-white/40  rounded-[84px] lg:rounded-b-none lg:rounded-t-[20px] p-12">
-            <div className="absolute bottom-20 left-20 animate-fade-in-down text-left xxl:relative xxl:left-0 xxl:bottom-0 xxl:text-center">
-              <h1 className="text-white text-5xl font-bold flex flex-col gap-3 card:text-3xl ls:card:text-2xl">
-                <span className="uppercase">construyendo tus sueños</span>
-                <span className="uppercase">encontrando tu hogar</span>
-              </h1>
-            </div>
-            <div className="absolute w-max h-max bottom-20 right-20 xxl:relative xxl:right-0 xxl:bottom-0">
-              <Link
-                href={"#"}
-                className="w-max h-max py-4 px-8 rounded-md border-[1px] mt-5 text-lg text-white bg-black border-black transition-all duration-150"
-              >
-                Ver desarrollos
-              </Link>
-            </div>
+
+        {/* Subtle overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black/10 z-20"></div>
+
+        {/* Content - aligned to top */}
+        <div className="relative z-30 h-full w-full flex flex-col p-8 md:p-12 lg:p-16 pt-24 md:pt-32">
+          <div className="flex flex-col items-start max-w-3xl h-full justify-end">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-1 text-cream">
+              Encontrá tu sueño en
+            </h2>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-wide mb-8 text-cream">
+              CEJAS PROPIEDADES
+            </h1>
           </div>
-        </article>
-      </section>
+
+          {/* CTA Button - positioned at bottom right */}
+          <div className="flex justify-end mt-auto mb-8">
+            <Button
+              asChild
+              variant="outline"
+              className="bg-cream hover:bg-cream/90 text-cta_red border-none rounded-md px-6 py-2 text-base font-medium transition-all duration-300"
+            >
+              <Link href="#">Ver Desarrollos</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }

@@ -1,14 +1,18 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
-import { Property } from "@/types/types";
-import { IconArrowNarrowRight } from "@tabler/icons-react";
-import React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { cn } from "@/lib/utils"
+import type { Property } from "@/types/types"
+import { IconArrowNarrowRight } from "@tabler/icons-react"
 
 const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
   return (
-    <div className="w-1/3 h-max border-[2px] border-black rounded-[15px] lg:w-full">
-      <header className="w-full h-max bg-black flex items-center justify-center rounded-t-[10px]">
-        <h6 className="text-white font-semibold text-lg p-5">
+    <div className="w-1/3 h-max border-2 border-primary_green rounded-xl lg:w-full">
+      <header className="w-full h-max bg-primary_green flex items-center justify-center rounded-t-lg">
+        <h6 className="text-cream font-semibold text-lg p-4 text-center">
           {fraccion?.title}
         </h6>
       </header>
@@ -19,21 +23,25 @@ const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
               type="single"
               collapsible
               key={index}
-              className={cn("w-full border-b-[1px] border-black px-10 py-3", {
-                "border-none": index === fraccion.list.length - 1,
-              })}
+              className={cn(
+                "w-full border-b border-primary_green/50 px-4 py-2",
+                {
+                  "border-none": index === fraccion.list.length - 1,
+                }
+              )}
             >
               <AccordionItem value={`item-${index}`} className="border-b-0">
-                <p className="text-black text-base font-medium flex flex-row gap-3">
-                  <AccordionTrigger className="text-black text-base font-medium flex flex-row gap-3">
-                    {property}
-                  </AccordionTrigger>
-                </p>
+                <AccordionTrigger className="text-primary_green text-sm font-medium hover:no-underline hover:text-primary_green/80 py-1">
+                  {property}
+                </AccordionTrigger>
                 <AccordionContent>
                   {/* Muestra el precio que corresponde al índice del lote */}
                   <div>
-                    <p className="text-black text-base font-medium flex flex-row gap-3">
-                      <IconArrowNarrowRight size={20} className="text-black" />
+                    <p className="text-primary_green text-sm font-medium flex flex-row gap-2 items-center">
+                      <IconArrowNarrowRight
+                        size={16}
+                        className="text-primary_green"
+                      />
                       {fraccion.prices[index] || "Precio no disponible"}
                     </p>
                   </div>
@@ -43,7 +51,7 @@ const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
           ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Col;
+export default Col

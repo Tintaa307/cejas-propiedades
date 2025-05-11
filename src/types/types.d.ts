@@ -39,6 +39,5 @@ export type FilterProps = {
   location: string
   type: string
   operation: string
-  size: string
   price: string
 }

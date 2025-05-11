@@ -12,15 +12,28 @@ import { notFound } from "next/navigation"
 import Loader from "@/components/loader/Loader"
 import { Work as WorkType } from "@/types/types"
 
-const Work = ({ params }: { params: { slug: string } }) => {
+const Work = ({ params }: { params: Promise<{ slug: string }> }) => {
   const [loading, setLoading] = useState(true)
   const [work, setWork] = useState({} as WorkType)
+  const [slug, setSlug] = useState("")
+
+  const handleParams = async () => {
+    const { slug } = await params
+
+    if (!slug) notFound()
+
+    setSlug(slug)
+  }
+
+  useEffect(() => {
+    handleParams()
+  }, [])
 
   const verifyData = () => {
     try {
-      if (!params.slug) notFound()
-      const work = data.works.find((work) => work.title === params.slug)
-      if (!work) notFound()
+      if (!slug) notFound()
+      const work = data.works.find((work) => work.title === slug)
+
       return work as WorkType
     } catch (error) {
       notFound()
@@ -30,9 +43,12 @@ const Work = ({ params }: { params: { slug: string } }) => {
   }
 
   useEffect(() => {
-    const work = verifyData()
-    setWork(work)
-  }, [params])
+    if (slug) {
+      const work = verifyData()
+
+      setWork(work)
+    }
+  }, [slug])
 
   return (
     <>
@@ -40,12 +56,9 @@ const Work = ({ params }: { params: { slug: string } }) => {
         <Loader />
       ) : (
         <div className="w-full h-full flex flex-col gap-12">
-          <Presentation
-            title={work.value}
-            video={work.video}
-            isSold={work.isSold}
-          />
+          <Presentation video={work.video} isSold={work.isSold} />
           <Details
+            title={work.value}
             details={work.details}
             location={work.location}
             properties={work.properties}
@@ -55,7 +68,7 @@ const Work = ({ params }: { params: { slug: string } }) => {
           {/* {work.title === "canada" || work.title === "pueblo" ? (
             <Information />
           ) : null} */}
-          <Map map={work.map} />
+          <Map map={work.value} />
           <Contact title="Recibí Asesoramiento" />
         </div>
       )}
