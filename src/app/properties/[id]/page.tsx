@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server"
-import { cookies } from "next/headers"
 import type { BatchProps } from "@/types/types"
 import PropertyDetails from "@/components/properties/ContactDetails"
 import SimilarProperties from "../SimilarProperties"
@@ -10,8 +9,7 @@ export default async function PropertyPage({
 }: {
   params: Promise<{ id: string }>
 }) {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = await createClient()
 
   const { id } = await params
 
