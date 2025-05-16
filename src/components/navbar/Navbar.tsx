@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -86,8 +86,8 @@ const Navbar = () => {
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
+            {/* Desktop Navigation - Now hidden below 1440px */}
+            <nav className="hidden 2xl:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
               {navItems.map((item, index) => (
                 <Link
                   key={index}
@@ -105,11 +105,11 @@ const Navbar = () => {
               </Button>
             </nav>
 
-            {/* Mobile Menu Button with Sheet */}
+            {/* Mobile Menu Button with Sheet - Now visible below 1440px */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button
-                  className="md:hidden focus:outline-none"
+                  className="2xl:hidden focus:outline-none"
                   aria-label={isOpen ? "Close menu" : "Open menu"}
                 >
                   <Menu className="h-6 w-6 text-primary_green" />
