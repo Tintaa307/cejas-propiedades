@@ -78,7 +78,7 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
-                src="/new-logo.png"
+                src="/logo-cejas-rojo.png"
                 alt="CEJAS PROPIEDADES"
                 width={120}
                 height={40}

@@ -2,11 +2,11 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { RiMapPinLine } from "@remixicon/react"
 import { AnimatePresence, motion } from "framer-motion"
 import Button from "../button/Button"
 import CardContent from "./CardContent"
 import { useRouter } from "next/navigation"
+import { RiMapPinFill } from "@remixicon/react"
 
 const variants = {
   open: {
@@ -119,7 +119,7 @@ const Map = ({ work }: { work?: string }) => {
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="relative mx-auto flex items-center justify-center">
           <Image
-            src={"/mapa-nuevo.png"}
+            src={"/new-mapa.jpg"}
             alt="Mapa de ubicaciones"
             width={1920}
             height={1080}
@@ -135,7 +135,7 @@ const Map = ({ work }: { work?: string }) => {
               }}
             >
               <div className="relative w-max h-max">
-                <RiMapPinLine
+                <RiMapPinFill
                   onMouseEnter={() => {
                     setIsHovered(true)
                     setLocation(loc.name)
