@@ -84,7 +84,7 @@ const Features = () => {
   }
 
   return (
-    <section id="ingresos" className="w-full bg-cream py-12 md:py-16">
+    <section id="ingresos" className="w-full py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
         <div className="w-full max-w-[1440px] mx-auto">
           <div className="bg-primary_green rounded-2xl overflow-hidden">

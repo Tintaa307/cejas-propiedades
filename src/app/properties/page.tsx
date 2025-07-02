@@ -69,7 +69,7 @@ export default function Properties() {
   }, [filter, properties])
 
   return (
-    <section className="w-full bg-cream min-h-screen py-32">
+    <section className="w-full min-h-screen py-32">
       <div className="container mx-auto px-4 md:px-6 pt-8">
         <h1 className="text-3xl md:text-5xl font-normal mb-8">
           <span className="text-primary_green">Inmuebles en </span>

@@ -24,7 +24,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="w-full bg-cream">
+    <footer className="w-full">
       <div className="container mx-auto px-4 md:px-6 py-6">
         {/* Social media and WhatsApp button */}
         <div className="flex justify-between items-center mb-6">

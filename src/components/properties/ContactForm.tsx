@@ -48,7 +48,7 @@ const ContactForm = () => {
                 name="name"
                 placeholder="Ingrese su nombre completo"
                 required
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
               />
             </div>
 
@@ -65,7 +65,7 @@ const ContactForm = () => {
                 type="email"
                 placeholder="Ingrese su correo electrónico"
                 required
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
               />
             </div>
           </div>
@@ -83,7 +83,7 @@ const ContactForm = () => {
                 name="phone"
                 type="tel"
                 placeholder="Ingrese su número de teléfono"
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
               />
             </div>
 
@@ -98,7 +98,7 @@ const ContactForm = () => {
                 id="subject"
                 name="subject"
                 placeholder="Asunto de su consulta"
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green"
               />
             </div>
           </div>
@@ -116,7 +116,7 @@ const ContactForm = () => {
               placeholder="Escriba su mensaje aquí"
               rows={4}
               required
-              className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green resize-none"
+              className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary_green resize-none"
             />
           </div>
 

@@ -99,10 +99,10 @@ const PropertiesFilter = ({
               }))
             }}
           >
-            <SelectTrigger className="w-full h-10 bg-cream border border-primary_green/30 text-primary_green text-sm focus:ring-primary_green focus:ring-opacity-30 cursor-pointer">
+            <SelectTrigger className="w-full h-10 border border-primary_green/30 text-primary_green text-sm focus:ring-primary_green focus:ring-opacity-30 cursor-pointer">
               <SelectValue placeholder={filterOpt.placeholder} />
             </SelectTrigger>
-            <SelectContent className="bg-cream border border-primary_green/30">
+            <SelectContent className="border border-primary_green/30">
               {filterOpt.options.map((option, idx) => (
                 <SelectItem
                   key={idx}
@@ -135,7 +135,7 @@ const PropertiesFilter = ({
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent
           side="left"
-          className="w-[85%] sm:w-[350px] bg-cream p-6 border-r border-primary_green/20"
+          className="w-[85%] sm:w-[350px] p-6 border-r border-primary_green/20"
         >
           <SheetHeader className="text-left mb-6">
             <SheetTitle className="text-primary_green">

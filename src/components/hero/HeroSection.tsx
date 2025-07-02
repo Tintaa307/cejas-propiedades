@@ -6,7 +6,7 @@ import Image from "next/image"
 
 const HeroSection = () => {
   return (
-    <main className="w-full min-h-screen relative overflow-hidden bg-cream p-[10px]">
+    <main className="w-full min-h-screen relative overflow-hidden p-[10px]">
       {/* Main content container with rounded corners */}
       <div className="relative w-full h-[calc(100vh_-_25px)] rounded-3xl overflow-hidden">
         {/* Static background image */}

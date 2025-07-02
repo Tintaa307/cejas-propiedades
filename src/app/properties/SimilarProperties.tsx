@@ -28,7 +28,7 @@ const SimilarProperties = ({
         {recentProperties.map((property) => (
           <div
             key={property.id}
-            className="bg-cream border border-primary_green/10 rounded-md overflow-hidden cursor-pointer hover:shadow-md transition-shadow duration-300"
+            className="border border-primary_green/10 rounded-md overflow-hidden cursor-pointer shadow-md transition-shadow duration-300"
             onClick={() => router.push(`/properties/${property.id}`)}
           >
             {/* Property Image */}

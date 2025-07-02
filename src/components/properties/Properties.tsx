@@ -23,7 +23,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
         {properties.map((property) => (
           <div
             key={property.id}
-            className="bg-cream overflow-hidden flex flex-col h-[420px]"
+            className="overflow-hidden flex flex-col h-[420px]"
           >
             {/* Property Image */}
             <div className="relative h-[240px] w-full">

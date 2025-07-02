@@ -62,7 +62,7 @@ export default async function PropertyPage({
   }
 
   return (
-    <div className="w-full bg-cream min-h-screen">
+    <div className="w-full min-h-screen">
       <div className="container mx-auto px-4 py-36">
         <PropertyDetails property={data[0]} images={images} />
         <ContactForm />

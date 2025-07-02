@@ -42,7 +42,7 @@ const Contact = ({ title }: { title: string }) => {
   }
 
   return (
-    <section id="contacto" className="w-full py-16 md:py-24 bg-cream">
+    <section id="contacto" className="w-full py-16 md:py-24">
       <Toaster position="top-center" duration={3000} richColors />
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-2xl mx-auto">
@@ -63,7 +63,7 @@ const Contact = ({ title }: { title: string }) => {
                 name="name"
                 placeholder="Nombre Completo..."
                 required
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
               />
             </div>
 
@@ -73,7 +73,7 @@ const Contact = ({ title }: { title: string }) => {
                 name="email"
                 placeholder="Correo Electronico..."
                 required
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
               />
             </div>
 
@@ -82,7 +82,7 @@ const Contact = ({ title }: { title: string }) => {
                 type="tel"
                 name="phone"
                 placeholder="Telefono..."
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
               />
             </div>
 
@@ -92,7 +92,7 @@ const Contact = ({ title }: { title: string }) => {
                 placeholder="Escribe Un Mensaje..."
                 rows={4}
                 required
-                className="bg-cream border-primary_green/30 text-primary_green placeholder:text-primary_green/60 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
+                className="border-primary_green/30 text-primary_green placeholder:text-primary_green/60 resize-none focus-visible:ring-0 focus-visible:ring-offset-0 focus:border-primary_green/60"
               />
             </div>
 
