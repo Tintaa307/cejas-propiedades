@@ -19,37 +19,27 @@ const About = () => {
 
             <div className="text-primary_green space-y-4 text-base md:text-lg leading-relaxed">
               <p>
-                Somos una inmobiliaria rural dedicada a la venta de campos y
-                desarrollos urbanos en áreas rurales y nos enorgullece ofrecer
-                un servicio personalizado que combina experiencia en el mercado
-                inmobiliario con un profundo amor por la belleza de la vida
-                rural.
+                En Cejas Propiedades creemos que cada persona merece un
+                acompañamiento profesional, cercano y transparente a la hora de
+                tomar decisiones importantes. Somos una inmobiliaria familiar
+                con más de 40 años de trayectoria. Nacimos en el corazón de San
+                Justo y hoy continuamos creciendo desde Castelar, con la misma
+                pasión y compromiso de siempre.
               </p>
 
               <p>
-                Nuestro objetivo es ayudarlos a encontrar la propiedad perfecta
-                que se adapte a sus necesidades y deseos. Con nosotros, no solo
-                obtendrá una propiedad, sino una experiencia personalizada y un
-                compromiso inquebrantable con la excelencia en el servicio al
-                cliente.
+                Nos especializamos en la venta, tasación y asesoramiento de
+                propiedades tanto urbanas como rurales. Trabajamos con un equipo
+                de profesionales que garantizan operaciones seguras, confiables
+                y a medida.
               </p>
 
               <p>
-                Cejas propiedades es una empresa familiar fundada hace mas de 40
-                años en el corazón de San Justo. Luego de años de
-                especializarnos en la venta de propiedades urbanas, hemos
-                redirigido nuestra pasión hacia los encantos y oportunidades que
-                ofrece la vida rural.
-              </p>
-
-              <p>
-                Contamos con un equipo altamente calificado de profesionales,
-                incluyendo agrimensores, abogados, escribanos y otros expertos,
-                es por eso que te ofrecemos un negocio 100% transparente, de
-                confianza y con seguridad. Ofrecemos servicios de tasación y
-                estamos aquí para asesorarlo a vender su propiedad actual o
-                encontrar la propiedad perfecta para vivir. Estamos aquí para
-                guiarlo en cada paso del camino.
+                Ya sea que estés buscando una inversión, tu primera vivienda o
+                un cambio de estilo de vida, estamos para ayudarte a encontrar
+                la propiedad que mejor se adapte a tus necesidades. En Cejas
+                Propiedades combinamos experiencia, compromiso y cercanía para
+                que cada operación sea una experiencia segura y positiva.
               </p>
             </div>
 
