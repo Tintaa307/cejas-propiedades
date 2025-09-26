@@ -29,65 +29,42 @@
     {
       "title": "pueblo",
       "value": "Pueblo Chico",
-      "location": "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+      "location": "Barrio abierto en el Partido y Localidad de Cañuelas, sobre Ricardo Rojas entre Camino Panelo y Raggio. A 1.500 m del centro (acceso directo por Camino Panelo) y a 2.000 m de la Ruta 205.",
       "properties": [
         {
           "title": "Fraccion 1A",
-          "list": [
-            "Lotes 1 a 4",
-            "Lote 5",
-            "Lotes 6 y 7"
-          ],
-          "prices": [
-            "Desde U$S 31.000",
-            "Desde U$S 53.000",
-            "Desde U$S 36.500"
-          ]
+          "list": ["Lotes 1 a 4", "Lote 5", "Lotes 6 y 7"],
+          "prices": ["U$S 31.000", "U$S 53.000", "U$S 36.500"]
         },
         {
           "title": "Fraccion 1B",
-          "list": [
-            "Lotes 1",
-            "Lote 8",
-            "Lotes 10 a 13"
-          ],
-          "prices": [
-            "Desde U$S 23.000",
-            "Desde U$S 48.000",
-            "Desde U$S 23.500"
-          ]
+          "list": ["Lotes 1", "Lote 8", "Lotes 10 a 13"],
+          "prices": ["U$S 23.000", "U$S 48.000", "U$S 23.500"]
         },
         {
           "title": "Fraccion 1C",
-          "list": [
-            "Lotes 1, 2, 3 y 5",
-            "Lote 6 y 10",
-            "Lotes 7",
-            "Lote 8 y 9"
-          ],
-          "prices": [
-            "Desde U$S 26.000",
-            "Desde U$S 24.000",
-            "Desde U$S 58.000",
-            "Desde U$S ---"
-          ]
+          "list": ["Lotes 1, 2, 3 y 5", "Lote 6 y 10", "Lote 7", "Lote 8 y 9"],
+          "prices": ["U$S 26.000", "U$S 24.000", "U$S 58.000", "U$S 150.000"]
         }
       ],
       "details": [
-        "El loteo se encuentra divido en 3 fracciones (1a, 1b y 1c).",
-        "En él se encuentran 36 lotes. Algunos de ellos baldíos y otros con casas de 2 y 3 ambientes.",
-        "Barrio abierto. Sin expensas.",
-        "Tendido Eléctrico, Luminaria en calles internas. Calles empedradas.",
-        "Títulos perfectos, listo para escriturar.",
-        "Se aceptan vehículos en parte de pago (consultar).",
-        "Financiación particular > Anticipo del 60% y saldo en 12, 18 y 24 cuotas."
+        "Desarrollo con 34 lotes (barrio abierto, sin expensas).",
+        "Calles con estabilizado, entoscado y empedrado.",
+        "Tendido eléctrico, luminarias públicas y fibra óptica.",
+        "Financiación: anticipo y hasta 24 cuotas.",
+        "Se acepta vehículo en parte de pago (consultar).",
+        "Opción de entregar con vivienda (consultar modelos y valores)."
       ],
       "imgs": [
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/1.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/2.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/3.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/4.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/pueblo/5.jpg"
+        "/images/works/pueblo/1.JPG",
+        "/images/works/pueblo/2.JPG",
+        "/images/works/pueblo/3.JPG",
+        "/images/works/pueblo/4.jpg",
+        "/images/works/pueblo/5.jpg",
+        "/images/works/pueblo/6.jpg",
+        "/images/works/pueblo/7.jpg",
+        "/images/works/pueblo/9.jpg",
+        "/images/works/pueblo/8.JPG"
       ],
       "blueprints": [
         "/images/planos/plano-pueblo.jpg"
@@ -206,28 +183,29 @@
     {
       "title": "magnolias",
       "value": "Las Magnolias",
-      "location": "Los lotes se encuentran sobre la calle Maipú y sobre José Hernández, Localidad y Partido de Cañuelas, Provincia de Buenos Aires. Se ubican a 1 cuadra del asfalto (calle Maipú). A 1.500 mts de la estación de tren de Cañuelas (8 minutos en auto), 800 mts de calle Dorrego (continuación de Camino Panelo), 3 km de Ruta 3 (10 min en auto)",
+      "location": "El barrio abierto “Las Magnolias” se encuentra sobre las calles Maipú y José Hernández, Localidad y Partido de Cañuelas, Provincia de Buenos Aires. A 1 cuadra del asfalto (calle Maipú), a 1.500 m de la estación de tren de Cañuelas (8 min en auto), a 800 m de calle Dorrego (continuación de Camino Panelo) y a 3 km de Ruta 3 (10 min en auto).",
       "details": [
-        "El predio se encuentra divido en 32 lotes de terreno.",
-        "Todos los terrenos son baldíos.",
-        "Se encuentra en curso la apertura de las calles que tiene previsto la realización de estabilizado, entoscado y empedrado.",
-        "Posteriormente se realizará el tendido eléctrico, luminarias públicas",
-        "Escrituración en 12 meses. (Tiempo estimativo)",
-        "Financiación particular.",
-        "Se aceptan vehículos en parte de pago (Consultar)"
+        "Desarrollo urbanístico compuesto por 32 lotes de terreno baldíos, comercializado en dos etapas.",
+        "Calles con estabilizado, entoscado y empedrado.",
+        "Cuenta con tendido eléctrico y luminarias públicas.",
+        "Barrio abierto: no paga expensas.",
+        "Financiación: anticipo de u$s 11.500 y hasta 12 cuotas de u$s 530.",
+        "Se puede tomar auto en parte de pago (consultar)."
       ],
       "imgs": [
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/1.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/2.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/4.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/5.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/6.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/magnolias/7.jpg"
+        "/images/works/magnolias/1.JPG",
+        "/images/works/magnolias/2.JPG",
+        "/images/works/magnolias/3.JPG",
+        "/images/works/magnolias/4.jpg",
+        "/images/works/magnolias/5.jpg",
+        "/images/works/magnolias/6.jpg",
+        "/images/works/magnolias/7.jpg",
+        "/images/works/magnolias/8.jpg"
       ],
       "blueprints": [
         "/images/planos/plano-magnolias.jpg"
       ],
-      "video": "/videos/video.mp4",
+      "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/lasmagnolias.mp4",
       "map": "magnolias",
       "isSold": false
     },
