@@ -10,7 +10,7 @@ const Works = () => {
       title: "La Cañada",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/canada-dron.JPG",
       link: "/canada",
-      isSold: false,
+      isSold: true,
     },
     {
       title: "Pueblo Chico",

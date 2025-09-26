@@ -19,7 +19,7 @@ const Presentation = ({ video, isSold }: PresentationProps) => {
           <div className="absolute inset-0 bg-primary_green/30 z-0"></div>
         </>
       ) : (
-        <div className="w-full h-screen bg-cream/90 flex items-center justify-center flex-col gap-10">
+        <div className="w-full h-screen flex items-center justify-center flex-col gap-10">
           <h1 className="text-primary_green text-6xl md:text-5xl sm:text-4xl font-serif font-bold">
             Este desarrollo se encuentra{" "}
             <span className="underline">VENDIDO</span>

@@ -8,7 +8,7 @@ type GalleryProps = {
 
 const Gallery = ({ imgs }: GalleryProps) => {
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-10 py-16 bg-cream">
+    <article className="w-full h-max flex items-center justify-center flex-col gap-10 py-16">
       <div className="w-full h-max flex items-center justify-center flex-col gap-4">
         <Title className="text-primary_green max-sm:text-2xl text-5xl font-normal flex items-center text-center gap-3">
           Imágenes Satelitales y Terrestres

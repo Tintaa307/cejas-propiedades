@@ -3,9 +3,11 @@
 import type { BatchProps } from "@/types/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { Grid2X2, MapPin, Tag } from "lucide-react"
+import { Grid2X2, MapPin, Tag, Home } from "lucide-react"
 import { Button } from "../ui/button"
 import { firstLetterUppercase } from "@/lib/utils"
+import { useContext } from "react"
+import { FilterContext } from "@/context/FilterContext"
 
 interface PropertyGridProps {
   properties: BatchProps[]
@@ -15,6 +17,36 @@ interface PropertyGridProps {
 
 const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
   const router = useRouter()
+  const { setFilter } = useContext(FilterContext)
+
+  const clearFilters = () => {
+    setFilter({
+      location: "todos",
+      type: "todos",
+      operation: "todos",
+      price: "todos",
+    })
+  }
+
+  if (properties.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 text-center">
+        <Home className="h-16 w-16 text-primary_green/50 mb-4" />
+        <h3 className="text-lg font-medium text-primary_green mb-2">
+          No se encontraron propiedades
+        </h3>
+        <p className="text-primary_green/70 mb-4">
+          No hay propiedades disponibles con los filtros seleccionados.
+        </p>
+        <Button
+          onClick={clearFilters}
+          className="bg-primary_green text-cream hover:bg-primary_green/90"
+        >
+          Limpiar filtros
+        </Button>
+      </div>
+    )
+  }
 
   return (
     <div className="space-y-8">

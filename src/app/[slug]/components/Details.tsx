@@ -52,13 +52,13 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
   }, [properties])
 
   return (
-    <article className="w-full h-max flex items-center justify-center flex-col gap-16 py-12 bg-cream">
+    <article className="w-full h-max flex items-center justify-center flex-col gap-16 py-12">
       <h1 className="text-primary_green text-5xl font-normal flex items-center gap-3">
         {title}
       </h1>
       <div className="w-full max-w-5xl mx-auto px-4">
         <Tabs defaultValue="details" className="w-full lg:w-[95%] mx-auto">
-          <TabsList className="grid w-full h-full grid-cols-2 bg-cream border-2 border-primary_green">
+          <TabsList className="grid w-full h-full grid-cols-2 border-2 border-primary_green">
             <TabsTrigger
               className="data-[state=active]:bg-primary_green data-[state=active]:text-cream text-primary_green"
               value="details"
@@ -73,7 +73,7 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="details">
-            <Card className="border-2 border-primary_green bg-cream shadow-none">
+            <Card className="border-2 border-primary_green shadow-none">
               <CardHeader className="pb-2">
                 <CardTitle className="text-primary_green text-xl">
                   Detalles de la propiedad
@@ -90,7 +90,7 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
             </Card>
           </TabsContent>
           <TabsContent value="location">
-            <Card className="border-2 border-primary_green bg-cream shadow-none">
+            <Card className="border-2 border-primary_green shadow-none">
               <CardHeader className="pb-2">
                 <CardTitle className="text-primary_green text-xl">
                   Ubicación de la propiedad

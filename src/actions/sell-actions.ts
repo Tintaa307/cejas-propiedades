@@ -1,7 +1,8 @@
 "use server"
 
-import { ContactSchema } from "@/lib/validators/FormSchema"
-import axios from "axios"
+import { SellContactSchema } from "@/lib/validations/ContactSchema"
+import { sendSellContactEmail } from "@/controllers/contact-controller"
+import { actionErrorHandler } from "@/lib/handlers/actionErrorHandler"
 import { z } from "zod"
 
 export const handleSubmit = async (formData: FormData) => {
@@ -26,22 +27,20 @@ export const handleSubmit = async (formData: FormData) => {
   }
 
   try {
-    const result = ContactSchema.parse(values)
-    const res = await axios.post(
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000/api/emails"
-        : "https://cejas-propiedades.com.ar/api/emails",
-      result
-    )
+    const validatedData = SellContactSchema.parse(values)
 
-    return res.data
+    const result = await actionErrorHandler(async () => {
+      return await sendSellContactEmail(validatedData)
+    })
+
+    return { status: 200, message: result.message }
   } catch (error) {
     if (error instanceof z.ZodError) {
       const errors = error.errors.map((err) => err.message)
       return { status: 500, message: errors }
     } else {
-      console.log(error)
-      return error
+      console.error("Sell action error:", error)
+      return { status: 500, message: "Error al enviar el mensaje" }
     }
   }
 }

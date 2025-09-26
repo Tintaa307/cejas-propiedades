@@ -41,3 +41,19 @@ export type FilterProps = {
   operation: string
   price: string
 }
+
+export interface PublicUser {
+  id: string
+  email: string
+  name: string
+  phone: string
+  role: "customer" | "admin"
+}
+
+export type AppActionError = {
+  statusCode: number
+  message: string
+  userMessage?: string
+  fieldErrors?: Record<string, string[]>
+  details?: unknown
+}
