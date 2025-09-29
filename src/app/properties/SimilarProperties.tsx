@@ -94,6 +94,7 @@ const SimilarProperties = ({
                       {property.locality === "flores" && "Las Flores"}
                       {property.locality === "marcos_paz" && "Marcos Paz"}
                       {property.locality === "navarro" && "Navarro"}
+                      {property.locality === "las_heras" && "Las Heras"}
                       {!property.locality && "No especificada"}
                     </span>
                   </div>

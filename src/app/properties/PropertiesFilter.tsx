@@ -37,6 +37,7 @@ const PropertiesFilter = ({
         { name: "Cañuelas", value: "canuelas" },
         { name: "San Miguel del Monte", value: "san_miguel_monte" },
         { name: "Ituzaingó", value: "ituzaingo" },
+        { name: "Las Heras", value: "las_heras" },
       ],
     },
     {
