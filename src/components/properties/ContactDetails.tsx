@@ -83,7 +83,7 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
                 <span className="font-medium text-primary_green">Tipo</span>
               </div>
               <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
-                <span className="text-primary_green">
+                <span className="text-primary_green capitalize">
                   {property.type || "Chacra"}
                 </span>
               </div>
@@ -98,9 +98,9 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
                   {property.locality === "canuelas" && "Cañuelas"}
                   {property.locality === "ituzaingo" && "Ituzaingó"}
                   {property.locality === "san_miguel_monte" &&
-                    "San Miguel Monte"}
+                    "San Miguel del Monte"}
                   {property.locality === "lujan" && "Luján"}
-                  {property.locality === "flores" && "Flores"}
+                  {property.locality === "flores" && "Las Flores"}
                   {property.locality === "marcos_paz" && "Marcos Paz"}
                   {property.locality === "navarro" && "Navarro"}
                 </span>
@@ -117,11 +117,24 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
 
               <div className="bg-primary_green/10 p-3 border-b border-r border-primary_green/20">
                 <span className="font-medium text-primary_green">
-                  Desarrollo
+                  Dirección
                 </span>
               </div>
               <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
-                <span className="text-primary_green">{property.site}</span>
+                <span className="text-primary_green">
+                  {property.address || "No especificada"}
+                </span>
+              </div>
+
+              <div className="bg-primary_green/10 p-3 border-b border-r border-primary_green/20">
+                <span className="font-medium text-primary_green">
+                  Ubicación
+                </span>
+              </div>
+              <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
+                <span className="text-primary_green">
+                  {property.location || "No especificada"}
+                </span>
               </div>
             </div>
           </div>

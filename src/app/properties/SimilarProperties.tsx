@@ -3,7 +3,7 @@
 import type { BatchProps } from "@/types/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { MapPin, Square, Bed, Bath } from "lucide-react"
+import { MapPin, Home, DollarSign } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const SimilarProperties = ({
@@ -57,19 +57,33 @@ const SimilarProperties = ({
               {/* Property Specs */}
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-primary_green">
-                  <Square className="h-4 w-4 mr-1" />
-                  <span className="text-sm">{property.type || "2,800m²"}</span>
+                  <Home className="h-4 w-4 mr-1" />
+                  <span className="text-sm capitalize">
+                    {property.type || "Casa"}
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="flex items-center text-primary_green">
-                    <Bed className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{property.site || 3}</span>
+                    <MapPin className="h-4 w-4 mr-1" />
+                    <span className="text-sm">
+                      {property.locality === "canuelas" && "Cañuelas"}
+                      {property.locality === "ituzaingo" && "Ituzaingó"}
+                      {property.locality === "san_miguel_monte" &&
+                        "San Miguel del Monte"}
+                      {property.locality === "lujan" && "Luján"}
+                      {property.locality === "flores" && "Las Flores"}
+                      {property.locality === "marcos_paz" && "Marcos Paz"}
+                      {property.locality === "navarro" && "Navarro"}
+                      {!property.locality && "No especificada"}
+                    </span>
                   </div>
 
                   <div className="flex items-center text-primary_green">
-                    <Bath className="h-4 w-4 mr-1" />
-                    <span className="text-sm">{property.price || 2}</span>
+                    <DollarSign className="h-4 w-4 mr-1" />
+                    <span className="text-sm">
+                      {property.price || "Consultar"}
+                    </span>
                   </div>
                 </div>
               </div>

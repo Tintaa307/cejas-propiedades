@@ -28,11 +28,7 @@ export default async function PropertyPage({
     })
 
     // Fetch property images
-    const folderPath = property.address
-      .replaceAll(" ", "_")
-      .replaceAll(".", "")
-      .replace("ü", "u")
-      .replaceAll(",", "")
+    const folderPath = property.id
 
     const images = await actionErrorHandler(async () => {
       return await getPropertyImages(folderPath)

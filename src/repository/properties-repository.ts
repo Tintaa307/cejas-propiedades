@@ -158,6 +158,8 @@ export class PropertiesRepository {
         .from("images")
         .list(folderPath)
 
+      console.log(propertyImages)
+
       if (error) {
         throw new PropertyImageFetchException(error.message, error)
       }

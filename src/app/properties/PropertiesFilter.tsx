@@ -35,35 +35,30 @@ const PropertiesFilter = ({
       options: [
         { name: "Todos", value: "todos" },
         { name: "Cañuelas", value: "canuelas" },
-        { name: "San Miguel Del Monte", value: "san_miguel_monte" },
+        { name: "San Miguel del Monte", value: "san_miguel_monte" },
         { name: "Ituzaingó", value: "ituzaingo" },
-        { name: "Navarro", value: "navarro" },
-        { name: "Las Flores", value: "flores" },
-        { name: "Marcos Paz", value: "marcos_paz" },
-        { name: "Lujan", value: "lujan" },
       ],
     },
     {
       label: "Tipo",
       filterName: "type",
-      placeholder: "Chacra",
+      placeholder: "Casa",
       options: [
         { name: "Todos", value: "todos" },
         { name: "Casa", value: "casa" },
         { name: "Quinta", value: "quinta" },
         { name: "Chacra", value: "chacra" },
-        { name: "Lotes", value: "lote" },
+        { name: "Lote", value: "lote" },
       ],
     },
-
     {
       label: "Estado",
       filterName: "operation",
-      placeholder: "Alquiler",
+      placeholder: "Venta",
       options: [
         { name: "Todos", value: "todos" },
+        { name: "En Venta", value: "venta" },
         { name: "Alquiler", value: "alquiler" },
-        { name: "Venta", value: "venta" },
       ],
     },
     {
@@ -72,10 +67,11 @@ const PropertiesFilter = ({
       placeholder: "$10000-$100000",
       options: [
         { name: "Todos", value: "todos" },
-        { name: "$10000-$100000", value: "10000-100000" },
-        { name: "$100000-$200000", value: "100000-200000" },
-        { name: "$200000-$300000", value: "200000-300000" },
-        { name: "$300000+", value: "300000+" },
+        { name: "Hasta $50.000", value: "0-50000" },
+        { name: "$50.000 - $100.000", value: "50000-100000" },
+        { name: "$100.000 - $200.000", value: "100000-200000" },
+        { name: "$200.000 - $300.000", value: "200000-300000" },
+        { name: "Más de $300.000", value: "300000+" },
       ],
     },
   ]

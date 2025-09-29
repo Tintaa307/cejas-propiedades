@@ -23,29 +23,41 @@ export function PropertiesPage({ properties }: PropertiesPageProps) {
   useEffect(() => {
     let filtered = properties
     if (filter.location !== "todos") {
-      filtered = filtered.filter((p) => p.location === filter.location)
+      filtered = filtered.filter((p) => p.locality === filter.location)
     }
     if (filter.type !== "todos") {
       filtered = filtered.filter((p) => p.type === filter.type)
     }
     if (filter.operation !== "todos") {
-      filtered = filtered.filter((p) => p.site === filter.operation)
+      // Filtrar por estado de venta (onsale)
+      if (filter.operation === "venta") {
+        filtered = filtered.filter((p) => p.onsale === true)
+      } else if (filter.operation === "alquiler") {
+        filtered = filtered.filter((p) => p.onsale === false)
+      }
     }
     if (filter.price !== "todos") {
-      // Suponiendo que el campo price es string, y filter.price es un rango tipo "4000-6000"
-      if (filter.price.includes("-")) {
-        const [min, max] = filter.price.split("-").map(Number)
-        filtered = filtered.filter((p) => {
-          const priceNum = Number(p.price.replace(/[^\d]/g, ""))
+      filtered = filtered.filter((p) => {
+        // Función para extraer el precio numérico del string
+        const extractPrice = (priceStr: string): number => {
+          // Remover caracteres no numéricos excepto puntos y comas
+          const cleanPrice = priceStr.replace(/[^\d.,]/g, "")
+          // Convertir a número, manejando tanto puntos como comas como separadores decimales
+          const price = parseFloat(cleanPrice.replace(",", "."))
+          return isNaN(price) ? 0 : price
+        }
+
+        const priceNum = extractPrice(p.price)
+
+        if (filter.price.includes("-")) {
+          const [min, max] = filter.price.split("-").map(Number)
           return priceNum >= min && priceNum <= max
-        })
-      } else if (filter.price.includes("+")) {
-        const min = Number(filter.price.replace("+", ""))
-        filtered = filtered.filter((p) => {
-          const priceNum = Number(p.price.replace(/[^\d]/g, ""))
+        } else if (filter.price.includes("+")) {
+          const min = Number(filter.price.replace("+", ""))
           return priceNum >= min
-        })
-      }
+        }
+        return true
+      })
     }
     setFilteredProperties(filtered)
   }, [filter, properties])
