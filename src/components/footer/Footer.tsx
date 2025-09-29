@@ -16,11 +16,6 @@ const Footer = () => {
       icon: <Facebook size={24} className="text-primary_green" />,
       link: "https://www.facebook.com/estudio.integral11",
     },
-    {
-      title: "Phone",
-      icon: <Phone size={24} className="text-primary_green" />,
-      link: "tel:+5491133683251",
-    },
   ]
 
   return (
