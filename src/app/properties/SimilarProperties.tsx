@@ -3,7 +3,7 @@
 import type { BatchProps } from "@/types/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { MapPin, Home, DollarSign } from "lucide-react"
+import { MapPin, Home, DollarSign, ImageIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const SimilarProperties = ({
@@ -15,6 +15,14 @@ const SimilarProperties = ({
 
   if (!recentProperties || recentProperties.length === 0) {
     return null
+  }
+
+  const hasValidImage = (property: BatchProps) => {
+    return (
+      property.public_url &&
+      property.public_url !== "/" &&
+      property.public_url.trim() !== ""
+    )
   }
 
   return (
@@ -33,15 +41,26 @@ const SimilarProperties = ({
           >
             {/* Property Image */}
             <div className="relative h-48 w-full">
-              <Image
-                src={
-                  property.public_url || "/placeholder.svg?height=400&width=600"
-                }
-                alt={property.address || "Property"}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
+              {hasValidImage(property) ? (
+                <Image
+                  src={property.public_url}
+                  alt={property.address || "Property"}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              ) : (
+                /* Fallback for properties without image */
+                <div className="absolute inset-0 bg-gradient-to-br from-primary_green/10 to-primary_green/5 flex flex-col items-center justify-center border-2 border-dashed border-primary_green/30">
+                  <ImageIcon className="h-10 w-10 text-primary_green/50 mb-2" />
+                  <p className="text-primary_green/70 text-sm font-medium text-center px-4 capitalize">
+                    {property.type}
+                  </p>
+                  <p className="text-primary_green/50 text-xs text-center px-4 mt-1">
+                    Sin imagen
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Property Details */}

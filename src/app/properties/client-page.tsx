@@ -60,7 +60,9 @@ export function PropertiesPage({ properties }: PropertiesPageProps) {
       })
     }
     setFilteredProperties(filtered)
-  }, [filter, properties])
+    // Reset limit when filters change
+    setLimit(9)
+  }, [filter, properties, setLimit])
 
   return (
     <section className="w-full min-h-screen py-32">

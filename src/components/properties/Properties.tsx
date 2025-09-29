@@ -3,11 +3,12 @@
 import type { BatchProps } from "@/types/types"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { Grid2X2, MapPin, Tag, Home } from "lucide-react"
+import { Grid2X2, MapPin, Tag, Home, ImageIcon } from "lucide-react"
 import { Button } from "../ui/button"
 import { firstLetterUppercase } from "@/lib/utils"
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { FilterContext } from "@/context/FilterContext"
+import PropertySkeleton from "./PropertySkeleton"
 
 interface PropertyGridProps {
   properties: BatchProps[]
@@ -18,6 +19,34 @@ interface PropertyGridProps {
 const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
   const router = useRouter()
   const { setFilter } = useContext(FilterContext)
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+
+  // Reset loaded images when properties change
+  useEffect(() => {
+    setLoadedImages(new Set())
+  }, [properties])
+
+  const handleImageLoad = (propertyId: string) => {
+    setLoadedImages((prev) => new Set(prev).add(propertyId))
+  }
+
+  const handleLoadMore = () => {
+    setIsLoadingMore(true)
+    // Simulate loading delay for better UX
+    setTimeout(() => {
+      setLimit(limit + 9)
+      setIsLoadingMore(false)
+    }, 500)
+  }
+
+  const hasValidImage = (property: BatchProps) => {
+    return (
+      property.public_url &&
+      property.public_url !== "/" &&
+      property.public_url.trim() !== ""
+    )
+  }
 
   const clearFilters = () => {
     setFilter({
@@ -52,24 +81,44 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
     <div className="space-y-8">
       {/* Property Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {properties.map((property) => (
+        {properties.slice(0, limit).map((property) => (
           <div
             key={property.id}
             className="overflow-hidden flex flex-col h-[420px]"
           >
             {/* Property Image */}
             <div className="relative h-[240px] w-full">
-              <Image
-                src={
-                  property.public_url || "/placeholder.svg?height=400&width=600"
-                }
-                alt={property.address || "Property"}
-                fill
-                className="object-cover rounded-md"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority
-                loading="eager"
-              />
+              {hasValidImage(property) ? (
+                <>
+                  {!loadedImages.has(property.id) && (
+                    <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md" />
+                  )}
+                  <Image
+                    src={property.public_url}
+                    alt={property.address || "Property"}
+                    fill
+                    className={`object-cover rounded-md transition-opacity duration-300 ${
+                      loadedImages.has(property.id)
+                        ? "opacity-100"
+                        : "opacity-0"
+                    }`}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    onLoad={() => handleImageLoad(property.id)}
+                    priority={properties.indexOf(property) < 6}
+                  />
+                </>
+              ) : (
+                /* Fallback for properties without image */
+                <div className="absolute inset-0 bg-gradient-to-br from-primary_green/10 to-primary_green/5 rounded-md flex flex-col items-center justify-center border-2 border-dashed border-primary_green/30">
+                  <ImageIcon className="h-12 w-12 text-primary_green/50 mb-2" />
+                  <p className="text-primary_green/70 text-sm font-medium text-center px-4">
+                    {firstLetterUppercase(property.type)}
+                  </p>
+                  <p className="text-primary_green/50 text-xs text-center px-4 mt-1">
+                    Imagen no disponible
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* Property Details */}
@@ -132,14 +181,24 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
       </div>
 
       {/* Load More Button */}
-      {properties.length >= limit && (
+      {properties.length > limit && (
         <div className="flex justify-center mt-8">
           <Button
-            onClick={() => setLimit(limit + 9)}
-            className="bg-primary_green text-cream hover:bg-primary_green/90 px-6 py-2 rounded-sm"
+            onClick={handleLoadMore}
+            disabled={isLoadingMore}
+            className="bg-primary_green text-cream hover:bg-primary_green/90 px-6 py-2 rounded-sm disabled:opacity-50"
           >
-            Ver Más
+            {isLoadingMore ? "Cargando..." : "Ver Más"}
           </Button>
+        </div>
+      )}
+
+      {/* Loading Skeletons for new properties */}
+      {isLoadingMore && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <PropertySkeleton key={`skeleton-${index}`} />
+          ))}
         </div>
       )}
     </div>
