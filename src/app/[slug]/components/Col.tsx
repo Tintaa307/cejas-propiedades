@@ -10,7 +10,7 @@ import { IconArrowNarrowRight } from "@tabler/icons-react"
 
 const Col = ({ fraccion }: { fraccion: Property | undefined }) => {
   return (
-    <div className="w-1/3 h-max border-2 border-primary_green rounded-xl lg:w-full">
+    <div className="lg:w-1/3 h-max border-2 border-primary_green rounded-xl w-full">
       <header className="w-full h-max bg-primary_green flex items-center justify-center rounded-t-lg">
         <h6 className="text-cream font-semibold text-lg p-4 text-center">
           {fraccion?.title}
