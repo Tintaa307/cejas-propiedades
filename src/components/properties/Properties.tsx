@@ -136,6 +136,8 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                   {property.locality === "marcos_paz" && "Marcos Paz"}
                   {property.locality === "navarro" && "Navarro"}
                   {property.locality === "las_heras" && "Las Heras"}
+                  {property.locality === "las_flores" && "Las Flores"}
+                  {property.locality === "castelar" && "Castelar"}
                 </p>
               </div>
 
