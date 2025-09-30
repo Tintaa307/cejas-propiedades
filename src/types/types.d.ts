@@ -14,6 +14,7 @@ export interface Work {
   list?: string[]
   video: string
   isSold: boolean
+  isComingSoon?: boolean
 }
 
 export interface Property {

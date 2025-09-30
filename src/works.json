@@ -138,7 +138,7 @@
         "/images/works/retiro/11.jpg"
       ],
       "blueprints": [
-        "/images/planos/planos-retiro.jpg"
+        "/images/planos/plano-retiro.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
       "map": "retiro",
@@ -193,7 +193,8 @@
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/estacion.mp4?t=2024-09-11T20%3A28%3A07.845Z",
       "map": "estacion",
-      "isSold": false
+      "isSold": false,
+      "isComingSoon": true
     },
     {
       "title": "magnolias",

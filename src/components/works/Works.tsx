@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Check } from "lucide-react"
+import { Check, Clock } from "lucide-react"
 
 const Works = () => {
   const works = [
@@ -11,48 +11,56 @@ const Works = () => {
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/canada-dron.JPG",
       link: "/canada",
       isSold: true,
+      isComingSoon: false,
     },
     {
       title: "Pueblo Chico",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/pueblo-dron.JPG",
       link: "/pueblo",
       isSold: false,
+      isComingSoon: false,
     },
     {
       title: "Las Gardenias",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/gardenias-dron.JPG",
       link: "/gardenias",
       isSold: false,
+      isComingSoon: false,
     },
     {
       title: "El Retiro",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/retiro-dron.JPG",
       link: "/retiro",
       isSold: false,
+      isComingSoon: false,
     },
     {
       title: "La Comarca",
       src: "/images/dron-images/comarca-dron.jpg",
       link: "/comarca",
       isSold: true,
+      isComingSoon: false,
     },
     {
       title: "La Estación",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/img-estacion.jpg",
       link: "/estacion",
       isSold: false,
+      isComingSoon: true,
     },
     {
       title: "Las Magnolias",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/magnolias-dron.jpg",
       link: "/magnolias",
       isSold: false,
+      isComingSoon: false,
     },
     {
       title: "La Cañada II",
       src: "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/desarrollos/canada2-dron.JPG",
       link: "/canada2",
       isSold: false,
+      isComingSoon: false,
     },
   ]
 
@@ -85,6 +93,20 @@ const Works = () => {
                       <p className="text-sm mt-2 max-w-md text-center px-4">
                         Este desarrollo ya ha sido vendido. Consulte nuestras
                         otras opciones disponibles.
+                      </p>
+                    </div>
+                  ) : work.isComingSoon ? (
+                    <div className="absolute inset-0 bg-primary_green/90 flex flex-col items-center justify-center text-cream space-y-1">
+                      <div className="bg-cta_red rounded-full p-3">
+                        <Clock size={32} className="text-cream" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif">
+                        {work.title}
+                      </h3>
+                      <p className="text-lg md:text-xl font-medium">PRÓXIMO LANZAMIENTO</p>
+                      <p className="text-sm mt-2 max-w-md text-center px-4">
+                        Este desarrollo estará disponible próximamente. Consulta
+                        nuestras otras opciones disponibles.
                       </p>
                     </div>
                   ) : (

@@ -56,7 +56,7 @@ const Work = ({ params }: { params: Promise<{ slug: string }> }) => {
         <Loader />
       ) : (
         <div className="w-full h-full flex flex-col gap-12">
-          <Presentation video={work.video} isSold={work.isSold} />
+          <Presentation video={work.video} isSold={work.isSold} isComingSoon={work.isComingSoon} />
           <Details
             title={work.value}
             details={work.details}

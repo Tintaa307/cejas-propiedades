@@ -1,12 +1,13 @@
 type PresentationProps = {
   video: string
   isSold: boolean
+  isComingSoon?: boolean
 }
 
-const Presentation = ({ video, isSold }: PresentationProps) => {
+const Presentation = ({ video, isSold, isComingSoon }: PresentationProps) => {
   return (
     <div className="w-full h-screen flex items-center justify-center relative overflow-hidden">
-      {!isSold ? (
+      {!isSold && !isComingSoon ? (
         <>
           <video
             autoPlay
@@ -18,7 +19,7 @@ const Presentation = ({ video, isSold }: PresentationProps) => {
           </video>
           <div className="absolute inset-0 bg-primary_green/30 z-0"></div>
         </>
-      ) : (
+      ) : isSold ? (
         <div className="w-full h-screen flex items-center justify-center flex-col gap-10">
           <h1 className="text-primary_green text-6xl md:text-5xl sm:text-4xl font-serif font-bold">
             Este desarrollo se encuentra{" "}
@@ -27,6 +28,17 @@ const Presentation = ({ video, isSold }: PresentationProps) => {
           <p className="text-primary_green text-lg font-normal">
             Si estás interesado en adquirir una propiedad similar, no dudes en
             contactarnos. Abajo te dejamos la información del desarrollo.
+          </p>
+        </div>
+      ) : (
+        <div className="w-full h-screen flex items-center justify-center flex-col gap-10">
+          <h1 className="text-primary_green text-6xl md:text-5xl sm:text-4xl font-serif font-bold">
+            Este desarrollo estará disponible{" "}
+            <span className="underline">PRÓXIMAMENTE</span>
+          </h1>
+          <p className="text-primary_green text-lg font-normal">
+            Si estás interesado en este desarrollo, no dudes en
+            contactarnos para más información. Abajo te dejamos los detalles del proyecto.
           </p>
         </div>
       )}
