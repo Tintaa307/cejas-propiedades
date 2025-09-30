@@ -52,14 +52,14 @@ const Slider = ({
   aria-label="Anterior"
   className="bg-primary_green text-cream border-none hover:bg-primary_green/80
              left-[-2.75rem] sm:left-[-3.25rem] md:left-[-3.75rem] lg:left-[-4.5rem]
-             h-10 w-10 rounded-full shadow-md hidden lg:block"
+             h-10 w-10 rounded-full shadow-md hidden lg:flex justify-center items-center"
 />
 
 <CarouselNext
   aria-label="Siguiente"
   className="bg-primary_green text-cream border-none hover:bg-primary_green/80
              right-[-2.75rem] sm:right-[-3.25rem] md:right-[-3.75rem] lg:right-[-4.5rem]
-             h-10 w-10 rounded-full shadow-md hidden lg:block"
+             h-10 w-10 rounded-full shadow-md hidden lg:flex justify-center items-center"
 />
     </Carousel>
   )

@@ -94,11 +94,18 @@
         "Financiación "
       ],
       "imgs": [
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/1.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/gardenias/2.jpg"
+        "/images/works/gardenias/1.jpg",
+        "/images/works/gardenias/2.jpg",
+        "/images/works/gardenias/3.webp",
+        "/images/works/gardenias/5.webp",
+        "/images/works/gardenias/6.webp",
+        "/images/works/gardenias/7.webp",
+        "/images/works/gardenias/8.jpg",
+        "/images/works/gardenias/9.jpg"
+
       ],
       "blueprints": [
-        "/images/planos/planos-gardenias.png"
+        "/images/planos/planos-gardenias.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/gardenias.mp4?t=2024-09-11T20%3A28%3A18.563Z",
       "map": "gardenias",
@@ -118,12 +125,20 @@
         "Se puede entregar con vivienda (Consultar modelos y valores)"
       ],
       "imgs": [
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/1.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/2.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/retiro/3.jpg"
+        "/images/works/retiro/1.jpg",
+        "/images/works/retiro/2.jpg",
+        "/images/works/retiro/3.jpg",
+        "/images/works/retiro/4.jpg",
+        "/images/works/retiro/5.jpg",
+        "/images/works/retiro/6.jpg",
+        "/images/works/retiro/7.jpg",
+        "/images/works/retiro/8.jpg",
+        "/images/works/retiro/9.jpg",
+        "/images/works/retiro/10.jpg",
+        "/images/works/retiro/11.jpg"
       ],
       "blueprints": [
-        "/images/planos/planos-retiro.png"
+        "/images/planos/planos-retiro.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
       "map": "retiro",
@@ -224,17 +239,16 @@
         "Financiación."
       ],
       "imgs": [
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/1.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/2.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/3.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/4.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/5.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/6.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/7.jpg",
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada2/8.jpg"
+        "/images/works/canada2/1.jpg",
+        "/images/works/canada2/2.JPG",
+        "/images/works/canada2/3.jpg",
+        "/images/works/canada2/4.jpg",
+        "/images/works/canada2/5.jpg",
+        "/images/works/canada2/6.jpg",
+        "/images/works/canada2/7.jpg"
       ],
       "blueprints": [
-        "/images/planos/planos-canada.png"
+        "/images/planos/planos-canada2.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada2.mp4?t=2024-09-11T20%3A27%3A37.931Z",
       "map": "canada2",
