@@ -54,6 +54,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
       type: "todos",
       operation: "todos",
       price: "todos",
+      sortBy: "default",
     })
   }
 
@@ -159,6 +160,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                       {property.locality === "las_heras" && "Las Heras"}
                       {property.locality === "las_flores" && "Las Flores"}
                       {property.locality === "castelar" && "Castelar"}
+                      {property.locality === "lobos" && "Lobos"}
                     </p>
                   </span>
                 </div>

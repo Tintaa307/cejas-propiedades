@@ -78,6 +78,20 @@ const PropertiesFilter = ({
         { name: "Más de $300.000", value: "300000+" },
       ],
     },
+    {
+      label: "Ordenar por",
+      filterName: "sortBy",
+      placeholder: "Predeterminado",
+      options: [
+        { name: "Predeterminado", value: "default" },
+        { name: "Precio: Menor a Mayor", value: "price_asc" },
+        { name: "Precio: Mayor a Menor", value: "price_desc" },
+        { name: "Nombre: A-Z", value: "name_asc" },
+        { name: "Nombre: Z-A", value: "name_desc" },
+        { name: "Tipo: A-Z", value: "type_asc" },
+        { name: "Localidad: A-Z", value: "locality_asc" },
+      ],
+    },
   ]
 
   const { setFilter, filter } = useContext(FilterContext)

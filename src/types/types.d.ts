@@ -42,6 +42,7 @@ export type FilterProps = {
   type: string
   operation: string
   price: string
+  sortBy: string
 }
 
 export interface PublicUser {

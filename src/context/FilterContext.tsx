@@ -9,6 +9,7 @@ const FilterContext = createContext({
     type: "todos",
     price: "todos",
     operation: "todos",
+    sortBy: "default",
   },
   setFilter: (filter: FilterProps | ((prev: FilterProps) => FilterProps)) => {},
 })
@@ -19,6 +20,7 @@ const FilterProvider = ({ children }: { children: React.ReactNode }) => {
     type: "todos",
     operation: "todos",
     price: "todos",
+    sortBy: "default",
   })
 
   return (
