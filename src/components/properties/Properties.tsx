@@ -125,20 +125,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
             <div className="py-4 flex flex-col space-y-4">
               {/* Location */}
               <div className="flex items-center text-primary_green">
-                <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
-                <p className="text-sm truncate">
-                  {property.locality === "canuelas" && "Cañuelas"}
-                  {property.locality === "san_miguel_monte" &&
-                    "San Miguel del Monte"}
-                  {property.locality === "ituzaingo" && "Ituzaingó"}
-                  {property.locality === "lujan" && "Luján"}
-                  {property.locality === "flores" && "Flores"}
-                  {property.locality === "marcos_paz" && "Marcos Paz"}
-                  {property.locality === "navarro" && "Navarro"}
-                  {property.locality === "las_heras" && "Las Heras"}
-                  {property.locality === "las_flores" && "Las Flores"}
-                  {property.locality === "castelar" && "Castelar"}
-                </p>
+                {property.name}
               </div>
 
               {/* Property Specs */}
@@ -160,7 +147,19 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                 <div className="flex items-center text-primary_green">
                   <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                   <span className="text-sm">
-                    {property.address.slice(0, 14) + "..."}
+                    <p className="text-sm truncate">
+                      {property.locality === "canuelas" && "Cañuelas"}
+                      {property.locality === "san_miguel_monte" &&
+                        "San Miguel del Monte"}
+                      {property.locality === "ituzaingo" && "Ituzaingó"}
+                      {property.locality === "lujan" && "Luján"}
+                      {property.locality === "flores" && "Flores"}
+                      {property.locality === "marcos_paz" && "Marcos Paz"}
+                      {property.locality === "navarro" && "Navarro"}
+                      {property.locality === "las_heras" && "Las Heras"}
+                      {property.locality === "las_flores" && "Las Flores"}
+                      {property.locality === "castelar" && "Castelar"}
+                    </p>
                   </span>
                 </div>
               </div>
