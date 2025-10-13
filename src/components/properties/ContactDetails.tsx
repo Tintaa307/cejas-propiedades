@@ -53,8 +53,8 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column - Property Info */}
         <div className="order-2 md:order-1">
-          <h1 className="text-2xl md:text-5xl font-normal text-primary_green mb-2">
-            {property.site}
+          <h1 className="text-2xl md:text-5xl font-normal text-primary_green mb-8">
+            {property.name}
           </h1>
 
           <div className="flex justify-between items-center mb-4">
@@ -106,6 +106,7 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
                   {property.locality === "las_heras" && "Las Heras"}
                   {property.locality === "las_flores" && "Las Flores"}
                   {property.locality === "castelar" && "Castelar"}
+                  {property.locality === "lobos" && "Lobos"}
                 </span>
               </div>
 

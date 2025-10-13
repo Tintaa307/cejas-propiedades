@@ -18,20 +18,6 @@ const Features = () => {
 
   const features = [
     {
-      title: "La Estacion",
-      image: "/images/desarrollos/work-estacion.svg",
-      description:
-        "Se encuentra ubicado en el barrio de Peluffo en la Ruta 3 km 55. A 600 mts de la colectora de la Ruta 3 altura del km 55, frente a la calle Güemes, esquina San Martin (80mts). A 10 km del centro de Cañuelas. Tiene acceso por autopista Ezeiza/Cañuelas y Ruta 6 y Ruta 3.",
-      price: {
-        original: "18.000 USD",
-        discount: "16.000 USD",
-      },
-      isInOffer: true,
-      location: "Ruta 3 Km 71,600",
-      site: "Cañuelas",
-      link: "/estacion",
-    },
-    {
       title: "Las Magnolias",
       image: "/images/desarrollos/work-magnolias.jpg",
       description:

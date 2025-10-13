@@ -20,6 +20,7 @@ type ItemProps = {
     onsale: boolean
     type: string
     public_url: string
+    name: string
   }
 }
 
@@ -50,6 +51,14 @@ const Item = ({ index, property }: ItemProps) => {
       ) : (
         <div className="w-[500px] h-[300px] relative rounded-[40px]">
           <strong className="text-red text-xl">Coming soon!</strong>
+        </div>
+      )}
+
+      {property.name && (
+        <div className="w-full">
+          <h3 className="text-lg font-semibold text-primary_green mb-2">
+            {property.name}
+          </h3>
         </div>
       )}
 

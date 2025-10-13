@@ -34,6 +34,7 @@ export interface BatchProps {
   type: string
   public_url: string
   locality: string
+  name: string
 }
 
 export type FilterProps = {

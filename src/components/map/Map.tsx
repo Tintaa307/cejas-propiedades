@@ -103,6 +103,17 @@ const Map = ({ work }: { work?: string }) => {
       location: "",
       pathname: "/estacion",
     },
+    {
+      name: "La Cañada II",
+      className:
+        "absolute top-[45%] left-[32%] w-max h-max rounded-full flex items-center justify-center",
+      image: "/images/desarrollos/work-canada2.svg",
+      logo: "",
+      surface: "796,87m²",
+      price: "Consultar",
+      location: "Barrio de Peluffo, Ruta 3 km 55",
+      pathname: "/canada2",
+    },
   ]
 
   useEffect(() => {

@@ -40,6 +40,7 @@ const PropertiesFilter = ({
         { name: "Las Heras", value: "las_heras" },
         { name: "Las Flores", value: "las_flores" },
         { name: "Castelar", value: "castelar" },
+        { name: "Lobos", value: "lobos" },
       ],
     },
     {
