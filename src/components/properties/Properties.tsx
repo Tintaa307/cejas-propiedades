@@ -22,10 +22,9 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  // Reset loaded images when properties change
-  useEffect(() => {
-    setLoadedImages(new Set())
-  }, [properties])
+  // Remove the useEffect that was resetting loaded images on every filter change
+  // This was causing images to disappear when filters were applied
+  // Images will now persist once loaded, providing a better user experience
 
   const handleImageLoad = (propertyId: string) => {
     setLoadedImages((prev) => new Set(prev).add(propertyId))
