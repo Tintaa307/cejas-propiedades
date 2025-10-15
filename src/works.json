@@ -19,9 +19,7 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/2.jpg?t=2024-09-20T00%3A26%3A05.780Z",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/canada/3.jpg"
       ],
-      "blueprints": [
-        "/images/planos/planos-canada.png"
-      ],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada.mp4?t=2024-09-11T20%3A27%3A57.533Z",
       "map": "canada",
       "isSold": false
@@ -29,20 +27,20 @@
     {
       "title": "pueblo",
       "value": "Pueblo Chico",
-      "location": "Barrio abierto en el Partido y Localidad de Cañuelas, sobre Ricardo Rojas entre Camino Panelo y Raggio. A 1.500 m del centro (acceso directo por Camino Panelo) y a 2.000 m de la Ruta 205.",
+      "location": "El barrio abierto “Pueblo Chico” , se encuentra en el Partido y Localidad de Cañuelas. Ubicado sobre Ricardo Rojas, entre Camino Panelo y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Camino Panelo), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       "properties": [
         {
-          "title": "Fraccion 1A",
-          "list": ["Lotes 1 a 4", "Lote 5", "Lotes 6 y 7"],
+          "title": "Fraccion 1F",
+          "list": ["Lotes 1 a 3", "Lote 4 a 5", "Lotes 6 y 7"],
           "prices": ["U$S 31.000", "U$S 53.000", "U$S 36.500"]
         },
         {
-          "title": "Fraccion 1B",
+          "title": "Fraccion 1E",
           "list": ["Lotes 1", "Lote 8", "Lotes 10 a 13"],
           "prices": ["U$S 23.000", "U$S 48.000", "U$S 23.500"]
         },
         {
-          "title": "Fraccion 1C",
+          "title": "Fraccion 1D",
           "list": ["Lotes 1, 2, 3 y 5", "Lote 6 y 10", "Lote 7", "Lote 8 y 9"],
           "prices": ["U$S 26.000", "U$S 24.000", "U$S 58.000", "U$S 150.000"]
         }
@@ -66,9 +64,7 @@
         "/images/works/pueblo/8.jpg",
         "/images/works/pueblo/9.JPG"
       ],
-      "blueprints": [
-        "/images/planos/plano-pueblo.jpg"
-      ],
+      "blueprints": ["/images/planos/plano-pueblo.jpg"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/pueblo.mp4?t=2024-09-11T20%3A28%3A31.071Z",
       "map": "pueblo",
       "isSold": false
@@ -76,7 +72,7 @@
     {
       "title": "gardenias",
       "value": "Las Gardenias",
-      "location": "El desarrollo se encuentra sobre la Ruta 205 a la altura del km 56,500, Localidad y Partido de Cañuelas. Excelente acceso, por autopista Ezeiza-Cañuelas, altura de la bajada Petion 2.000mts de distancia. A 4 km del centro de Cañuelas. Referencia: Frente al Country La Taquara.",
+      "location": "El barrio abierto “Las Gardenias”, se encuentra ubicado en el Partido y Localidad de Cañuelas. El desarrollo tiene ingreso por Ruta Nacional N° 205, altura del km 57. (Frente al country “La Tacuara”). Cuenta con un excelente acceso, por autopista Ezeiza-Cañuelas, a la altura de la bajada Petion (2.000mts de distancia). A 4 km del centro de Cañuelas.",
       "list": [
         "El emprendimiento está compuesto por 61 lotes de terreno, entre ellos: ",
         "Lote n°1: Lote Baldío sobre Ruta 205.",
@@ -84,14 +80,15 @@
         "Lote N° 3: Casa de 3 ambientes, 2 dormitorios, cocina, comedor y baño. (A REFACCIONAR). Con cimientos para ampliación. Pileta de fibrofacil de 2x4"
       ],
       "details": [
-        "El barrio consta de 61 lotes de terreno. ",
+        "El barrio consta de 61 lotes de terreno baldíos. ",
         "Lotes baldíos y arbolados.",
         "Lotes de 640 m2, 720m2, 920 m2 y 940m2 ",
-        "Calles internas empedradas",
-        "Luminaria pública",
-        "Tendido de luz eléctrica",
-        "Escrituración inmediata",
-        "Financiación "
+        "Calles internas empedradas de estabilizado, entoscado y empedrado.",
+        "además tiene tendido eléctrico, luminarias públicas y fibra optica.",
+        "Barrio abierto: no paga expensas.",
+        "Financiación hasta 24 cuotas.",
+        "Se acepta vehículo en parte de pago (consultar).",
+        "Se puede entregar con vivienda (consultar modelos y valores)."
       ],
       "imgs": [
         "/images/works/gardenias/1.jpg",
@@ -102,10 +99,10 @@
         "/images/works/gardenias/7.webp",
         "/images/works/gardenias/8.jpg",
         "/images/works/gardenias/9.jpg"
-
       ],
       "blueprints": [
-        "/images/planos/planos-gardenias.jpg"
+        "/images/planos/gardenias-planos.jpg",
+        "/images/planos/gardenias-precios.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/gardenias.mp4?t=2024-09-11T20%3A28%3A18.563Z",
       "map": "gardenias",
@@ -138,7 +135,8 @@
         "/images/works/retiro/11.jpg"
       ],
       "blueprints": [
-        "/images/planos/plano-retiro.jpg"
+        "/images/planos/plano-retiro.jpg",
+        "/images/planos/retiro-precios.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/retiro.mp4?t=2024-09-11T20%3A28%3A40.001Z",
       "map": "retiro",
@@ -158,12 +156,8 @@
         "Se aceptan vehículos en parte de pago (Consultar)",
         "Financiación."
       ],
-      "imgs": [
-        "/images/image-carrousel.png"
-      ],
-      "blueprints": [
-        "/images/planos/planos-canada.png"
-      ],
+      "imgs": ["/images/image-carrousel.png"],
+      "blueprints": ["/images/planos/planos-canada.png"],
       "video": "/videos/video.mp4",
       "map": "comarca",
       "isSold": true
@@ -188,9 +182,7 @@
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/3.jpg",
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/carrousel/estacion/4.jpg?t=2024-09-25T19%3A11%3A42.562Z"
       ],
-      "blueprints": [
-        "/images/planos/plano-estacion.jpg"
-      ],
+      "blueprints": ["/images/planos/plano-estacion.jpg"],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/estacion.mp4?t=2024-09-11T20%3A28%3A07.845Z",
       "map": "estacion",
       "isSold": false,
@@ -219,7 +211,8 @@
         "/images/works/magnolias/8.jpg"
       ],
       "blueprints": [
-        "/images/planos/plano-magnolias.jpg"
+        "/images/planos/plano-magnolias.jpg",
+        "/images/planos/magnolias-precios.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/lasmagnolias.mp4",
       "map": "magnolias",
@@ -249,7 +242,8 @@
         "/images/works/canada2/7.jpg"
       ],
       "blueprints": [
-        "/images/planos/planos-canada2.jpg"
+        "/images/planos/planos-canada2.jpg",
+        "/images/planos/canada2-precios.jpg"
       ],
       "video": "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/videos/canada2.mp4?t=2024-09-11T20%3A27%3A37.931Z",
       "map": "canada2",

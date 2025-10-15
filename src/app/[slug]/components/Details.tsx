@@ -40,9 +40,9 @@ const Details = ({ title, details, location, properties }: DetailsProps) => {
   const [fraccionC, setFraccionC] = useState<Property | undefined>(undefined)
 
   useEffect(() => {
-    const A = properties?.find((property) => property.title === "Fraccion 1A")
-    const B = properties?.find((property) => property.title === "Fraccion 1B")
-    const C = properties?.find((property) => property.title === "Fraccion 1C")
+    const A = properties?.find((property) => property.title === "Fraccion 1F")
+    const B = properties?.find((property) => property.title === "Fraccion 1E")
+    const C = properties?.find((property) => property.title === "Fraccion 1D")
 
     if (!A && !B && !C) return
 

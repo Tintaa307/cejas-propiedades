@@ -21,15 +21,15 @@ const Features = () => {
       title: "Las Magnolias",
       image: "/images/desarrollos/work-magnolias.jpg",
       description:
-        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+        "El barrio abierto “Las Magnolias” se encuentra sobre las calles Maipú y José Hernández, Localidad y Partido de Cañuelas, Provincia de Buenos Aires. A 1 cuadra del asfalto (calle Maipú), a 1.500 m de la estación de tren de Cañuelas (8 min en auto), a 800 m de calle Dorrego (continuación de Camino Panelo) y a 3 km de Ruta 3 (10 min en auto).",
       price: {
-        original: "16.000 USD",
-        discount: "14.500 USD",
+        original: "19.000 USD",
+        discount: "17.000 USD",
       },
       isInOffer: true,
-      location: "Ruta 3 Km 71,600",
+      location: "Maipú y José Hernández",
       site: "Cañuelas",
-      link: "/magnoilias",
+      link: "/magnolias",
     },
     {
       // de 3, has
@@ -37,13 +37,14 @@ const Features = () => {
       image:
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/Chacra_35_Has_Santa_Rosa/1.jpg",
       description:
-        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+        "Se encuentra a la altura del Km 54 de la Ruta 3; ingresando por calle San Martin 2300 mts hasta el puente (Calle Asfaltada), luego del puente Se encuentra a 1000 mts ( Por camino de Ripio.)",
       price: {
         original: "140.000 USD",
         discount: "120.000 USD",
       },
       isInOffer: true,
-      location: "Ruta 3 Km 71,600",
+      location:
+        "Altura del Km 54 de la Ruta 3; ingresando por calle San Martin",
       site: "Cañuelas",
       link: "/properties/2009",
     },
