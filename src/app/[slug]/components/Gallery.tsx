@@ -1,4 +1,3 @@
-import { IconSatellite } from "@tabler/icons-react"
 import Slider from "./Slider"
 import Title from "@/components/title/Title"
 
