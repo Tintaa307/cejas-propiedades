@@ -35,7 +35,7 @@ const Features = () => {
       // de 3, has
       title: "Chacra en Cañuelas",
       image:
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/Chacra_35_Has_Santa_Rosa/1.jpg",
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/2009/1.jpg",
       description:
         "Se encuentra a la altura del Km 54 de la Ruta 3; ingresando por calle San Martin 2300 mts hasta el puente (Calle Asfaltada), luego del puente Se encuentra a 1000 mts ( Por camino de Ripio.)",
       price: {
@@ -51,7 +51,8 @@ const Features = () => {
     {
       // 18 has en
       title: "San Miguel del monte",
-      image: "/images/image-1.png",
+      image:
+        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/3000/Imagen%20de%20WhatsApp%202024-07-02%20a%20las%2009.12.23_0590f30a.jpg",
       description:
         "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
       price: {
