@@ -54,15 +54,15 @@ const Features = () => {
       image:
         "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/3000/Imagen%20de%20WhatsApp%202024-07-02%20a%20las%2009.12.23_0590f30a.jpg",
       description:
-        "El predio se encuentra ubicado en el Partido y Localidad de Cañuelas. Ingreso por Ricardo Rojas, entre Dorrego y Raggio. Ubicado a 1.500 mts del centro de Cañuelas (Acceso directo al centro por Dorrego), a 2.000 mts de la Ruta 205 (Excelente acceso a la ruta).",
+        "Se encuentra ubicado en la localidad de Francisco Berra, Partido de San Miguel del Monte. A una distancia de 2.300 mts de la Ruta 41 ingresando por excelente acceso, entoscado y firme. Tambien dista 5 Km de la rotonda que cruza la Ruta 41 con la Ruta 3.",
       price: {
         original: "210.000 USD",
         discount: "200.000 USD",
       },
       isInOffer: true,
-      location: "Ruta 3 Km 71,600",
-      site: "Cañuelas",
-      link: "#",
+      location: "Francisco Berra",
+      site: "San Miguel del Monte",
+      link: "/properties/3000",
     },
   ]
 
