@@ -6,7 +6,6 @@ import { Toaster, toast } from "sonner"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { Instagram, Facebook, Phone } from "lucide-react"
 import Link from "next/link"
 
 const Sell = () => {

@@ -59,7 +59,7 @@ const ServicesExample = () => {
     {
       title: "Usucapion",
       description:
-        "Dormaliza tu derecho de propiedad mediante posesión continua y legal.",
+        "Normaliza tu derecho de propiedad mediante posesión continua y legal.",
       icon: <IconNotebook size={30} className="text-white" />,
     },
   ]

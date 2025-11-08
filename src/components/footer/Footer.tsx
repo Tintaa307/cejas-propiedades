@@ -9,7 +9,7 @@ const Footer = () => {
     {
       title: "Instagram",
       icon: <Instagram size={24} className="text-primary_green" />,
-      link: "https://www.instagram.com/cejas.propiedades/?hl=es",
+      link: "https://www.instagram.com/cejaspropiedades",
     },
     {
       title: "Facebook",
