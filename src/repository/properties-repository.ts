@@ -10,7 +10,6 @@ import {
   PropertyNotFoundException,
   PropertyCreationException,
   PropertyUpdateException,
-  PropertyInvalidFieldsException,
   PropertyFetchException,
   PropertyImageFetchException,
 } from "@/exceptions/properties/properties-exceptions"
