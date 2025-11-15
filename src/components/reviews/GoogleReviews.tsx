@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { DevelopmentReview, GoogleReview } from "@/types/types"
 import { Star, RefreshCw, User, Clock } from "lucide-react"
 import Image from "next/image"
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -195,15 +196,22 @@ const GoogleReviews = ({ refreshInterval = 300000 }: GoogleReviewsProps) => {
               align: "start",
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-2">
               {allReviews.map((review, index) => (
                 <CarouselItem
                   key={`${review.time}-${index}`}
                   className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3"
                 >
-                  <div className="bg-cream rounded-lg shadow-md p-6 h-full hover:shadow-lg transition-shadow flex flex-col">
+                  <div className="bg-cream rounded-lg border border-primary_green shadow-md p-6 h-full hover:shadow-lg transition-shadow flex flex-col">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         {review.profile_photo_url ? (

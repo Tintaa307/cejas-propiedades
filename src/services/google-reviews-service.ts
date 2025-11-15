@@ -17,7 +17,7 @@ export class GoogleReviewsService {
     developmentTitle: string,
     location?: string
   ): Promise<DevelopmentReview | null> {
-    let finalPlaceId = placeId
+    let finalPlaceId: string | null | undefined = placeId
 
     // Si no hay placeId, intenta buscarlo
     if (!finalPlaceId) {
@@ -37,6 +37,11 @@ export class GoogleReviewsService {
       console.log(
         `Place ID encontrado para ${developmentTitle}: ${finalPlaceId}`
       )
+    }
+
+    // En este punto, finalPlaceId debe ser un string válido
+    if (!finalPlaceId) {
+      return null
     }
 
     const placeDetails =
