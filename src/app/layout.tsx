@@ -3,6 +3,7 @@ import { Mona_Sans } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/navbar/Navbar"
 import Footer from "@/components/footer/Footer"
+import { TagManagerProvider } from "@/context/TagManager"
 
 const monaSans = Mona_Sans({ subsets: ["latin"] })
 
@@ -48,9 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={monaSans.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <TagManagerProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </TagManagerProvider>
       </body>
     </html>
   )
