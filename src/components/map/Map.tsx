@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import Button from "../button/Button"
 import CardContent from "./CardContent"
 import { useRouter } from "next/navigation"
-import { RiMapPinFill } from "@remixicon/react"
+import { RiMapPinFill, RiCheckboxCircleFill } from "@remixicon/react"
 
 const variants = {
   open: {
@@ -32,8 +32,8 @@ const Map = ({ work }: { work?: string }) => {
         "absolute top-2/3 md:top-2/3 md:mt-8 lg:mt-12 md:-ml-6 lg:-ml-10 md:left-[30%] lg:left-1/3 left-[28%] mt-8 -ml-6 w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-retiro.svg",
       logo: "",
-      surface: "",
-      price: "",
+      surface: "Lotes de 32x18m y 70x48m",
+      price: "Desde 30000 USD",
       location: "",
       pathname: "/retiro",
     },
@@ -43,8 +43,8 @@ const Map = ({ work }: { work?: string }) => {
         "absolute top-3/4 md:top-3/4 md:mt-12 lg:mt-[84px] md:-ml-16 lg:-ml-[108px] md:left-[30%] lg:left-1/3 left-[28%] mt-16 -ml-20 w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-pueblo-chico.svg",
       logo: "",
-      surface: "",
-      price: "",
+      surface: "Lotes desde 750m² a 1000m²",
+      price: "Desde 23000 USD",
       location: "",
       pathname: "/pueblo",
     },
@@ -54,8 +54,8 @@ const Map = ({ work }: { work?: string }) => {
         "absolute top-[58%] md:top-[58%] md:left-[38%] lg:left-[42%] left-[38%] w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-gardenias.svg",
       logo: "",
-      surface: "",
-      price: "",
+      surface: "Desde 675m² a 1061m²",
+      price: "Desde 25000 USD",
       location: "",
       pathname: "/gardenias",
     },
@@ -65,8 +65,8 @@ const Map = ({ work }: { work?: string }) => {
         "absolute top-1/2 md:top-1/2 md:mt-2 lg:mt-4 md:left-[32%] lg:left-[36%] left-[32%] mt-2 w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-canada.svg",
       logo: "",
-      surface: "",
-      price: "",
+      surface: "Lotes desde 850m² a 2000m²",
+      price: "Desde 20000 USD",
       location: "",
       pathname: "/canada",
     },
@@ -87,8 +87,8 @@ const Map = ({ work }: { work?: string }) => {
         "absolute top-3/4 md:top-3/4 md:mt-12 lg:mt-[84px] md:-ml-6 lg:-ml-[38px] md:left-[30%] lg:left-1/3 left-[28%] mt-16 -ml-8 w-max h-max rounded-full flex items-center justify-center",
       image: "/images/desarrollos/work-magnolias.jpg",
       logo: "",
-      surface: "",
-      price: "",
+      surface: "Desde 295m² a 517m²",
+      price: "Desde 17000 USD",
       location: "",
       pathname: "/magnolias",
     },
@@ -110,7 +110,7 @@ const Map = ({ work }: { work?: string }) => {
       image: "/images/desarrollos/work-canada2.svg",
       logo: "",
       surface: "796,87m²",
-      price: "Consultar",
+      price: "Desde 22000 USD",
       location: "Barrio de Peluffo, Ruta 3 km 55",
       pathname: "/canada2",
     },
@@ -169,42 +169,55 @@ const Map = ({ work }: { work?: string }) => {
                         {loc.name}
                       </h5>
                     </header>
-                    <main className="w-full h-max flex items-center justify-center flex-col md:flex-row p-1.5 md:p-2 lg:p-3">
-                      <article className="w-full md:w-1/2 h-full flex items-center justify-center">
-                        <Image
-                          src={loc.image || "/placeholder.svg"}
-                          alt={`Imagen de ${loc.name}`}
-                          width={250}
-                          height={250}
-                          className="w-full max-w-[120px] sm:max-w-[140px] md:max-w-[180px] lg:max-w-[270px] h-auto max-h-[120px] sm:max-h-[140px] md:max-h-[200px] lg:max-h-[285px] rounded-md border-2 border-primary_green mt-1 object-cover"
-                        />
-                      </article>
-                      <article className="w-full md:w-1/2 h-full flex items-center justify-center flex-col gap-0.5 md:gap-1 px-1 md:px-1.5 lg:px-0 mt-1 md:mt-0">
-                        <div className="w-full h-max flex items-start justify-center flex-row gap-0.5 md:gap-1 overflow-hidden">
-                          <CardContent
-                            title="Lotes"
-                            content="275m2 a 310m2"
-                            className="rounded-tl-md rounded-tr-none bg-primary_green/10 border-primary_green flex-shrink"
+                    {loc.name === "La Comarca" ? (
+                      <main className="w-full h-full flex flex-col items-center justify-center p-6 md:p-8 gap-4">
+                        <RiCheckboxCircleFill className="text-red-600 w-16 h-16 md:w-20 md:h-20" />
+                        <p className="text-primary_green text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+                          VENDIDO
+                        </p>
+                        <p className="text-primary_green text-sm md:text-base lg:text-lg text-center px-4 max-w-md">
+                          Este desarrollo ya ha sido vendido. Consulte nuestras
+                          otras opciones disponibles.
+                        </p>
+                      </main>
+                    ) : (
+                      <main className="w-full h-max flex items-center justify-center flex-col md:flex-row p-1.5 md:p-2 lg:p-3">
+                        <article className="w-full md:w-1/2 h-full flex items-center justify-center">
+                          <Image
+                            src={loc.image || "/placeholder.svg"}
+                            alt={`Imagen de ${loc.name}`}
+                            width={250}
+                            height={250}
+                            className="w-full max-w-[120px] sm:max-w-[140px] md:max-w-[180px] lg:max-w-[270px] h-auto max-h-[120px] sm:max-h-[140px] md:max-h-[200px] lg:max-h-[285px] rounded-md border-2 border-primary_green mt-1 object-cover"
                           />
+                        </article>
+                        <article className="w-full md:w-1/2 h-full flex items-center justify-center flex-col gap-0.5 md:gap-1 px-1 md:px-1.5 lg:px-0 mt-1 md:mt-0">
+                          <div className="w-full h-max flex items-start justify-center flex-row gap-0.5 md:gap-1 overflow-hidden">
+                            <CardContent
+                              title="Lotes"
+                              content={loc.surface}
+                              className="rounded-tl-md rounded-tr-none bg-primary_green/10 border-primary_green flex-shrink"
+                            />
+                            <CardContent
+                              title="Ubicacion"
+                              content="Cañuelas"
+                              className="bg-primary_green/10 border-primary_green flex-shrink"
+                            />
+                          </div>
                           <CardContent
-                            title="Ubicacion"
-                            content="Cañuelas"
-                            className="bg-primary_green/10 border-primary_green flex-shrink"
+                            title="Desde"
+                            content={loc.price}
+                            className="w-full rounded-b-md rounded-tr-none bg-primary_green/10 border-primary_green"
                           />
-                        </div>
-                        <CardContent
-                          title="Desde"
-                          content="1000 USD"
-                          className="w-full rounded-b-md rounded-tr-none bg-primary_green/10 border-primary_green"
-                        />
-                        <Button
-                          onClick={() => router.push(loc.pathname)}
-                          className="bg-primary_green text-cream w-full rounded-md h-8 md:h-9 lg:h-11 text-xs md:text-sm lg:text-base hover:bg-primary_green/90 transition-colors mt-0.5 md:mt-1"
-                        >
-                          Ver Desarrollo
-                        </Button>
-                      </article>
-                    </main>
+                          <Button
+                            onClick={() => router.push(loc.pathname)}
+                            className="bg-primary_green text-cream w-full rounded-md h-8 md:h-9 lg:h-11 text-xs md:text-sm lg:text-base hover:bg-primary_green/90 transition-colors mt-0.5 md:mt-1"
+                          >
+                            Ver Desarrollo
+                          </Button>
+                        </article>
+                      </main>
+                    )}
                   </motion.div>
                 </AnimatePresence>
               </div>
