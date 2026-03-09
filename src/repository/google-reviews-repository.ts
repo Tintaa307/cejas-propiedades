@@ -1,14 +1,17 @@
 import axios from "axios"
 import { GooglePlaceDetails, GoogleReview } from "@/types/types"
 
+/**
+ * Google Reviews Repository - Uses Places API (New)
+ * @see https://developers.google.com/maps/documentation/places/web-service/place-details
+ * @see https://developers.google.com/maps/documentation/places/web-service/text-search
+ *
+ * IMPORTANT: Enable "Places API (New)" in Google Cloud Console, NOT the legacy "Places API".
+ */
 export class GoogleReviewsRepository {
   private readonly apiKey: string
-  private readonly baseUrl =
-    "https://maps.googleapis.com/maps/api/place/details/json"
-  private readonly searchUrl =
-    "https://maps.googleapis.com/maps/api/place/textsearch/json"
-  private readonly findPlaceUrl =
-    "https://maps.googleapis.com/maps/api/place/findplacefromtext/json"
+  private readonly baseUrl = "https://places.googleapis.com/v1/places"
+  private readonly searchUrl = "https://places.googleapis.com/v1/places:searchText"
 
   constructor() {
     this.apiKey = process.env.GOOGLE_PLACES_API_KEY || ""
@@ -22,8 +25,16 @@ export class GoogleReviewsRepository {
     }
   }
 
+  private getHeaders(fieldMask: string) {
+    return {
+      "Content-Type": "application/json",
+      "X-Goog-Api-Key": this.apiKey,
+      "X-Goog-FieldMask": fieldMask,
+    }
+  }
+
   /**
-   * Busca un Place ID usando el nombre del lugar y su ubicación
+   * Busca un Place ID usando el nombre del lugar y su ubicación (Text Search New)
    */
   async findPlaceId(
     placeName: string,
@@ -34,25 +45,29 @@ export class GoogleReviewsRepository {
     }
 
     try {
-      const query = location
+      const textQuery = location
         ? `${placeName}, ${location}`
         : `${placeName}, Cañuelas, Argentina`
 
-      const response = await axios.get(this.searchUrl, {
-        params: {
-          query: query,
-          key: this.apiKey,
-          language: "es",
-          region: "ar",
+      const response = await axios.post(
+        this.searchUrl,
+        {
+          textQuery,
+          languageCode: "es",
+          regionCode: "AR",
         },
-      })
+        {
+          headers: this.getHeaders("places.id"),
+        }
+      )
 
-      if (response.data.status === "OK" && response.data.results.length > 0) {
-        // Retorna el primer resultado que coincida mejor
-        return response.data.results[0].place_id
+      const places = response.data?.places
+      if (places && Array.isArray(places) && places.length > 0) {
+        const placeId = places[0].id
+        if (placeId) return placeId
       }
 
-      console.warn(`Place ID not found for: ${query}`)
+      console.warn(`Place ID not found for: ${textQuery}`)
       return null
     } catch (error) {
       console.error("Error finding Place ID:", error)
@@ -61,7 +76,7 @@ export class GoogleReviewsRepository {
   }
 
   /**
-   * Obtiene las reviews de un lugar usando su Place ID
+   * Obtiene las reviews de un lugar usando su Place ID (Place Details New)
    */
   async getPlaceReviews(placeId: string): Promise<GooglePlaceDetails | null> {
     if (!this.apiKey || !placeId) {
@@ -69,67 +84,72 @@ export class GoogleReviewsRepository {
     }
 
     try {
-      const response = await axios.get(this.baseUrl, {
-        params: {
-          place_id: placeId,
-          fields: "place_id,name,rating,user_ratings_total,reviews",
-          key: this.apiKey,
-          language: "es",
-        },
+      const url = `${this.baseUrl}/${placeId}?languageCode=es`
+      const response = await axios.get(url, {
+        headers: this.getHeaders(
+          "id,displayName,rating,userRatingCount,reviews"
+        ),
       })
 
-      if (response.data.status === "OK" && response.data.result) {
-        const result = response.data.result
-        return {
-          place_id: result.place_id,
-          name: result.name,
-          rating: result.rating || 0,
-          user_ratings_total: result.user_ratings_total || 0,
-          reviews: (result.reviews || []).map((review: any) => ({
-            author_name: review.author_name,
-            author_url: review.author_url,
-            language: review.language,
-            profile_photo_url: review.profile_photo_url,
-            rating: review.rating,
-            relative_time_description: review.relative_time_description,
-            text: review.text,
-            time: review.time,
-          })) as GoogleReview[],
-        }
-      }
+      const place = response.data
+      if (!place) return null
 
-      // Log específico de errores de la API
-      if (response.data.status === "NOT_FOUND") {
-        console.error(`Place ID not found: ${placeId}`)
-      } else if (response.data.status === "REQUEST_DENIED") {
-        const errorMessage = response.data.error_message || "Unknown error"
+      const result = place
+      const reviews = (result.reviews || []).map((review: any) =>
+        this.mapReviewToLegacyFormat(review)
+      ) as GoogleReview[]
+
+      return {
+        place_id: result.id || placeId,
+        name: result.displayName?.text || "",
+        rating: result.rating ?? 0,
+        user_ratings_total: result.userRatingCount ?? 0,
+        reviews,
+      }
+    } catch (error: any) {
+      const status = error.response?.status
+      const data = error.response?.data
+
+      if (status === 403 || data?.error?.message) {
+        const msg = data?.error?.message || error.message
         console.error(
-          "API request denied. Check your API key and billing settings."
-        )
-        console.error(
-          `Error details: ${errorMessage}\n` +
-            `Possible causes:\n` +
-            `1. Places API is not enabled in Google Cloud Console\n` +
+          "Places API (New) request denied. Possible causes:\n" +
+            `1. "Places API (New)" is not enabled in Google Cloud Console\n` +
             `2. Billing is not enabled or active\n` +
-            `3. API key doesn't have access to Places API\n` +
-            `4. API key is invalid or expired`
+            `3. API key restrictions may block this request\n` +
+            `4. Error: ${msg}`
         )
       } else {
-        console.error(
-          `API Error: ${response.data.status} - ${
-            response.data.error_message || "Unknown error"
-          }`
-        )
+        console.error("Error fetching Google reviews:", {
+          message: error.message,
+          placeId,
+          response: data,
+        })
       }
+      return null
+    }
+  }
 
-      return null
-    } catch (error: any) {
-      console.error("Error fetching Google reviews:", {
-        message: error.message,
-        placeId,
-        response: error.response?.data,
-      })
-      return null
+  /**
+   * Mapea el formato de review de la API New al formato legacy usado en la app
+   */
+  private mapReviewToLegacyFormat(review: any): GoogleReview {
+    const author = review.authorAttribution || {}
+    const textObj = review.text || review.originalText
+    const text = typeof textObj === "string" ? textObj : textObj?.text || ""
+
+    return {
+      author_name: author.displayName || "Anónimo",
+      author_url: author.uri,
+      language: "es",
+      profile_photo_url: author.photoUri,
+      rating: review.rating ?? 0,
+      relative_time_description:
+        review.relativePublishTimeDescription || "",
+      text,
+      time: review.publishTime
+        ? new Date(review.publishTime).getTime()
+        : Date.now(),
     }
   }
 
