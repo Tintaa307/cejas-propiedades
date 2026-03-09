@@ -1,12 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import React, { useEffect } from "react"
 import Button from "../button/Button"
 import { IconMap } from "@tabler/icons-react"
 import { RiMapPinLine } from "@remixicon/react"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
+import { formatPropertyPrice } from "@/lib/utils"
+import type { PropertyCurrency } from "@/types/types"
 
 type ItemProps = {
   index: number
@@ -16,6 +17,7 @@ type ItemProps = {
     address: string
     site: string
     price: string
+    currency: PropertyCurrency
     location: string
     onsale: boolean
     type: string
@@ -26,6 +28,7 @@ type ItemProps = {
 
 const Item = ({ index, property }: ItemProps) => {
   const router = useRouter()
+  const formattedPrice = formatPropertyPrice(property.price, property.currency)
 
   return (
     <motion.li
@@ -82,9 +85,7 @@ const Item = ({ index, property }: ItemProps) => {
       </div>
       <article className="w-full h-max flex items-center justify-between flex-row gap-4"></article>
       <footer className="w-full h-max flex items-center justify-between">
-        <strong className="text-xl">
-          {property.price.replace(",", ".")} USD
-        </strong>
+        <strong className="text-xl">{formattedPrice}</strong>
         <Button
           onClick={() => router.push(`/properties/${property.id}`)}
           className="px-5 py-3 hover:bg-black hover:text-white"

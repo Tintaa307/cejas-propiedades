@@ -36,7 +36,10 @@ const PropertiesFilter = ({
         { name: "Todos", value: "todos" },
         { name: "Cañuelas", value: "canuelas" },
         { name: "San Miguel del Monte", value: "san_miguel_monte" },
+        { name: "José C. Paz", value: "jose_c_paz" },
         { name: "Ituzaingó", value: "ituzaingo" },
+        { name: "Hurlingham", value: "hurlingham" },
+        { name: "Tortuguitas", value: "tortuguitas" },
         { name: "Las Heras", value: "las_heras" },
         { name: "Las Flores", value: "las_flores" },
         { name: "Castelar", value: "castelar" },
@@ -96,7 +99,6 @@ const PropertiesFilter = ({
 
   const { setFilter, filter } = useContext(FilterContext)
 
-  // Filter options component - reused in both desktop and mobile views
   const FilterOptions = () => (
     <div className="space-y-6">
       {filterOpts.map((filterOpt, index) => (
@@ -135,7 +137,6 @@ const PropertiesFilter = ({
 
   return (
     <>
-      {/* Desktop Filter - Hidden on mobile */}
       <aside className="hidden md:block md:w-1/4 lg:w-1/5 pr-6">
         <div className="space-y-6">
           <h2 className="text-base font-medium text-primary_green mb-4">
@@ -145,7 +146,6 @@ const PropertiesFilter = ({
         </div>
       </aside>
 
-      {/* Mobile Filter Sheet - Only shown on mobile */}
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent
           side="left"

@@ -7,6 +7,7 @@ export const PropertySchema = z.object({
   type: z.string().min(1, "El tipo es requerido"),
   site: z.string().min(1, "El sitio es requerido"),
   price: z.string().min(1, "El precio es requerido"),
+  currency: z.enum(["ARS", "USD"]).default("ARS"),
   public_url: z.string().optional(),
   locality: z.string().optional(),
 })

@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import type { BatchProps } from "@/types/types"
 import { Skeleton } from "@/components/ui/skeleton"
-import { cn } from "@/lib/utils"
+import { cn, formatPropertyPrice, getPropertyLocalityLabel } from "@/lib/utils"
 import PropertyShare from "@/components/properties/PropertyShare"
 
 interface PropertyDetailsProps {
@@ -21,14 +21,12 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
     if (images.length > 0) {
       const folderPath = images[0].path.relativePath.split("/")[0]
 
-      // Set main image
       const completeUrl = images[0].path.publicURL.data.publicUrl.replace(
         "images",
         `images/${folderPath}/`
       )
       setMainImage(completeUrl)
 
-      // Set all property images
       const allImages = images.map((img: any) => {
         return img.path.publicURL.data.publicUrl.replace(
           "images",
@@ -48,21 +46,21 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
     setIsLoading(false)
   }
 
+  const formattedPrice = formatPropertyPrice(property.price, property.currency)
+
   return (
     <div className="mb-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Left Column - Property Info */}
         <div className="order-2 md:order-1">
           <h1 className="text-2xl md:text-5xl font-normal text-primary_green mb-8">
             {property.name}
           </h1>
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 gap-4">
             <div className="flex items-center">
-              <span className="text-xl md:text-2xl font-bold text-cta_red mr-2">
-                ${property.price || "18.000"}
+              <span className="text-xl md:text-2xl font-bold text-cta_red">
+                {formattedPrice}
               </span>
-              <span className="text-sm text-primary_green/70">USD</span>
             </div>
             <PropertyShare />
           </div>
@@ -73,7 +71,6 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
             </p>
           </div>
 
-          {/* Property Details Table */}
           <div className="mb-8">
             <h3 className="text-lg font-semibold text-primary_green mb-3">
               Detalles de la Propiedad
@@ -95,18 +92,7 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
               </div>
               <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
                 <span className="text-primary_green">
-                  {property.locality === "canuelas" && "Cañuelas"}
-                  {property.locality === "ituzaingo" && "Ituzaingó"}
-                  {property.locality === "san_miguel_monte" &&
-                    "San Miguel del Monte"}
-                  {property.locality === "lujan" && "Luján"}
-                  {property.locality === "flores" && "Las Flores"}
-                  {property.locality === "marcos_paz" && "Marcos Paz"}
-                  {property.locality === "navarro" && "Navarro"}
-                  {property.locality === "las_heras" && "Las Heras"}
-                  {property.locality === "las_flores" && "Las Flores"}
-                  {property.locality === "castelar" && "Castelar"}
-                  {property.locality === "lobos" && "Lobos"}
+                  {getPropertyLocalityLabel(property.locality)}
                 </span>
               </div>
 
@@ -144,7 +130,6 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
           </div>
         </div>
 
-        {/* Right Column - Property Image */}
         <div className="order-1 md:order-2">
           <div className="relative rounded-md overflow-hidden">
             {isLoading && (
@@ -163,7 +148,6 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
             />
           </div>
 
-          {/* Thumbnail Images */}
           {propertyImages.length > 1 && (
             <div className="flex gap-2 mt-2 overflow-x-auto pb-2">
               {propertyImages.map((img, index) => (

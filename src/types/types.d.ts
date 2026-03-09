@@ -24,6 +24,8 @@ export interface Property {
   prices: string[]
 }
 
+export type PropertyCurrency = "ARS" | "USD"
+
 export interface BatchProps {
   id: string
   description: string
@@ -36,6 +38,7 @@ export interface BatchProps {
   public_url: string
   locality: string
   name: string
+  currency: PropertyCurrency
 }
 
 export type FilterProps = {
