@@ -122,7 +122,8 @@ const GoogleReviews = ({ refreshInterval = 300000 }: GoogleReviewsProps) => {
                 <p className="text-yellow-800 text-sm">{error}</p>
                 <p className="text-yellow-700 text-xs mt-2">
                   Verifica que el Place ID esté configurado correctamente y que
-                  la API "Places API (New)" esté habilitada en Google Cloud.
+                  la API &quot;Places API (New)&quot; esté habilitada en Google
+                  Cloud.
                 </p>
               </div>
             )}

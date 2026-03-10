@@ -18,44 +18,34 @@ const MainImage = ({
   const [areImagesLoading, setAreImagesLoading] = useState(true)
 
   useEffect(() => {
-    console.log(images)
-    if (images.length > 0) {
-      const folderPath = images[0].path.relativePath.split("/")[0]
+    if (images.length === 0) {
+      setMainImage(public_url)
+      setPropertyImages([])
+      return
+    }
 
-      const CompleteUrl = images[0].path.publicURL.data.publicUrl.replace(
-        "images",
-        `images/${folderPath}/`
+    const folderPath = images[0].path.relativePath.split("/")[0]
+    const nextImages = images
+      .map(
+        (img: any) =>
+          img.path.publicURL.data.publicUrl.replace(
+            "images",
+            `images/${folderPath}/`
+          ) as string
       )
-
-      setMainImage(CompleteUrl)
-    }
-  }, [images])
-
-  useEffect(() => {
-    if (images.length > 0) {
-      const folderPath = images[0].path.relativePath.split("/")[0]
-      images.map((img: any) => {
-        const url = img.path.publicURL.data.publicUrl.replace(
-          "images",
-          `images/${folderPath}/`
-        ) as string
-
-        setPropertyImages((prev: any) =>
-          [...prev, url].filter(
-            (value, index, self) => self.indexOf(value) === index
-          )
-        )
+      .filter((value: string, index: number, self: string[]) => {
+        return self.indexOf(value) === index
       })
-    }
-  }, [])
+
+    setPropertyImages(nextImages)
+    setMainImage(nextImages[0] ?? public_url)
+  }, [images, public_url])
 
   const handleLoadMainImage = () => {
-    console.log("load")
     setIsLoading(false)
   }
 
   const handleImagesLoad = () => {
-    console.log("load")
     setAreImagesLoading(false)
   }
 

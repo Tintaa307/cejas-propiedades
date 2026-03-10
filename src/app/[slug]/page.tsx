@@ -15,40 +15,39 @@ import { Work as WorkType } from "@/types/types"
 const Work = ({ params }: { params: Promise<{ slug: string }> }) => {
   const [loading, setLoading] = useState(true)
   const [work, setWork] = useState({} as WorkType)
-  const [slug, setSlug] = useState("")
-
-  const handleParams = async () => {
-    const { slug } = await params
-
-    if (!slug) notFound()
-
-    setSlug(slug)
-  }
 
   useEffect(() => {
-    handleParams()
-  }, [])
+    let isActive = true
 
-  const verifyData = () => {
-    try {
-      if (!slug) notFound()
-      const work = data.works.find((work) => work.title === slug)
+    const loadWork = async () => {
+      const { slug } = await params
 
-      return work as WorkType
-    } catch (error) {
-      notFound()
-    } finally {
+      if (!slug) {
+        notFound()
+      }
+
+      const nextWork = data.works.find((entry) => entry.title === slug)
+
+      if (!nextWork) {
+        notFound()
+      }
+
+      if (!isActive) {
+        return
+      }
+
+      setWork(nextWork as WorkType)
       setLoading(false)
     }
-  }
 
-  useEffect(() => {
-    if (slug) {
-      const work = verifyData()
+    loadWork().catch(() => {
+      notFound()
+    })
 
-      setWork(work)
+    return () => {
+      isActive = false
     }
-  }, [slug])
+  }, [params])
 
   return (
     <>
@@ -56,7 +55,11 @@ const Work = ({ params }: { params: Promise<{ slug: string }> }) => {
         <Loader />
       ) : (
         <div className="w-full h-full flex flex-col gap-12">
-          <Presentation video={work.video} isSold={work.isSold} isComingSoon={work.isComingSoon} />
+          <Presentation
+            video={work.video}
+            isSold={work.isSold}
+            isComingSoon={work.isComingSoon}
+          />
           <Details
             title={work.value}
             details={work.details}
