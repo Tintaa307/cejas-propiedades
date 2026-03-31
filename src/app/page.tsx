@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       <Features />
       <Works />
-      <GoogleReviews refreshInterval={300000} />
+      {/* <GoogleReviews refreshInterval={300000} /> */}
       <Map />
       <Sections />
       <Contact title="Pongamonos en contacto" />
