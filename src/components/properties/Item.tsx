@@ -28,7 +28,11 @@ type ItemProps = {
 
 const Item = ({ index, property }: ItemProps) => {
   const router = useRouter()
-  const formattedPrice = formatPropertyPrice(property.price, property.currency)
+  const formattedPrice = formatPropertyPrice(
+    property.price,
+    property.onsale ? "USD" : property.currency,
+    "ARS"
+  )
 
   return (
     <motion.li

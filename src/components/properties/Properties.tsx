@@ -82,7 +82,8 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
         {properties.slice(0, limit).map((property, index) => {
           const formattedPrice = formatPropertyPrice(
             property.price,
-            property.currency
+            property.onsale ? "USD" : property.currency,
+            "ARS"
           )
 
           return (

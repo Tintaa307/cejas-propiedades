@@ -46,7 +46,11 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
     setIsLoading(false)
   }
 
-  const formattedPrice = formatPropertyPrice(property.price, property.currency)
+  const formattedPrice = formatPropertyPrice(
+    property.price,
+    property.onsale ? "USD" : property.currency,
+    "ARS"
+  )
 
   return (
     <div className="mb-16">

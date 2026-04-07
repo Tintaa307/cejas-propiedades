@@ -37,7 +37,8 @@ const SimilarProperties = ({
         {recentProperties.map((property) => {
           const formattedPrice = formatPropertyPrice(
             property.price,
-            property.currency
+            property.onsale ? "USD" : property.currency,
+            "ARS"
           )
 
           return (

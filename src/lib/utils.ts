@@ -39,9 +39,16 @@ export const getPropertyLocalityLabel = (locality?: string) => {
 }
 
 export const normalizePropertyCurrency = (
-  currency?: string
+  currency?: string,
+  fallbackCurrency: PropertyCurrency = "ARS"
 ): PropertyCurrency => {
-  return currency === "USD" ? "USD" : "ARS"
+  const normalizedCurrency = currency?.trim().toUpperCase()
+
+  if (normalizedCurrency === "USD" || normalizedCurrency === "ARS") {
+    return normalizedCurrency
+  }
+
+  return fallbackCurrency
 }
 
 const normalizeNumericString = (value: string) => {
@@ -88,14 +95,21 @@ export const parsePropertyPriceValue = (price?: string): number | null => {
   return Number.isFinite(numericValue) ? numericValue : null
 }
 
-export const formatPropertyPrice = (price?: string, currency?: string) => {
+export const formatPropertyPrice = (
+  price?: string,
+  currency?: string,
+  fallbackCurrency: PropertyCurrency = "ARS"
+) => {
   const rawPrice = price?.trim()
 
   if (!rawPrice || rawPrice.toLowerCase().includes("consultar")) {
     return "Consultar"
   }
 
-  const normalizedCurrency = normalizePropertyCurrency(currency)
+  const normalizedCurrency = normalizePropertyCurrency(
+    currency,
+    fallbackCurrency
+  )
   const priceMatch = rawPrice.match(/\d[\d.,]*/)
 
   if (!priceMatch || priceMatch.index === undefined) {
