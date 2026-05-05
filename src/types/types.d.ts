@@ -15,7 +15,6 @@ export interface Work {
   video: string
   isSold: boolean
   isComingSoon?: boolean
-  placeId?: string
 }
 
 export interface Property {
@@ -65,32 +64,12 @@ export type AppActionError = {
   details?: unknown
 }
 
-export interface GoogleReview {
+export interface Review {
   author_name: string
-  author_url?: string
-  language: string
-  profile_photo_url?: string
   rating: number
   relative_time_description: string
   text: string
-  time: number
-}
-
-export interface GooglePlaceDetails {
-  place_id: string
-  name: string
-  rating: number
-  user_ratings_total: number
-  reviews: GoogleReview[]
-}
-
-export interface DevelopmentReview {
-  developmentName: string
   developmentTitle: string
-  placeId?: string
-  reviews: GoogleReview[]
-  rating: number
-  totalReviews: number
 }
 
 export interface PropertyImageEntry {

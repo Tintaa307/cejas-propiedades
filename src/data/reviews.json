@@ -1,0 +1,75 @@
+{
+  "_comment": "Reseñas mostradas en la home. Editar este archivo para reemplazar/agregar/quitar reseñas. El orden del array es el orden en que se muestran (de más nuevo a más viejo).",
+  "reviews": [
+    {
+      "author_name": "Ezequiel Martinez",
+      "rating": 4,
+      "relative_time_description": "Hace 2 meses",
+      "text": "Quinta en Cañuelas - Santa Rosa. Alquilamos por un dia (sábado). Nos esperaba Luis que muy amablemente nos mostró la quinta. Todo impecable. Muy clara la gestión para la reserva de la quinta.",
+      "developmentTitle": "Quinta Santa Rosa"
+    },
+    {
+      "author_name": "Rosy Solano",
+      "rating": 5,
+      "relative_time_description": "Hace 3 meses",
+      "text": "Hermoso Lugar quinta en cañuelas Santa Rosa Muy confortable, LIMPIO Y ORDENADO PARA Q PODAMOS DISFRUTAR la atención excelente de parte cejas operaciones ! Todo muy correcto en cuanto los pasos para el alquiler MUCHISIMAS GRACIAS ! VOLVEREMOS",
+      "developmentTitle": "Quinta Santa Rosa"
+    },
+    {
+      "author_name": "Jorge Rossin",
+      "rating": 5,
+      "relative_time_description": "Hace 3 meses",
+      "text": "La experiencia que tuve fué y sigue siendo bárbara.....la atención de Nadia, de Luis y de Vanina es muy amable te hacen sentir cómo de su familia agradezco x la posibilidad que me dieron en poder comprar un terreno en Las Gardenias. .... Gracias, gracias, gracias totales",
+      "developmentTitle": "Las Gardenias"
+    },
+    {
+      "author_name": "Daniela Reynes",
+      "rating": 5,
+      "relative_time_description": "Hace 4 meses",
+      "text": "La verdad una inmobiliaria super confiable, total amabilidad. Ellos me vendieron mi lote de cañuelas, fue todo muy sencillo el tema de los tramites gracias inmobiliaria cejas.",
+      "developmentTitle": "Cejas Propiedades"
+    },
+    {
+      "author_name": "Marto Olego",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Con cejas propiedades compré mi terreno en las gardenias. Súper recomendable, gracias por la atención.",
+      "developmentTitle": "Las Gardenias"
+    },
+    {
+      "author_name": "Sabrina Rossin",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Excelente inmobiliaria. Mi familia logró el sueño de comprarse una propiedad a través de cejas propiedades. Gracias por la atención y buena predisposición siempre 💗",
+      "developmentTitle": "Cejas Propiedades"
+    },
+    {
+      "author_name": "Jorge Loureiro",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Estamos cerrando una operación de compra con CEJAS INMOBILIARIA en cañuelas (ya nos conocíamos de hace algún tiempo) pero ahora estamos concretando. Excelente atención y predisposición de Luis y sus hijas. MUY PROFESIONALES y muy recomendables.",
+      "developmentTitle": "Cejas Propiedades"
+    },
+    {
+      "author_name": "Facundo Lanzilotti",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Excelente trato de parte del equipo, es super gratificante encontrar un grupo humano que te acompañe de esta manera en un proceso tan importante como es invertir en tu propio terreno! Super recomendado.",
+      "developmentTitle": "Cejas Propiedades"
+    },
+    {
+      "author_name": "Diego Toco",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Hola! Nos mudamos a Cañuelas hace un mes y el trato que tienen con nosotros es impecable: preguntas que hagas, pregunta que te contestan a la brevedad. Viviana y todo el equipo, siempre atentos. Muy recomendable.",
+      "developmentTitle": "Cejas Propiedades"
+    },
+    {
+      "author_name": "Marcela Albacete",
+      "rating": 5,
+      "relative_time_description": "Hace 5 meses",
+      "text": "Muy buena experiencia en venta de lotes.",
+      "developmentTitle": "Cejas Propiedades"
+    }
+  ]
+}
