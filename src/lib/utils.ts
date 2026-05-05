@@ -5,22 +5,8 @@ import type { PropertyCurrency } from "@/types/types"
 const PROPERTY_NUMBER_LOCALE = "es-AR"
 const PROPERTY_CURRENCY_TOKEN_REGEX = /\b(?:usd|ars|u\$s)\b|\$/gi
 
-export const PROPERTY_LOCALITY_LABELS: Record<string, string> = {
-  canuelas: "Cañuelas",
-  san_miguel_monte: "San Miguel del Monte",
-  ituzaingo: "Ituzaingó",
-  jose_c_paz: "José C. Paz",
-  hurlingham: "Hurlingham",
-  tortuguitas: "Tortuguitas",
-  las_heras: "Las Heras",
-  las_flores: "Las Flores",
-  castelar: "Castelar",
-  lobos: "Lobos",
-  lujan: "Luján",
-  flores: "Flores",
-  marcos_paz: "Marcos Paz",
-  navarro: "Navarro",
-}
+export type LocalityLabelMap = Record<string, string>
+export type PropertyTypeLabelMap = Record<string, string>
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -30,12 +16,32 @@ export const firstLetterUppercase = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export const getPropertyLocalityLabel = (locality?: string) => {
+const humanizeKey = (value: string) =>
+  value
+    .split("_")
+    .map((part) => firstLetterUppercase(part))
+    .join(" ")
+
+export const getPropertyLocalityLabel = (
+  locality?: string,
+  labels?: LocalityLabelMap
+) => {
   if (!locality) {
     return "No especificada"
   }
 
-  return PROPERTY_LOCALITY_LABELS[locality] ?? locality
+  return labels?.[locality] ?? humanizeKey(locality)
+}
+
+export const getPropertyTypeLabel = (
+  type?: string,
+  labels?: PropertyTypeLabelMap
+) => {
+  if (!type) {
+    return "No especificado"
+  }
+
+  return labels?.[type] ?? humanizeKey(type)
 }
 
 export const normalizePropertyCurrency = (

@@ -5,7 +5,12 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { MapPin, Home, DollarSign, ImageIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { formatPropertyPrice, getPropertyLocalityLabel } from "@/lib/utils"
+import {
+  formatPropertyPrice,
+  getPropertyLocalityLabel,
+  getPropertyTypeLabel,
+} from "@/lib/utils"
+import { useLookups } from "@/context/LookupsContext"
 
 const SimilarProperties = ({
   recentProperties,
@@ -13,6 +18,7 @@ const SimilarProperties = ({
   recentProperties: BatchProps[]
 }) => {
   const router = useRouter()
+  const { localityLabels, propertyTypeLabels } = useLookups()
 
   if (!recentProperties || recentProperties.length === 0) {
     return null
@@ -59,8 +65,8 @@ const SimilarProperties = ({
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary_green/10 to-primary_green/5 flex flex-col items-center justify-center border-2 border-dashed border-primary_green/30">
                     <ImageIcon className="h-10 w-10 text-primary_green/50 mb-2" />
-                    <p className="text-primary_green/70 text-sm font-medium text-center px-4 capitalize">
-                      {property.type}
+                    <p className="text-primary_green/70 text-sm font-medium text-center px-4">
+                      {getPropertyTypeLabel(property.type, propertyTypeLabels)}
                     </p>
                     <p className="text-primary_green/50 text-xs text-center px-4 mt-1">
                       Sin imagen
@@ -80,8 +86,8 @@ const SimilarProperties = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-primary_green">
                     <Home className="h-4 w-4 mr-1" />
-                    <span className="text-sm capitalize">
-                      {property.type || "Casa"}
+                    <span className="text-sm">
+                      {getPropertyTypeLabel(property.type, propertyTypeLabels)}
                     </span>
                   </div>
 
@@ -89,7 +95,7 @@ const SimilarProperties = ({
                     <div className="flex items-center text-primary_green">
                       <MapPin className="h-4 w-4 mr-1" />
                       <span className="text-sm">
-                        {getPropertyLocalityLabel(property.locality)}
+                        {getPropertyLocalityLabel(property.locality, localityLabels)}
                       </span>
                     </div>
 

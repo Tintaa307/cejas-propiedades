@@ -32,7 +32,6 @@ const GoogleReviews = ({ refreshInterval = 300000 }: GoogleReviewsProps) => {
       const data = await response.json()
 
       if (response.ok) {
-        console.log("Reviews data received:", data)
         setReviews(data.reviews || [])
         setLastRefresh(new Date())
         if (!data.reviews || data.reviews.length === 0) {
@@ -41,12 +40,10 @@ const GoogleReviews = ({ refreshInterval = 300000 }: GoogleReviewsProps) => {
           )
         }
       } else {
-        console.error("API Error:", data)
         setError(data.message || "Error al obtener las reseñas")
         setReviews([])
       }
-    } catch (error: any) {
-      console.error("Error fetching reviews:", error)
+    } catch {
       setError("Error de conexión al obtener las reseñas")
       setReviews([])
     } finally {

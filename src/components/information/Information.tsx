@@ -14,7 +14,6 @@ const Information = () => {
   })
 
   useEffect(() => {
-    console.log(scroll)
     if (scroll >= 2273) {
       if (salesNumber < 6) {
         setTimeout(() => {

@@ -2,17 +2,24 @@
 
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import type { BatchProps } from "@/types/types"
+import type { BatchProps, PropertyImageEntry } from "@/types/types"
 import { Skeleton } from "@/components/ui/skeleton"
-import { cn, formatPropertyPrice, getPropertyLocalityLabel } from "@/lib/utils"
+import {
+  cn,
+  formatPropertyPrice,
+  getPropertyLocalityLabel,
+  getPropertyTypeLabel,
+} from "@/lib/utils"
 import PropertyShare from "@/components/properties/PropertyShare"
+import { useLookups } from "@/context/LookupsContext"
 
 interface PropertyDetailsProps {
   property: BatchProps
-  images: any[]
+  images: PropertyImageEntry[]
 }
 
 const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
+  const { localityLabels, propertyTypeLabels } = useLookups()
   const [mainImage, setMainImage] = useState(property.public_url)
   const [propertyImages, setPropertyImages] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -27,12 +34,12 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
       )
       setMainImage(completeUrl)
 
-      const allImages = images.map((img: any) => {
-        return img.path.publicURL.data.publicUrl.replace(
+      const allImages = images.map((img) =>
+        img.path.publicURL.data.publicUrl.replace(
           "images",
           `images/${folderPath}/`
         )
-      })
+      )
 
       setPropertyImages(
         [property.public_url, ...allImages].filter(
@@ -84,8 +91,8 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
                 <span className="font-medium text-primary_green">Tipo</span>
               </div>
               <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
-                <span className="text-primary_green capitalize">
-                  {property.type || "Chacra"}
+                <span className="text-primary_green">
+                  {getPropertyTypeLabel(property.type, propertyTypeLabels)}
                 </span>
               </div>
 
@@ -96,7 +103,7 @@ const PropertyDetails = ({ property, images }: PropertyDetailsProps) => {
               </div>
               <div className="bg-primary_green/5 p-3 border-b border-primary_green/20">
                 <span className="text-primary_green">
-                  {getPropertyLocalityLabel(property.locality)}
+                  {getPropertyLocalityLabel(property.locality, localityLabels)}
                 </span>
               </div>
 

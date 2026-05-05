@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server"
-import { BatchProps } from "@/types/types"
+import { BatchProps, PropertyImageEntry } from "@/types/types"
 import {
   CreateProperty,
   UpdateProperty,
@@ -149,15 +149,13 @@ export class PropertiesRepository {
     }
   }
 
-  async getPropertyImages(folderPath: string): Promise<any[]> {
+  async getPropertyImages(folderPath: string): Promise<PropertyImageEntry[]> {
     const supabase = await createClient()
 
     try {
       const { data: propertyImages, error } = await supabase.storage
         .from("images")
         .list(folderPath)
-
-      console.log(propertyImages)
 
       if (error) {
         throw new PropertyImageFetchException(error.message, error)

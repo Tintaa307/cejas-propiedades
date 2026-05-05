@@ -1,5 +1,5 @@
 import { PropertiesRepository } from "@/repository/properties-repository"
-import { BatchProps } from "@/types/types"
+import { BatchProps, PropertyImageEntry } from "@/types/types"
 import {
   CreateProperty,
   UpdateProperty,
@@ -40,7 +40,7 @@ export class PropertiesService {
     return this.propertiesRepository.deleteProperty(id)
   }
 
-  async getPropertyImages(folderPath: string): Promise<any[]> {
+  async getPropertyImages(folderPath: string): Promise<PropertyImageEntry[]> {
     return this.propertiesRepository.getPropertyImages(folderPath)
   }
 }

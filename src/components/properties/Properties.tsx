@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation"
 import { Grid2X2, MapPin, Tag, Home, ImageIcon } from "lucide-react"
 import { Button } from "../ui/button"
 import {
-  firstLetterUppercase,
   formatPropertyPrice,
   getPropertyLocalityLabel,
+  getPropertyTypeLabel,
 } from "@/lib/utils"
 import { useContext, useState } from "react"
 import { FilterContext } from "@/context/FilterContext"
+import { useLookups } from "@/context/LookupsContext"
 import PropertySkeleton from "./PropertySkeleton"
 
 interface PropertyGridProps {
@@ -23,10 +24,11 @@ interface PropertyGridProps {
 const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
   const router = useRouter()
   const { setFilter } = useContext(FilterContext)
-  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
+  const { localityLabels, propertyTypeLabels } = useLookups()
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  const handleImageLoad = (propertyId: string) => {
+  const handleImageLoad = (propertyId: number) => {
     setLoadedImages((prev) => new Set(prev).add(propertyId))
   }
 
@@ -115,7 +117,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary_green/10 to-primary_green/5 rounded-md flex flex-col items-center justify-center border-2 border-dashed border-primary_green/30">
                     <ImageIcon className="h-12 w-12 text-primary_green/50 mb-2" />
                     <p className="text-primary_green/70 text-sm font-medium text-center px-4">
-                      {firstLetterUppercase(property.type)}
+                      {getPropertyTypeLabel(property.type, propertyTypeLabels)}
                     </p>
                     <p className="text-primary_green/50 text-xs text-center px-4 mt-1">
                       Imagen no disponible
@@ -133,7 +135,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                   <div className="flex items-center text-primary_green">
                     <Grid2X2 className="h-4 w-4 mr-1 flex-shrink-0" />
                     <span className="text-sm">
-                      {firstLetterUppercase(property.type)}
+                      {getPropertyTypeLabel(property.type, propertyTypeLabels)}
                     </span>
                   </div>
 
@@ -147,7 +149,7 @@ const PropertyGrid = ({ properties, limit, setLimit }: PropertyGridProps) => {
                   <div className="flex items-center text-primary_green">
                     <MapPin className="h-4 w-4 mr-1 flex-shrink-0" />
                     <p className="text-sm truncate">
-                      {getPropertyLocalityLabel(property.locality)}
+                      {getPropertyLocalityLabel(property.locality, localityLabels)}
                     </p>
                   </div>
                 </div>

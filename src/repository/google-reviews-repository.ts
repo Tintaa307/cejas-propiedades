@@ -1,5 +1,20 @@
-import axios from "axios"
+import axios, { AxiosError } from "axios"
 import { GooglePlaceDetails, GoogleReview } from "@/types/types"
+
+interface GooglePlaceApiAuthor {
+  displayName?: string
+  uri?: string
+  photoUri?: string
+}
+
+interface GooglePlaceApiReview {
+  authorAttribution?: GooglePlaceApiAuthor
+  text?: string | { text?: string }
+  originalText?: string | { text?: string }
+  rating?: number
+  relativePublishTimeDescription?: string
+  publishTime?: string
+}
 
 /**
  * Google Reviews Repository - Uses Places API (New)
@@ -19,9 +34,6 @@ export class GoogleReviewsRepository {
       console.warn(
         "GOOGLE_PLACES_API_KEY is not set. Google Reviews will not work."
       )
-      console.warn("Please set GOOGLE_PLACES_API_KEY in your .env.local file")
-    } else {
-      console.log("Google Places API Key is configured")
     }
   }
 
@@ -95,9 +107,9 @@ export class GoogleReviewsRepository {
       if (!place) return null
 
       const result = place
-      const reviews = (result.reviews || []).map((review: any) =>
-        this.mapReviewToLegacyFormat(review)
-      ) as GoogleReview[]
+      const reviews = ((result.reviews ?? []) as GooglePlaceApiReview[]).map(
+        (review) => this.mapReviewToLegacyFormat(review)
+      )
 
       return {
         place_id: result.id || placeId,
@@ -106,24 +118,33 @@ export class GoogleReviewsRepository {
         user_ratings_total: result.userRatingCount ?? 0,
         reviews,
       }
-    } catch (error: any) {
-      const status = error.response?.status
-      const data = error.response?.data
+    } catch (error: unknown) {
+      if (error instanceof AxiosError) {
+        const status = error.response?.status
+        const data = error.response?.data as
+          | { error?: { message?: string } }
+          | undefined
 
-      if (status === 403 || data?.error?.message) {
-        const msg = data?.error?.message || error.message
-        console.error(
-          "Places API (New) request denied. Possible causes:\n" +
-            `1. "Places API (New)" is not enabled in Google Cloud Console\n` +
-            `2. Billing is not enabled or active\n` +
-            `3. API key restrictions may block this request\n` +
-            `4. Error: ${msg}`
-        )
-      } else {
+        if (status === 403 || data?.error?.message) {
+          const msg = data?.error?.message || error.message
+          console.error(
+            "Places API (New) request denied. Possible causes:\n" +
+              `1. "Places API (New)" is not enabled in Google Cloud Console\n` +
+              `2. Billing is not enabled or active\n` +
+              `3. API key restrictions may block this request\n` +
+              `4. Error: ${msg}`
+          )
+        } else {
+          console.error("Error fetching Google reviews:", {
+            message: error.message,
+            placeId,
+            response: data,
+          })
+        }
+      } else if (error instanceof Error) {
         console.error("Error fetching Google reviews:", {
           message: error.message,
           placeId,
-          response: data,
         })
       }
       return null
@@ -133,7 +154,7 @@ export class GoogleReviewsRepository {
   /**
    * Mapea el formato de review de la API New al formato legacy usado en la app
    */
-  private mapReviewToLegacyFormat(review: any): GoogleReview {
+  private mapReviewToLegacyFormat(review: GooglePlaceApiReview): GoogleReview {
     const author = review.authorAttribution || {}
     const textObj = review.text || review.originalText
     const text = typeof textObj === "string" ? textObj : textObj?.text || ""

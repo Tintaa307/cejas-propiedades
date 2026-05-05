@@ -14,7 +14,7 @@ export class ContactRepository {
 
   async sendContactEmail(contactData: ContactMessage): Promise<void> {
     try {
-      const { data, error } = await this.resend.emails.send({
+      const { error } = await this.resend.emails.send({
         from: "Cejas Inmobiliaria <contact@cejaspropiedades.com>",
         to: ["estudiointegral1@hotmail.com"],
         subject: "Nuevo mensaje desde Cejas Propiedades",
@@ -30,8 +30,6 @@ export class ContactRepository {
       if (error) {
         throw new EmailSendException(error.message, error)
       }
-
-      console.log("Email sent successfully:", data)
     } catch (error) {
       throw new EmailSendException("Error al enviar el email", error)
     }
@@ -39,7 +37,7 @@ export class ContactRepository {
 
   async sendSellContactEmail(contactData: SellContactMessage): Promise<void> {
     try {
-      const { data, error } = await this.resend.emails.send({
+      const { error } = await this.resend.emails.send({
         from: "Cejas Inmobiliaria <contact@cejaspropiedades.com>",
         to: ["estudiointegral1@hotmail.com"],
         subject: "Nuevo mensaje de venta desde Cejas Propiedades",
@@ -57,8 +55,6 @@ export class ContactRepository {
       if (error) {
         throw new EmailSendException(error.message, error)
       }
-
-      console.log("Sell email sent successfully:", data)
     } catch (error) {
       throw new EmailSendException("Error al enviar el email de venta", error)
     }

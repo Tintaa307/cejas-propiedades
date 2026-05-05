@@ -7,8 +7,8 @@ export interface Work {
   value: string
   location: string
   details: string[]
-  imgs: any[]
-  blueprints: any[]
+  imgs: string[]
+  blueprints: string[]
   map: string
   properties?: Property[]
   list?: string[]
@@ -27,7 +27,7 @@ export interface Property {
 export type PropertyCurrency = "ARS" | "USD"
 
 export interface BatchProps {
-  id: string
+  id: number
   description: string
   address: string
   site: string
@@ -91,4 +91,21 @@ export interface DevelopmentReview {
   reviews: GoogleReview[]
   rating: number
   totalReviews: number
+}
+
+export interface PropertyImageEntry {
+  name: string
+  id?: string
+  updated_at?: string
+  created_at?: string
+  last_accessed_at?: string
+  metadata?: Record<string, unknown> | null
+  path: {
+    relativePath: string
+    publicURL: {
+      data: {
+        publicUrl: string
+      }
+    }
+  }
 }

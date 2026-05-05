@@ -11,8 +11,6 @@ type ItemProps = {
 }
 
 const Item = ({ index, title, link, src, isSold }: ItemProps) => {
-  console.log(src)
-
   return (
     <li className="relative w-full h-max flex items-center justify-center flex-col">
       <Link

@@ -53,12 +53,12 @@ export async function GET(request: NextRequest) {
         : null,
       message: "Place ID encontrado exitosamente",
     })
-  } catch (error: any) {
-    console.error("Error finding Place ID:", error)
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Error desconocido"
     return NextResponse.json(
       {
         error: "Failed to find Place ID",
-        message: error.message || "Error desconocido",
+        message,
       },
       { status: 500 }
     )

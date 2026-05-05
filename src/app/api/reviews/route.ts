@@ -65,12 +65,15 @@ export async function GET(request: NextRequest) {
             : `Se obtuvieron reviews de ${reviews.length} desarrollo(s)`,
       })
     }
-  } catch (error: any) {
-    console.error("Error fetching reviews:", error)
+  } catch (error: unknown) {
+    const message =
+      error instanceof Error
+        ? error.message
+        : "Error desconocido al obtener las reviews"
     return NextResponse.json(
       {
         error: "Failed to fetch reviews",
-        message: error.message || "Error desconocido al obtener las reviews",
+        message,
       },
       { status: 500 }
     )

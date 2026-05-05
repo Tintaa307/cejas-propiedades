@@ -1,74 +1,27 @@
-"use client"
+import { getActiveFeaturedProperties } from "@/controllers"
+import { actionErrorHandler } from "@/lib/handlers/actionErrorHandler"
+import { AppActionException } from "@/types/exceptions"
+import type { FeaturedProperty } from "@/lib/validations/FeaturedPropertySchema"
+import FeaturesCarousel from "./FeaturesCarousel"
 
-import { useState } from "react"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { MapPin, Navigation } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
+const loadFeaturedProperties = async (): Promise<FeaturedProperty[]> => {
+  try {
+    return await actionErrorHandler(async () => {
+      return (await getActiveFeaturedProperties()) as FeaturedProperty[]
+    })
+  } catch (error) {
+    if (error instanceof AppActionException) {
+      return []
+    }
+    throw error
+  }
+}
 
-const Features = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
+const Features = async () => {
+  const items = await loadFeaturedProperties()
 
-  const features = [
-    {
-      title: "Las Magnolias",
-      image: "/images/desarrollos/work-magnolias.jpg",
-      description:
-        "El barrio abierto “Las Magnolias” se encuentra sobre las calles Maipú y José Hernández, Localidad y Partido de Cañuelas, Provincia de Buenos Aires. A 1 cuadra del asfalto (calle Maipú), a 1.500 m de la estación de tren de Cañuelas (8 min en auto), a 800 m de calle Dorrego (continuación de Camino Panelo) y a 3 km de Ruta 3 (10 min en auto).",
-      price: {
-        original: "19.000 USD",
-        discount: "17.000 USD",
-      },
-      isInOffer: true,
-      location: "Maipú y José Hernández",
-      site: "Cañuelas",
-      link: "/magnolias",
-    },
-    {
-      // de 3, has
-      title: "Chacra en Cañuelas",
-      image:
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/2009/1.jpg",
-      description:
-        "Se encuentra a la altura del Km 54 de la Ruta 3; ingresando por calle San Martin 2300 mts hasta el puente (Calle Asfaltada), luego del puente Se encuentra a 1000 mts ( Por camino de Ripio.)",
-      price: {
-        original: "140.000 USD",
-        discount: "120.000 USD",
-      },
-      isInOffer: true,
-      location:
-        "Altura del Km 54 de la Ruta 3; ingresando por calle San Martin",
-      site: "Cañuelas",
-      link: "/properties/2009",
-    },
-    {
-      // 18 has en
-      title: "San Miguel del monte",
-      image:
-        "https://dmcxbrwufzuvbiooeyde.supabase.co/storage/v1/object/public/images/3000/Imagen%20de%20WhatsApp%202024-07-02%20a%20las%2009.12.23_0590f30a.jpg",
-      description:
-        "Se encuentra ubicado en la localidad de Francisco Berra, Partido de San Miguel del Monte. A una distancia de 2.300 mts de la Ruta 41 ingresando por excelente acceso, entoscado y firme. Tambien dista 5 Km de la rotonda que cruza la Ruta 41 con la Ruta 3.",
-      price: {
-        original: "210.000 USD",
-        discount: "200.000 USD",
-      },
-      isInOffer: true,
-      location: "Francisco Berra",
-      site: "San Miguel del Monte",
-      link: "/properties/3000",
-    },
-  ]
-
-  const handleSlideChange = (api: any) => {
-    if (!api) return
-    setActiveIndex(api.selectedScrollSnap())
+  if (items.length === 0) {
+    return null
   }
 
   return (
@@ -82,104 +35,7 @@ const Features = () => {
                 <span className="font-serif italic">nuevos ingresos</span>
               </h2>
 
-              <Carousel
-                className="w-full"
-                onSelect={(index) => handleSlideChange(index)}
-                opts={{
-                  loop: true,
-                  align: "start",
-                }}
-              >
-                <CarouselContent>
-                  {features.map((feature, idx) => (
-                    <CarouselItem key={idx} className="md:basis-full">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                        {/* Left side - Property info */}
-                        <div className="flex flex-col justify-between h-full">
-                          <div>
-                            <h3 className="text-xl md:text-2xl font-medium text-cream mb-2">
-                              {feature.title}
-                            </h3>
-                            <p className="text-cream/80 text-sm md:text-base mb-6 line-clamp-[8]">
-                              {feature.description}
-                            </p>
-                          </div>
-
-                          <div className="mt-4">
-                            <div className="flex flex-col gap-3 mb-6">
-                              <div className="flex items-center gap-2 text-cream/90">
-                                <MapPin size={18} className="text-cream/70" />
-                                <span>{feature.location}</span>
-                              </div>
-                              <div className="flex items-center gap-2 text-cream/90">
-                                <Navigation
-                                  size={18}
-                                  className="text-cream/70"
-                                />
-                                <span>{feature.site}</span>
-                              </div>
-                            </div>
-
-                            <div className="flex items-center justify-between mb-4">
-                              <div className="flex flex-col">
-                                <span className="text-2xl font-bold text-cream">
-                                  ${feature.price.discount}
-                                </span>
-                                {feature.isInOffer && (
-                                  <span className="text-cream/70 line-through text-sm">
-                                    ${feature.price.original}
-                                  </span>
-                                )}
-                              </div>
-                              <Button
-                                asChild
-                                size="lg"
-                                className="border border-cream text-cream hover:bg-cream/10 bg-transparent hover:bg-primary_green hover:text-cream/80"
-                              >
-                                <Link href={feature.link}>Más Detalles</Link>
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Right side - Property image */}
-                        <div className="relative rounded-lg overflow-hidden h-[300px] md:h-[400px]">
-                          <Image
-                            src={feature.image || "/placeholder.svg"}
-                            alt={feature.title}
-                            fill
-                            className="object-cover"
-                          />
-                          {feature.isInOffer && (
-                            <div className="absolute bottom-0 right-0 bg-cta_red text-cream px-4 py-2 font-medium">
-                              ¡Nuevo Precio!
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-
-                <div className="flex items-center justify-between mt-8">
-                  <CarouselPrevious className="relative inset-0 translate-y-0 bg-transparent border-cream text-cream hover:bg-cream/10 hover:text-cream" />
-
-                  <div className="flex gap-2">
-                    {features.map((_, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => handleSlideChange(idx)}
-                        className={`w-2 h-2 rounded-full ${
-                          activeIndex === idx ? "bg-cream" : "bg-cream/30"
-                        }`}
-                        aria-label={`Go to slide ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-
-                  <CarouselNext className="relative inset-0 translate-y-0 bg-transparent border-cream text-cream hover:bg-cream/10 hover:text-cream" />
-                </div>
-              </Carousel>
+              <FeaturesCarousel items={items} />
             </div>
           </div>
         </div>

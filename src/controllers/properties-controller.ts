@@ -1,11 +1,20 @@
 "use server"
 
+import { revalidatePath } from "next/cache"
 import { actionHandler } from "@/lib/handlers/actionHandler"
 import { PropertiesService } from "@/services/properties-service"
 import {
   CreateProperty,
   UpdateProperty,
 } from "@/lib/validations/PropertySchema"
+
+const invalidatePropertiesCaches = (id?: string | number) => {
+  revalidatePath("/properties")
+  revalidatePath("/")
+  if (id !== undefined) {
+    revalidatePath(`/properties/${id}`)
+  }
+}
 
 const propertiesService = new PropertiesService()
 
@@ -41,6 +50,7 @@ export const getSimilarProperties = async (
 export const createProperty = async (property: CreateProperty) => {
   return await actionHandler(async () => {
     await propertiesService.createProperty(property)
+    invalidatePropertiesCaches()
     return { message: "Propiedad creada exitosamente" }
   })
 }
@@ -48,6 +58,7 @@ export const createProperty = async (property: CreateProperty) => {
 export const updateProperty = async (id: string, property: UpdateProperty) => {
   return await actionHandler(async () => {
     await propertiesService.updateProperty(id, property)
+    invalidatePropertiesCaches(id)
     return { message: "Propiedad actualizada exitosamente" }
   })
 }
@@ -55,6 +66,7 @@ export const updateProperty = async (id: string, property: UpdateProperty) => {
 export const deleteProperty = async (id: string) => {
   return await actionHandler(async () => {
     await propertiesService.deleteProperty(id)
+    invalidatePropertiesCaches(id)
     return { message: "Propiedad eliminada exitosamente" }
   })
 }

@@ -19,24 +19,15 @@ export class GoogleReviewsService {
   ): Promise<DevelopmentReview | null> {
     let finalPlaceId: string | null | undefined = placeId
 
-    // Si no hay placeId, intenta buscarlo
     if (!finalPlaceId) {
-      console.log(`Buscando Place ID para: ${developmentTitle}`)
       finalPlaceId = await this.googleReviewsRepository.findPlaceId(
         developmentTitle,
         location
       )
 
       if (!finalPlaceId) {
-        console.warn(
-          `No se pudo encontrar Place ID para: ${developmentTitle}`
-        )
         return null
       }
-
-      console.log(
-        `Place ID encontrado para ${developmentTitle}: ${finalPlaceId}`
-      )
     }
 
     // En este punto, finalPlaceId debe ser un string válido

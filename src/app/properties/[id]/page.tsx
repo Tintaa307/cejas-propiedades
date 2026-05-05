@@ -27,8 +27,7 @@ export default async function PropertyPage({
       return await getSimilarProperties(id, property.locality || "canuelas", 3)
     })
 
-    // Fetch property images
-    const folderPath = property.id
+    const folderPath = String(property.id)
 
     const images = await actionErrorHandler(async () => {
       return await getPropertyImages(folderPath)

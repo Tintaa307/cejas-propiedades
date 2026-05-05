@@ -7,10 +7,8 @@ import { Suspense, useContext, useEffect, useState } from "react"
 import Loader from "@/components/loader/Loader"
 import { Button } from "@/components/ui/button"
 import { FilterContext } from "@/context/FilterContext"
-import {
-  parsePropertyPriceValue,
-  PROPERTY_LOCALITY_LABELS,
-} from "@/lib/utils"
+import { parsePropertyPriceValue } from "@/lib/utils"
+import { useLookups } from "@/context/LookupsContext"
 
 interface PropertiesPageProps {
   properties: BatchProps[]
@@ -23,6 +21,7 @@ export function PropertiesPage({ properties }: PropertiesPageProps) {
     useState<BatchProps[]>(properties)
 
   const { filter } = useContext(FilterContext)
+  const { localityLabels } = useLookups()
 
   useEffect(() => {
     let filtered = properties
@@ -94,8 +93,8 @@ export function PropertiesPage({ properties }: PropertiesPageProps) {
             return (a.type || "").localeCompare(b.type || "")
 
           case "locality_asc": {
-            const nameA = PROPERTY_LOCALITY_LABELS[a.locality] || a.locality || ""
-            const nameB = PROPERTY_LOCALITY_LABELS[b.locality] || b.locality || ""
+            const nameA = localityLabels[a.locality] || a.locality || ""
+            const nameB = localityLabels[b.locality] || b.locality || ""
             return nameA.localeCompare(nameB)
           }
 
@@ -107,7 +106,7 @@ export function PropertiesPage({ properties }: PropertiesPageProps) {
 
     setFilteredProperties(filtered)
     setLimit(9)
-  }, [filter, properties])
+  }, [filter, properties, localityLabels])
 
   return (
     <section className="w-full min-h-screen py-32">

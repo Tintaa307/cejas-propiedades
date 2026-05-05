@@ -1,7 +1,8 @@
 "use client"
 
-import { type Dispatch, type SetStateAction, useContext } from "react"
+import { type Dispatch, type SetStateAction, useContext, useMemo } from "react"
 import { FilterContext } from "@/context/FilterContext"
+import { useLookups } from "@/context/LookupsContext"
 import { X } from "lucide-react"
 import {
   Sheet,
@@ -20,6 +21,18 @@ import {
 import { Label } from "@/components/ui/label"
 import { FilterProps } from "@/types/types"
 
+interface FilterOption {
+  name: string
+  value: string
+}
+
+interface FilterDefinition {
+  label: string
+  filterName: keyof FilterProps
+  placeholder: string
+  options: FilterOption[]
+}
+
 const PropertiesFilter = ({
   open,
   setOpen,
@@ -27,87 +40,88 @@ const PropertiesFilter = ({
   open: boolean
   setOpen: Dispatch<SetStateAction<boolean>>
 }) => {
-  const filterOpts = [
-    {
-      label: "Ubicación",
-      filterName: "location",
-      placeholder: "Cañuelas",
-      options: [
-        { name: "Todos", value: "todos" },
-        { name: "Cañuelas", value: "canuelas" },
-        { name: "San Miguel del Monte", value: "san_miguel_monte" },
-        { name: "José C. Paz", value: "jose_c_paz" },
-        { name: "Ituzaingó", value: "ituzaingo" },
-        { name: "Hurlingham", value: "hurlingham" },
-        { name: "Tortuguitas", value: "tortuguitas" },
-        { name: "Las Heras", value: "las_heras" },
-        { name: "Las Flores", value: "las_flores" },
-        { name: "Castelar", value: "castelar" },
-        { name: "Lobos", value: "lobos" },
-      ],
-    },
-    {
-      label: "Tipo",
-      filterName: "type",
-      placeholder: "Casa",
-      options: [
-        { name: "Todos", value: "todos" },
-        { name: "Casa", value: "casa" },
-        { name: "Quinta", value: "quinta" },
-        { name: "Chacra", value: "chacra" },
-        { name: "Lote", value: "lote" },
-      ],
-    },
-    {
-      label: "Estado",
-      filterName: "operation",
-      placeholder: "Venta",
-      options: [
-        { name: "Todos", value: "todos" },
-        { name: "En Venta", value: "venta" },
-        { name: "Alquiler", value: "alquiler" },
-      ],
-    },
-    {
-      label: "Precio",
-      filterName: "price",
-      placeholder: "$10000-$100000",
-      options: [
-        { name: "Todos", value: "todos" },
-        { name: "Hasta $50.000", value: "0-50000" },
-        { name: "$50.000 - $100.000", value: "50000-100000" },
-        { name: "$100.000 - $200.000", value: "100000-200000" },
-        { name: "$200.000 - $300.000", value: "200000-300000" },
-        { name: "Más de $300.000", value: "300000+" },
-      ],
-    },
-    {
-      label: "Ordenar por",
-      filterName: "sortBy",
-      placeholder: "Predeterminado",
-      options: [
-        { name: "Predeterminado", value: "default" },
-        { name: "Precio: Menor a Mayor", value: "price_asc" },
-        { name: "Precio: Mayor a Menor", value: "price_desc" },
-        { name: "Nombre: A-Z", value: "name_asc" },
-        { name: "Nombre: Z-A", value: "name_desc" },
-        { name: "Tipo: A-Z", value: "type_asc" },
-        { name: "Localidad: A-Z", value: "locality_asc" },
-      ],
-    },
-  ]
-
   const { setFilter, filter } = useContext(FilterContext)
+  const { localities, propertyTypes } = useLookups()
+
+  const filterOpts = useMemo<FilterDefinition[]>(() => {
+    const localityOptions: FilterOption[] = [
+      { name: "Todos", value: "todos" },
+      ...localities.map((locality) => ({
+        name: locality.name,
+        value: locality.value,
+      })),
+    ]
+
+    const typeOptions: FilterOption[] = [
+      { name: "Todos", value: "todos" },
+      ...propertyTypes.map((type) => ({
+        name: type.name,
+        value: type.value,
+      })),
+    ]
+
+    return [
+      {
+        label: "Ubicación",
+        filterName: "location",
+        placeholder: localities[0]?.name ?? "Ubicación",
+        options: localityOptions,
+      },
+      {
+        label: "Tipo",
+        filterName: "type",
+        placeholder: propertyTypes[0]?.name ?? "Tipo",
+        options: typeOptions,
+      },
+      {
+        label: "Estado",
+        filterName: "operation",
+        placeholder: "Venta",
+        options: [
+          { name: "Todos", value: "todos" },
+          { name: "En Venta", value: "venta" },
+          { name: "Alquiler", value: "alquiler" },
+        ],
+      },
+      {
+        label: "Precio",
+        filterName: "price",
+        placeholder: "$10000-$100000",
+        options: [
+          { name: "Todos", value: "todos" },
+          { name: "Hasta $50.000", value: "0-50000" },
+          { name: "$50.000 - $100.000", value: "50000-100000" },
+          { name: "$100.000 - $200.000", value: "100000-200000" },
+          { name: "$200.000 - $300.000", value: "200000-300000" },
+          { name: "Más de $300.000", value: "300000+" },
+        ],
+      },
+      {
+        label: "Ordenar por",
+        filterName: "sortBy",
+        placeholder: "Predeterminado",
+        options: [
+          { name: "Predeterminado", value: "default" },
+          { name: "Precio: Menor a Mayor", value: "price_asc" },
+          { name: "Precio: Mayor a Menor", value: "price_desc" },
+          { name: "Nombre: A-Z", value: "name_asc" },
+          { name: "Nombre: Z-A", value: "name_desc" },
+          { name: "Tipo: A-Z", value: "type_asc" },
+          { name: "Localidad: A-Z", value: "locality_asc" },
+        ],
+      },
+    ]
+  }, [localities, propertyTypes])
 
   const FilterOptions = () => (
     <div className="space-y-6">
-      {filterOpts.map((filterOpt, index) => (
-        <div key={index} className="space-y-2">
+      {filterOpts.map((filterOpt) => (
+        <div key={filterOpt.filterName} className="space-y-2">
           <Label className="text-sm font-medium text-primary_green">
             {filterOpt.label}
           </Label>
           <Select
-            value={filter[filterOpt.filterName as keyof FilterProps]}
+            value={filter[filterOpt.filterName]}
             onValueChange={(value) => {
               setFilter((prev: FilterProps) => ({
                 ...prev,
@@ -119,9 +133,9 @@ const PropertiesFilter = ({
               <SelectValue placeholder={filterOpt.placeholder} />
             </SelectTrigger>
             <SelectContent className="border border-primary_green/30">
-              {filterOpt.options.map((option, idx) => (
+              {filterOpt.options.map((option) => (
                 <SelectItem
-                  key={idx}
+                  key={option.value}
                   value={option.value}
                   className="text-primary_green hover:bg-primary_green/10 focus:bg-primary_green/10 cursor-pointer"
                 >
